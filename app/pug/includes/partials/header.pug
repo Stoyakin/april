@@ -1,0 +1,35 @@
++b('header').header 
+  .container
+    +e.row
+      +b('a')(href="#").logo
+        +e('img')(src="static/img/logo.png" alt="").img
+      +b.nav
+        +e('ul').list
+          +e('li').list-item
+            +e('a')(href="#").list-href Услуги
+          +e('li').list-item
+            +e('a')(href="#").list-href Проекты
+          +e('li').list-item
+            +e('a')(href="#").list-href.--active Компания
+          +e('li').list-item
+            +e('a')(href="#").list-href Блог
+            +e('ul').sublist
+              +e('li').subitem
+                +e('a')(href="#").subhref Продвижение сайтов
+              +e('li').subitem
+                +e('a')(href="#").subhref Интернет-маркетинг
+              +e('li').subitem
+                +e('a')(href="#").subhref Разработка
+              +e('li').subitem
+                +e('a')(href="#").subhref Маркетинг
+          +e('li').list-item
+            +e('a')(href="#").list-href Контакты
+
+      +e.right
+        +e('a')(href="tel:89617694801").phone +7 (961) 
+          b 769-48-01
+        +b.city
+          +e('a')(href="#").href Челябинск
+
+      +e('button')(type="button").burger.js-burger
+        i

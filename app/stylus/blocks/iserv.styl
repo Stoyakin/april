@@ -1,0 +1,124 @@
+.iserv
+  position relative
+  padding 80px 0 0
+  z-index 1
+  &--page
+    padding 0
+    margin-top 73px
+    margin-bottom -42px
+    .iserv
+      &__wrap
+        display flex
+        flex-wrap wrap
+        justify-content space-between
+        background-color transparent
+        margin 0
+        padding 0
+      &__item
+        flex-direction column
+        align-items flex-start
+        width calc(50% - 16px)
+        min-height 300px
+        margin-bottom 32px
+        padding 30px 45px
+        border 1px solid #e3e3e3
+        background-color #fff
+        transition background .4s
+        &:hover
+          background-color $blue
+          .iserv__item
+            &-title, &-descr, &-price, &-price span
+              color #fff
+        &-title, &-descr, &-price, &-price span
+          transition color .4s
+        &-title
+          display inline
+          color $black
+          line-height 24px
+          margin-bottom 25px
+          span
+            border-bottom 3px solid $blue
+        &-descr
+          margin-bottom 25px
+        &-price
+          margin-left 0
+          line-height 14px
+          color $black
+          span
+            color $black
+            line-height 45px
+  &__decor
+    font-size 352px
+    line-height 255px
+    position absolute
+    top 90px
+    right -180px
+  &__marker
+    margin-bottom 45px
+  &__content
+    max-width calc(50% + 60px)
+  &__title
+    margin-bottom 45px
+  &__text
+    padding-right 60px
+    a:not([class]), p:not([class]), ul:not([class]) li, ol:not([class]) li, ol:not([class]) li:before, table:not([class]) th, table:not([class]) td
+        color #656565
+        font-size 18px
+        line-height 32px
+  &__wrap
+    background-color #262626
+    margin-top 60px
+    padding 60px 0 114px
+  &__bottom
+    display flex
+    flex-wrap wrap
+    align-items center
+    margin-top 45px
+    &-text
+      max-width 50%
+      color rgba(#fff, .8)
+      font-size 28px
+      font-weight 400
+      line-height 48px
+    &-href
+      margin-left auto
+      min-width 268px
+  &__item
+    display flex
+    align-items center
+    padding 50px 0
+    border-bottom 2px solid rgba(#fff, .2)
+    &-info
+      width 50%
+    &-title
+      color #fff
+      font-size 29px
+      font-weight 700
+      line-height 34px
+      margin-bottom 15px
+    &-descr
+      color #bcbcbc
+      font-size 18px
+      font-weight 400
+      line-height 32px
+      margin-bottom 25px
+    &-more
+      color #fff
+      &:hover
+        color $blue
+    &-price
+      margin-left auto
+      font-size 18px
+      line-height 32px
+      color #bcbcbc
+      font-weight 400
+      span
+        color #fff
+        font-size 60px
+        font-weight 700
+        margin 0 15px
+
+
+
+
+

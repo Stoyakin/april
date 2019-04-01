@@ -1,0 +1,103 @@
+.cases
+  padding 80px 0
+  &__title
+    text-align center
+    margin-bottom 50px
+  .swiper
+    &-pagination
+      position relative
+      bottom auto
+      margin-top 82px
+      &-bullet
+        margin 0 23px !important
+    &-action
+      display flex
+      align-items center
+      justify-content space-between
+      position absolute
+      right -12px
+      top -6px
+      width 280px
+    &-count
+      display flex
+      align-items baseline
+      &__item
+        color $black
+        font-size 29px
+        line-height 32px
+        font-weight 700
+        margin-right 5px
+      &__all
+        position relative
+        color $black
+        font-size 23px
+        line-height 32px
+        &:before
+          content '/'
+          display inline-block
+          position relative
+          margin-right 5px
+          color $black
+          font-size 23px
+          line-height 32px
+          font-weight 400
+    &-buttons
+      position relative
+      width 144px
+      top 0
+      right 0
+      &-button
+        &-prev
+          left 0
+        &-next
+          right 0
+  &__item
+    &-title
+      color $black
+      font-size 29px
+      font-weight 700
+      line-height 32px
+      margin-bottom 25px
+    &-info
+      margin-top 30px
+      &-row
+        display flex
+        flex-wrap wrap
+        margin 0 -16px 2px
+        width calc(100% + 32px)
+        &--head
+          .cases__item
+            &-info
+              &-cell
+                background-color transparent
+                padding-left 0
+              &-text
+                font-weight 700
+                color $black
+      &-cell
+        width calc(25% - 32px)
+        padding 10px 25px
+        margin 0 16px
+        &--request
+          width calc(50% - 32px)
+          padding-left 0
+        &--old, &--new
+          .cases__item-info-text
+            font-weight 700
+            color $black
+        &--old
+          background-color #f2f2f2
+        &--new
+          background-color $blue
+      &-text
+        color $color
+        font-size 23px
+        line-height 40px
+  &__bottom
+    display flex
+    align-items center
+    justify-content center
+    margin-top 80px
+  &__btn-more
+    margin 0 15px
+    min-width 268px

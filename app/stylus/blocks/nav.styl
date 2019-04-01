@@ -1,0 +1,20 @@
+.nav
+  &__list
+    display flex
+    &-item
+      margin-right 60px
+      &:last-child
+        margin-right 0
+    &-href
+      color #fff
+      font-size 15px
+      font-weight 700
+      line-height 17px
+      transition color .5s
+      user-select none
+      &:hover, &--active
+        color $blue
+  &__sublist
+    display none
+  //&__subitem
+  //&__subhref

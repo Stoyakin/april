@@ -1,0 +1,90 @@
+.form
+  &--light
+    .form__field
+      &-input
+        border-bottom 1px solid rgba(#fff, .2)
+      &-label, &-input
+        color rgba(#fff, .8)
+    .checkbox__label
+      color #fff
+      &:before
+        border-color rgba(#fff, .5)
+      &:after
+        border-color #fff
+      &:hover
+        &:before
+          border-color #fff
+  .checkbox
+    & +.form__field
+      width auto
+      margin-left auto
+      .form__field-submit
+        min-width 212px
+  &__row
+    display flex
+    flex-wrap wrap
+    align-items center
+    margin 0 -15px
+    width calc(100% + 30px)
+    &+&
+      margin-top 35px
+    & > .checkbox
+      margin-left 15px
+  &__field
+    position relative
+    width 100%
+    margin 0 15px
+    z-index 1
+    &--half
+      width calc(50% - 30px)
+    &.warning
+      .form__field
+        &-input
+          border-bottom-color $red
+    &--x3
+      width calc(100%/3 - 30px)
+      margin 0 15px
+      .form__field-submit
+        width 100%
+    &--center
+      margin 0 auto
+    &-input, &-textarea
+      width 100%
+      color $color
+      font-family Montserrat
+      font-size 22px
+      font-weight 400
+      line-height 32px
+      background none
+      border none
+      outline none
+      border-bottom 1px solid rgba(#000, .2)
+      transition border .5s
+      &:focus + .form__field-label,
+      &.no-empty + .form__field-label
+        top 0px
+        font-size 14px
+        line-height 16px
+      &.warning
+        border-bottom-color $red
+    &-input
+      height 70px
+      padding 15px 0
+    &-textarea
+      height 150px
+      resize none
+      padding 20px 0
+    &-label
+      display block
+      position absolute
+      left 0
+      top 24px
+      width 100%
+      font-size 22px
+      font-weight 400
+      line-height 22px
+      color $color
+      z-index -1
+      transition top .5s, font .5s
+      span
+        color $red

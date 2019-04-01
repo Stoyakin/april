@@ -1,0 +1,101 @@
+include includes/bemto/bemto.pug
+include includes/__mixins
+
+doctype html
+html(lang="ru")
+  - var title = "Разводящая"
+  include includes/partials/head
+  style(type='text/css').
+    .page-list{
+      display: inline-block;
+      vertical-align: top;
+      width: 48%;
+      margin: 30px 0 0 !important;
+    }
+    .page-list-item{
+      margin: 0 0 10px !important;
+    }
+    .page-list-item:before{
+      display: none;
+      content: none;
+    }
+    .page-list-item a{
+      color: #1c1c1c;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+      border-bottom: 1px solid #1c1c1c;
+      transition: color 0.5s, border 0.5s;
+      -webkit-transition: color 0.5s, border 0.5s;
+    }
+    .page-list-item a:hover {
+      border-bottom-color: transparent;
+    }
+    
+  body
+    .wrapper(style="overflow-x: hidden; padding-top: 80px;")
+      main.main(style="background: none;")
+        .container
+          .wis-content
+            ul.page-list(style="display:inline-block;vertical-align:top;width:45%;margin-right:35px;")
+              li.page-list-item
+                h3 Страницы
+                a(target="_blank" href="main.html").link Главная
+              li.page-list-item
+                a(target="_blank" href="inside-default.html").link Типовая текстовая
+              li.page-list-item
+                a(target="_blank" href="inside-services.html").link Услуги
+              li.page-list-item
+                a(target="_blank" href="inside-services-one.html").link Услуга - одна
+              li.page-list-item
+                a(target="_blank" href="inside-reviews.html").link Отзывы
+              li.page-list-item
+                a(target="_blank" href="inside-questions.html").link Вопросы и ответы
+              li.page-list-item
+                a(target="_blank" href="inside-projects.html").link Проекты
+              li.page-list-item
+                a(target="_blank" href="inside-projects-one.html").link Проект - один
+              li.page-list-item
+                a(target="_blank" href="inside-contacts.html").link Контакты
+              li.page-list-item
+                a(target="_blank" href="inside-about.html").link О компании
+              li.page-list-item
+                a(target="_blank" href="inside-blog.html").link Блог
+              li.page-list-item
+                a(target="_blank" href="inside-blog-2.html").link  Блог(без пагинации)
+              li.page-list-item
+                a(target="_blank" href="inside-blog-page.html").link Блог - внутренняя
+
+            ul.page-list(style="display:inline-block;vertical-align:top;width:45%;margin-right:35px;")
+              li.page-list-item
+                h3 Попапы
+                a(href="#write-msg").js-mfp Написать сообщение
+              li.page-list-item
+                a(href="#request").js-mfp Оставить заявку
+              li.page-list-item
+                a(href="#review").js-mfp Оставить отзыв
+              li.page-list-item
+                a(href="#question").js-mfp Задать вопрос
+              li.page-list-item
+                a(href="#order-seo").js-mfp Заказать SEO-продвижение
+              li.page-list-item
+                a(href="#success").js-mfp Ваша заявка на бесплатный аудит отправлена.
+              li.page-list-item
+                a(href="#success2").js-mfp Мы свяжемся с вами в самое ближайшее время, чтобы обсудить проект.
+              li.page-list-item
+                a(href="#success4").js-mfp Мы в ближайшее время свяжемся с вами и обсудим проект.
+              li.page-list-item
+                a(href="#success3").js-mfp Благодарим за то что, вы выбрали нашу компанию.
+              li.page-list-item
+                a(href="#success5").js-mfp Ваш отзыв отправлен
+              li.page-list-item
+                a(href="#success6").js-mfp Ваш вопрос отправлен
+                
+      .hidden-block
+        include includes/__popups
+
+      script(src="static/js/vendor.js")
+      script(src="static/js/own.js")
+      
+
+

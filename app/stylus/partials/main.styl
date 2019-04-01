@@ -1,0 +1,95 @@
+.main
+  &__content
+    padding-bottom 160px
+    &+.ifeed
+      padding-top 0
+  &__center
+    max-width 867px
+  &__title
+    color #262626
+    font-weight 700
+    font-size 59px
+    line-height 72px
+    margin-bottom 40px
+    max-width calc(75% - 8px)
+    &+.wis-content
+      max-width 868px
+  &__top
+    display flex
+    align-items flex-start
+    justify-content space-between
+    margin-bottom 56px
+    .wis-content
+      max-width 868px
+    .btn
+      margin-left 50px
+  &__bottom
+    display flex
+    flex-wrap wrap
+    align-items center
+    margin-top 50px
+    &-right
+      display flex
+      align-items center
+      margin-left auto
+    &-text
+      color #262626
+      font-size 18px
+      font-weight 700
+      line-height 36px
+      &+.social
+        margin-left 25px
+  &__back-href
+    flex-direction row-reverse
+    i
+      margin-left 0
+      margin-right 32px
+      &:after
+        left 2px
+        right auto
+        transform rotate(-45deg) scale(-1, -1)
+  &__row
+    display flex
+    justify-content space-between
+  &__left
+    width calc(75% - 8px)
+  &__aside
+    width calc(25% - 24px)
+  &__nav
+    margin-bottom 75px
+    &:last-child
+      margin-bottom 0
+    &-title
+      color #262626
+      font-size 23px
+      font-weight 700
+      line-height 31px
+      margin-bottom 15px
+    &-list
+      &-item
+        margin-bottom 10px
+        &:last-child
+          margin-bottom 0
+      &-href
+        display inline-flex
+        vertical-align top
+        position relative
+        font-size 18px
+        font-weight 700
+        line-height 30px
+        color #262626
+        transition color .5s
+        &:before
+          content ''
+          display inline-block
+          vertical-align top
+          width 0
+          height 2px
+          margin 14px 0 0
+          background-color $blue
+          transition width .5s, margin .5s
+        &:hover, &--active
+          color #00bee0
+          &:before
+            width 16px
+            margin-right 17px

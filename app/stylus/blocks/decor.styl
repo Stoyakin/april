@@ -1,0 +1,21 @@
+.decor
+  position fixed
+  width 1168px
+  height 0
+  top 0
+  left 50%
+  transform translateX(-50%)
+  z-index -1
+  &__line
+    position absolute
+    left 0
+    top 0
+    width 1px
+    height 100vh
+    background-color #f2f2f2
+    &:nth-child(2)
+      left calc(25% + 8px)
+    &:nth-child(3)
+      left calc(50% + 16px)
+    &:nth-child(4)
+      left calc(75% + 24px)

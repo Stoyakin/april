@@ -1,0 +1,364 @@
+.title
+  color #272727
+  font-size 58px
+  font-weight 700
+  line-height 64px
+  &--middle
+    color $black
+    font-size 44px
+    line-height 64px
+
+.href, .href-arrow
+  display inline-flex
+  align-items center
+  color $black
+  font-size 18px
+  font-weight 700
+  line-height 24px
+  transition color .5s
+  &:hover
+    color $blue
+
+.href-arrow
+  i
+    display block
+    position relative
+    width 25px
+    height 2px
+    margin-left 32px
+    background-color $blue
+    transition width .5s
+    &:after
+      @extend .after
+      top -5px
+      right 2px
+      width 10px
+      height 10px
+      border-right 2px solid $blue
+      border-bottom 2px solid $blue
+      transform rotate(-45deg)
+  &:hover
+    i
+      width 49px
+
+.marker
+  display inline-block
+  vertical-align top
+  background-color $blue
+  color #fff
+  font-size 22px
+  font-weight 700
+  line-height 22px
+  padding 4px 16px 6px
+  text-transform lowercase
+
+.decor-text
+  color #f6f7f8
+  font-size 417px
+  font-weight 700
+  line-height 320px
+  z-index -1
+
+.h-align
+  &-left
+    float right
+    margin-left 32px
+    margin-bottom 0
+  &-right
+    float left
+    margin-right 32px
+    margin-bottom 0
+
+.swiper
+  &-buttons
+    height 44px
+  &-button
+    &-prev, &-next
+      position absolute
+      top 50%
+      transform translateY(-50%)
+      width 44px
+      height 44px
+      margin 0
+      i
+        display block
+        position absolute
+        left 3px
+        top 21px
+        width 38px
+        height 2px
+        background-color #000
+        transition background .5s
+        &:after
+          @extend .after
+          top -5px
+          right 2px
+          width 10px
+          height 10px
+          border-right 2px solid #000
+          border-bottom 2px solid #000
+          transform rotate(-45deg)
+          transition border .5s
+      &:hover
+        i
+          background-color $blue
+          &:after
+            border-color $blue
+    &-prev
+      i
+        transform scaleX(-1)
+  &-pagination
+    display flex
+    justify-content center
+    &-bullet
+      position relative
+      width 24px
+      height 24px
+      margin 0 23px
+      border-radius 50%
+      border 2px solid transparent
+      background none
+      transition border .5s
+      opacity 1
+      &:before
+        @extend .before
+        width 8px
+        height 8px
+        top 6px
+        left 6px
+        border-radius 50%
+        background-color rgba($black, .5)
+      &-active, &:hover
+        border-color $blue
+        &:before
+          background-color $black
+
+.common-wrap
+  padding-top 80px
+
+/*--wis-content--*/
+.wis-content
+  width 100%
+  color #5e5e5e
+
+  h1:not([class]), h2:not([class]), h3:not([class]), h4:not([class]), h5:not([class])
+    color #262626
+    font-weight 700
+    &:first-child
+      margin-top 0
+    &:last-child
+      margin-bottom 0
+
+  h1:not([class])
+    font-size 59px
+    line-height 72px
+    margin-bottom 40px
+
+  h2:not([class])
+    font-size 44px
+    line-height 57px
+    margin 30px 0 50px
+
+  h3:not([class])
+    font-size 29px
+    line-height 42px
+    margin 30px 0 20px
+
+  h4:not([class])
+    font-size 23px
+    line-height 36px
+    margin 30px 0 20px
+
+  h5:not([class])
+    font-size 18px
+    line-height 24px
+    margin 30px 0 20px
+
+  figure:not([class])
+    margin 30px 0
+    max-width 100%
+
+  figcaption:not([class])
+    color #9f9f9f
+    font-size 15px
+    font-weight 400
+    line-height 24px
+
+  img:not([class])
+    margin 20px 0
+    max-width 100%
+    margin-left 0
+
+  * + img:not([class])
+    margin-top 15px
+
+  ul:not([class])
+    list-style none
+    margin 25px 0
+
+    ul:not([class])
+      margin 20px 0 10px 15px
+
+      ul:not([class])
+        margin-top 10px
+
+        li + li
+          margin-top 5px
+
+  * + ul:not([class])
+    margin-top 5px
+
+  ul:not([class]) ul:not([class]),
+  ol:not([class]) ol:not([class]),
+  ol:not([class]) ul:not([class]),
+  ul:not([class]) ol:not([class])
+    margin-top 5px
+
+  ul:not([class]) li
+    padding-left 25px
+    position relative
+    font-size 15px
+    line-height 24px
+    font-weight 400
+
+  ul:not([class]) li + li
+    margin-top: 5px
+
+  ul:not([class]) ol:not([class]),
+  ol:not([class]) ul:not([class]),
+  ul:not([class]) li:not([class]) ol:not([class]),
+  ol:not([class]) li:not([class]) ul:not([class])
+    counter-reset myCounter
+
+  ul:not([class]) ol:not([class]) li:before
+    height 28px
+    background none
+
+  ul:not([class]) li:before
+    content ""
+    position absolute
+    display block
+    left 0
+    top 10px
+    width 16px
+    height 2px
+    background-color $blue
+
+  ol:not([class]) ul:not([class]) li:before
+    content ""
+    left 0
+    top 10px
+    width 16px
+    height 2px
+    background-color $blue
+
+  ol:not([class])
+    list-style none
+    margin 20px 0
+    counter-reset myCounter
+
+    ol:not([class])
+      margin 20px 0 10px 15px
+
+      ol:not([class])
+        margin-top 10px
+
+        li + li
+          margin-top 5px
+
+  * + ol:not([class])
+    margin-top 5px
+
+  ol:not([class]) li
+    position relative
+    padding-left 30px
+    font-size 15px
+    line-height 24px
+    font-weight 400
+
+  ol:not([class]) li + li
+    margin-top 5px
+
+  ol:not([class]) li:before
+    counter-increment myCounter
+    content counters(myCounter,".")"."
+    position absolute
+    left 0
+    top 0
+    width 28px
+    text-align left
+    color $blue
+    font-size 15px
+    line-height 24px
+    font-weight 700
+    box-sizing border-box
+    height 24px
+    background-color transparent
+
+  table:not([class])
+    margin 40px 0 35px
+    width 100%
+
+    th, td
+      font-size 15px
+      line-height 24px
+      padding 12px 25px
+
+    th
+      font-weight 700
+      color $black
+      background-color $blue
+
+    td
+      color #5e5e5e
+
+    tbody
+      tr:nth-child(even)
+        td
+          background-color #f2f2f2
+
+  b
+    color #1c1c1c
+    font-weight bold
+
+  p:not([class])
+    color #5e5e5e
+    font-size 15px
+    line-height 24px
+    font-weight 400
+    margin 20px 0
+
+    & + p
+      margin-top 20px
+
+  a:not([class])
+    color $blue
+    font-size 15px
+    line-height 24px
+    font-weight 400
+    border-bottom 1px solid transparent
+    transition .5s border
+    -webkit-transition .5s border
+
+    &:hover
+      border-color $blue
+
+  iframe
+    margin 20px 0  !important
+    max-width 100% !important
+
+  ul:not([class]):last-child,
+  ol:not([class]):last-child,
+  p:not([class]):last-child,
+  iframe:not([class]):last-child,
+  table:not([class]):last-child
+    margin-bottom 0 !important
+
+  p:not([class]):first-child,
+  table:not([class]):first-child
+    margin-top 0 !important
+/*--end - wis-content--*/
+
+.hidden-block
+  display none
+

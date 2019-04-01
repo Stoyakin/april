@@ -1,0 +1,33 @@
+.ifeed
+  padding 160px 0
+  //.container
+  &__row
+    display flex
+    flex-wrap wrap
+    width calc(100% + 30px)
+    margin 0 -15px
+  &__col
+    width calc(50% - 30px)
+    margin 0 15px
+  &__title
+    margin-bottom 45px
+    span
+      display block
+      font-weight 300
+  &__text
+    color #5e5e5e
+    a:not([class]), p:not([class]), ul:not([class]) li, ol:not([class]) li, ol:not([class]) li:before, table:not([class]) th, table:not([class]) td
+      font-size 18px
+      line-height 32px
+  &__contacts
+    display flex
+    align-items flex-start
+    flex-direction column
+    margin-top 35px
+    &-email, &-phone
+      font-size 23px
+      line-height 32px
+    &-email
+      color #00bee0
+    &-phone
+      color #5e5e5e

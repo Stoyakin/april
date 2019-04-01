@@ -1,0 +1,41 @@
+.control
+  padding 80px 0
+  &:last-child
+    padding-bottom 0
+  &__wrap
+    display flex
+    flex-wrap wrap
+    width calc(100% + 32px)
+    margin 0 -16px -32px
+  &__cell
+    width calc(50% - 32px)
+    margin 0 16px 32px
+  &__item
+    position relative
+    padding 25px 165px 25px 35px
+    border 1px solid #e3e3e3
+    min-height 192px
+    overflow hidden
+    z-index 1
+    &-overico
+      position absolute
+      right -60px
+      bottom -55px
+      width 230px
+      height 230px
+      opacity .05
+      z-index -1
+    //&-ico
+    &-title
+      color $black
+      font-size 29px
+      font-weight 700
+      line-height 34px
+      margin-bottom 20px
+      width 100%
+    &-text
+      color rgba($color, .8)
+      font-size 15px
+      font-weight 400
+      line-height 24px
+      width 100%

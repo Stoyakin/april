@@ -1,0 +1,92 @@
+.comments
+  margin-top 60px
+  &__title
+    margin-bottom 50px
+  &__form
+    &-wrap
+      background-color white
+      border 1px solid #e3e3e3
+      padding 60px 60px 61px
+      margin-bottom 50px
+      &:last-child
+        margin-bottom 0
+    &-title
+      color #262626
+      font-size 29px
+      font-weight 700
+      line-height 34px
+      margin-bottom 10px
+  &__item
+    margin-bottom 50px
+    &:last-child
+      margin-bottom 0
+    &--inner
+      margin-top 45px
+      margin-left 75px
+    &-wrap
+      position relative
+      padding-left 75px
+      &:before
+        @extend .before
+        left 0
+        top 0
+        width 56px
+        height 42px
+        background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAqCAMAAADRRmi8AAAAjVBMVEUAAADf39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f398moQqmAAAALnRSTlMA/SHcDAUDeg/08u1XN+bFwKaGYE0bFPjh1Mg7s5GBbkExKAjNrKGfmWhbtkYtjMsdoAAAAYBJREFUSMedlsmSgkAQRGkEwV3ccMFR3BB0+P/Pm0v34RVTdoR5zIwkKjqzKggEVi2wTS0f9SiMhW89gmzOTqjoy4SvP6d+dMKY/DQVxoT67mr5cEjhLHwTAzkvLR/P5CBEKh4gccKiMwiRUZ/3LX/mIKYUviV9w9Dym6kchAgH1JdOuJOf9emLb9TvTqjJD9wgygNMN5b/zeUgxNtQX1n+uiNfwNV9gKcTjuRHG2EsqPcidB6DACfKZoLOYxCgzKn/oPMYBIjEA+zj/ztvDgHxFEldROcdFsI3bolaWfqbG0R5gJfS+fzyeelHays0LXEKPne00CIKA4GLthWFshXaHg64h0yXyGSM3Hz2ibdGyWuhF4dJy4bEezofgUSiHP5wqBx+LcwMreIBU+vDTCpfJislk6hzpCWOSiZl7snkulPiPnkyQfWwtS9fJrXMBNVjJsRdyeRtPJmkWzobUT09k4P8tFK9xFe9WczqMRNWT8mk8WSC6iGTB51V8PUP0h/2geL38HXFMQAAAABJRU5ErkJggg==') no-repeat center
+    &-top
+      display flex
+      flex-wrap wrap
+      margin-bottom 10px
+    &-author
+      color $black
+      font-size 18px
+      font-weight 700
+      line-height 24px
+      margin-right 10px
+    &-to-people
+      position relative
+      color $color
+      font-size 15px
+      font-weight 400
+      line-height 24px
+      &:before
+        content ''
+        display inline-block
+        vertical-align top
+        margin-top 6px
+        margin-right 10px
+        width 17px
+        height 12px
+        background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAMBAMAAAB2C0uMAAAAGFBMVEUAAACenp6enp6enp6enp6enp6enp6enp72N2arAAAAB3RSTlMAHt3ID94crsIHUQAAADBJREFUCNdjAANBBihgCxKAsljMA2GCzqUoguUQABSEsooEYLKKMB2YQmxKQCGEbQDKVwupWWzXKAAAAABJRU5ErkJggg==') no-repeat center
+    &-date
+      display block
+      position relative
+      color rgba($color, .8)
+      font-size 15px
+      font-weight 400
+      line-height 24px
+      margin-right 21px
+      padding-left 24px
+      margin-bottom 17px
+      &:before
+        @extend .before
+        left 0
+        top 3px
+        width 14px
+        height 15px
+        background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAPBAMAAAAmOuNHAAAAD1BMVEUAAACenp6enp6enp6enp4CdBJxAAAABHRSTlMA5kpJG2qUMwAAAC5JREFUCNdjYGBxACE4begCAsIMImDakcGFAQRcEDSLAxDBaELicBpuniKYFgIAZjoPevN7/1AAAAAASUVORK5CYII=') no-repeat center
+    &-text
+      margin-bottom 15px
+      a:not([class]), p:not([class]), ul:not([class]) li, ol:not([class]) li, ol:not([class]) li:before, table:not([class]) th, table:not([class]) td
+        color $black
+        font-size 15px
+        line-height 24px
+    &-answer-href
+      color #1c1c1c
+      font-size 15px
+      font-weight 700
+      line-height 17px
+      transition color .5s
+      &:hover
+        color $blue
+

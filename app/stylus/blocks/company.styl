@@ -1,0 +1,31 @@
+.company
+  padding-bottom 61px
+  &:last-child
+    padding-bottom 0
+  &__row
+    display flex
+    flex-wrap wrap
+    justify-content space-between
+  &__col
+    width calc(50% - 16px)
+  &__title
+    color #262626
+    font-size 59px
+    font-weight 700
+    line-height 72px
+    margin-bottom 60px
+  &__text
+    a:not([class]), p:not([class]), ul:not([class]) li, ol:not([class]) li, ol:not([class]) li:before, table:not([class]) th, table:not([class]) td
+      color $color
+      font-size 22px
+      line-height 32px
+  &__decor
+    width calc(50vw - 25px)
+    &-img
+      display block
+      width 100%
+      padding-top 57.627%
+      background-repeat no-repeat
+      background-position left center
+      background-size cover
+      transition width .5s

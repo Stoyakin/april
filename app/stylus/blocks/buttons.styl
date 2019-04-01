@@ -1,0 +1,75 @@
+.btn
+  display inline-flex
+  align-items center
+  justify-content center
+  vertical-align top
+  position relative
+  min-width 268px
+  background-color $blue
+  color white
+  font-family Montserrat
+  font-size 18px
+  font-weight 600
+  line-height 24px
+  white-space nowrap
+  padding 19px 30px
+  border none
+  outline none
+  transition background .5s, color .4s
+  user-select none
+  z-index 1
+  &:hover
+    background-color #0fd6f9
+  &--arrow
+    i
+      display block
+      position relative
+      width 25px
+      height 2px
+      margin-left 32px
+      background-color #fff
+      transition width .5s
+      &:after
+        @extend .after
+        top -5px
+        right 2px
+        width 10px
+        height 10px
+        border-right 2px solid #fff
+        border-bottom 2px solid #fff
+        transform rotate(-45deg)
+    &:hover
+      i
+        width 49px
+  &--white
+    color $black
+    font-weight 400
+    background-color #fff
+    border 1px solid #e3e3e3
+    &:before, &:after
+      content ''
+      position absolute
+      width 15px
+      height 15px
+      transition width .5s, height .5s
+      pointer-events none
+    &:before
+      right -1px
+      bottom -1px
+      border-right 1px solid $blue
+      border-bottom 1px solid $blue
+    &:after
+      left -1px
+      top -1px
+      border-left 1px solid $blue
+      border-top 1px solid $blue
+    &:hover
+      background-color #fff
+      &:after, &:before
+        width calc(100% + 1px)
+        height calc(100% + 1px)
+    &.btn--arrow
+      i
+        background-color $blue
+        &:after, &:before
+          border-color $blue

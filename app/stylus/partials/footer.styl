@@ -1,0 +1,63 @@
+.footer
+  position relative
+  padding 160px 0
+  background-color #262626
+  background-repeat no-repeat
+  block-size cover
+  background-position right bottom
+  .social
+    margin-bottom 20px
+  .logo
+    display inline-block
+    vertical-align top
+    margin-bottom 50px
+  &__row
+    display flex
+    flex-wrap wrap
+    width calc(100% + 30px)
+    margin 0 -15px
+  &__col
+    width calc(25% - 30px)
+    margin 0 15px
+  &__copy
+    color rgba(#909090, .5)
+    font-size 15px
+    font-weight 400
+    line-height 24px
+  &__info
+    margin-bottom 40px
+    &-item
+      margin-bottom 20px
+    &-href
+      color #fff
+      line-height 32px
+      &--phone
+        font-size 23px
+      &--email
+        color $blue
+        font-size 18px
+  &__nav-list
+    &-item
+      margin-bottom 16px
+      &:last-child
+        margin-bottom 0
+    &-href
+      color #b1b1b1
+      font-size 18px
+      font-weight 400
+      line-height 32px
+      transition color .5s
+      &:hover, &--active
+        color #fff
+      &--title
+        display inline-block
+        vertical-align top
+        color #fff
+        font-size 22px
+        font-weight 700
+        line-height 26px
+        margin-bottom 25px
+        &:hover
+          color #b1b1b1
+      &--title&--active
+        color #b1b1b1
