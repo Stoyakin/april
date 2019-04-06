@@ -1,188 +1,164 @@
+@keyframes arrowJump
+  0%
+    bottom 57px
+  33%
+    bottom 42px
+  66%
+    bottom 57px
+  100%
+    bottom 57px
+
+@keyframes arrowLeft
+  0%
+    transform rotate(45deg)
+  20%
+    transform rotate(53deg)
+  100%
+    transform rotate(45deg)
+
+@keyframes arrowRight
+  0%
+    transform rotate(-45deg)
+  20%
+    transform rotate(-53deg)
+  100%
+    transform rotate(-45deg)
+
 .title
-  color #272727
-  font-size 58px
-  font-weight 700
-  line-height 64px
-  &--middle
-    color $black
-    font-size 44px
-    line-height 64px
+    color #fff
+    font-size 24px
+    line-height 30px
+    font-weight 200
+    text-transform uppercase
 
-.href, .href-arrow
-  display inline-flex
-  align-items center
-  color $black
-  font-size 18px
-  font-weight 700
-  line-height 24px
-  transition color .5s
-  &:hover
-    color $blue
+.blue
+  color #24a0f9
 
-.href-arrow
-  i
-    display block
-    position relative
-    width 25px
-    height 2px
-    margin-left 32px
-    background-color $blue
-    transition width .5s
-    &:after
-      @extend .after
-      top -5px
-      right 2px
-      width 10px
-      height 10px
-      border-right 2px solid $blue
-      border-bottom 2px solid $blue
-      transform rotate(-45deg)
-  &:hover
-    i
-      width 49px
+.cover
+  position absolute
+  left 0
+  top 0
+  width 100%
+  height 100%
+  background-size cover
+  background-position 50% 50%
+  background-repeat no-repeat
+  z-index -2
 
-.marker
+.video
+  position absolute
+  left 50%
+  top 0
+  transform translate(-50%,0)
+  min-width 100%
+  min-height 100%
+  z-index -2
+
+.callback-btn
   display inline-block
   vertical-align top
-  background-color $blue
-  color #fff
-  font-size 22px
-  font-weight 700
-  line-height 22px
-  padding 4px 16px 6px
-  text-transform lowercase
+  transform-origin left top
+  transform rotate(-90deg)
+  color $color
+  font-size 15px
+  line-height 20px
+  font-weight 300
+  text-transform uppercase
+  transition color .5s
+  &:hover
+    color rgba(#fff, .6)
 
-.decor-text
-  color #f6f7f8
-  font-size 417px
-  font-weight 700
-  line-height 320px
-  z-index -1
-
-.h-align
-  &-left
-    float right
-    margin-left 32px
-    margin-bottom 0
-  &-right
-    float left
-    margin-right 32px
-    margin-bottom 0
-
-.swiper
-  &-buttons
-    height 44px
-  &-button
-    &-prev, &-next
-      position absolute
-      top 50%
-      transform translateY(-50%)
-      width 44px
-      height 44px
-      margin 0
-      i
-        display block
-        position absolute
-        left 3px
-        top 21px
-        width 38px
-        height 2px
-        background-color #000
-        transition background .5s
-        &:after
-          @extend .after
-          top -5px
-          right 2px
-          width 10px
-          height 10px
-          border-right 2px solid #000
-          border-bottom 2px solid #000
-          transform rotate(-45deg)
-          transition border .5s
-      &:hover
-        i
-          background-color $blue
-          &:after
-            border-color $blue
-    &-prev
-      i
-        transform scaleX(-1)
-  &-pagination
-    display flex
-    justify-content center
-    &-bullet
-      position relative
-      width 24px
-      height 24px
-      margin 0 23px
-      border-radius 50%
-      border 2px solid transparent
-      background none
-      transition border .5s
-      opacity 1
-      &:before
-        @extend .before
-        width 8px
-        height 8px
-        top 6px
-        left 6px
-        border-radius 50%
-        background-color rgba($black, .5)
-      &-active, &:hover
-        border-color $blue
-        &:before
-          background-color $black
-
-.common-wrap
-  padding-top 80px
+.arrow
+  display block
+  position absolute
+  left 50%
+  transform translateX(-50%)
+  bottom 57px
+  width  25px
+  height 13px
+  animation arrowJump 1.4s infinite ease-in-out
+  &:before, &:after
+    content ''
+    position absolute
+    top 11px
+    width 16px
+    height 3px
+    background-color #fff
+    border-radius 2px
+  &:before
+    left -4px
+    transform-origin right bottom
+    transform rotate(45deg)
+    animation arrowLeft 1.4s infinite ease-in-out
+  &:after
+    right -4px
+    transform-origin left bottom
+    transform rotate(-45deg)
+    animation arrowRight 1.4s infinite ease-in-out
 
 /*--wis-content--*/
 .wis-content
   width 100%
-  color #5e5e5e
+  color #fff
 
   h1:not([class]), h2:not([class]), h3:not([class]), h4:not([class]), h5:not([class])
-    color #262626
-    font-weight 700
+    color #fff
+    font-weight 300
+    text-transform uppercase
     &:first-child
       margin-top 0
     &:last-child
       margin-bottom 0
 
   h1:not([class])
-    font-size 59px
-    line-height 72px
+    font-size 40px
+    line-height 44px
     margin-bottom 40px
+    @media $mLandscapeMax
+      font-size 30px
+      line-height 36px
 
   h2:not([class])
-    font-size 44px
-    line-height 57px
-    margin 30px 0 50px
+    font-size 30px
+    line-height 32px
+    margin 50px 0 60px
+    @media $mLandscapeMax
+      font-size 24px
+      line-height 28px
 
   h3:not([class])
-    font-size 29px
-    line-height 42px
-    margin 30px 0 20px
+    font-size 26px
+    line-height 28px
+    margin 59px 0 38px
+    @media $mLandscapeMax
+      font-size 20px
+      line-height 24px
 
   h4:not([class])
-    font-size 23px
-    line-height 36px
-    margin 30px 0 20px
+    font-size 22px
+    line-height 24px
+    margin 50px 0 30px
+    @media $mLandscapeMax
+      font-size 16px
+      line-height 20px
 
   h5:not([class])
     font-size 18px
-    line-height 24px
-    margin 30px 0 20px
+    line-height 22px
+    margin 50px 0 30px
+    @media $mLandscapeMax
+      font-size 16px
+      line-height 20px
 
   figure:not([class])
     margin 30px 0
     max-width 100%
 
   figcaption:not([class])
-    color #9f9f9f
-    font-size 15px
-    font-weight 400
-    line-height 24px
+    color #fff
+    font-size 14px
+    font-weight 300
+    line-height 17px
 
   img:not([class])
     margin 20px 0
@@ -217,9 +193,9 @@
   ul:not([class]) li
     padding-left 25px
     position relative
-    font-size 15px
-    line-height 24px
-    font-weight 400
+    font-size 16px
+    line-height 18px
+    font-weight 300
 
   ul:not([class]) li + li
     margin-top: 5px
@@ -242,7 +218,7 @@
     top 10px
     width 16px
     height 2px
-    background-color $blue
+    background-color #24a0f9
 
   ol:not([class]) ul:not([class]) li:before
     content ""
@@ -250,7 +226,7 @@
     top 10px
     width 16px
     height 2px
-    background-color $blue
+    background-color #fff
 
   ol:not([class])
     list-style none
@@ -272,9 +248,9 @@
   ol:not([class]) li
     position relative
     padding-left 30px
-    font-size 15px
-    line-height 24px
-    font-weight 400
+    font-size 16px
+    line-height 18px
+    font-weight 300
 
   ol:not([class]) li + li
     margin-top 5px
@@ -287,12 +263,12 @@
     top 0
     width 28px
     text-align left
-    color $blue
-    font-size 15px
-    line-height 24px
-    font-weight 700
+    color #fff
+    font-size 16px
+    line-height 18px
+    font-weight 300
     box-sizing border-box
-    height 24px
+    height 18px
     background-color transparent
 
   table:not([class])
@@ -300,48 +276,43 @@
     width 100%
 
     th, td
-      font-size 15px
-      line-height 24px
+      font-size 16px
+      line-height 18px
       padding 12px 25px
 
     th
-      font-weight 700
-      color $black
-      background-color $blue
+      font-weight 300
+      color #fff
 
     td
-      color #5e5e5e
-
-    tbody
-      tr:nth-child(even)
-        td
-          background-color #f2f2f2
+      color #fff
 
   b
-    color #1c1c1c
+    color #fff
     font-weight bold
 
   p:not([class])
-    color #5e5e5e
-    font-size 15px
-    line-height 24px
-    font-weight 400
+    color #fff
+    font-size 16px
+    line-height 19px
+    font-weight 300
     margin 20px 0
+    text-indent 40px
 
     & + p
       margin-top 20px
 
   a:not([class])
-    color $blue
-    font-size 15px
-    line-height 24px
-    font-weight 400
+    color #fff
+    font-size 16px
+    line-height 18px
+    font-weight 300
     border-bottom 1px solid transparent
     transition .5s border
     -webkit-transition .5s border
 
     &:hover
-      border-color $blue
+      border-color #24a0f9
 
   iframe
     margin 20px 0  !important

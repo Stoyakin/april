@@ -1,41 +1,50 @@
 .header
-  padding-top 63px
-  padding-bottom 63px
-  &--inside
-    .header__phone
-      color #262626
-      b
-        color #262626
-    .city__href
-      color rgba(#5e5e5e, .5)
-    .nav__list-href
-      color #262626
-      &--active, &:hover
-        color $blue
+  position absolute
+  left 0
+  top 0
+  width 100%
+  z-index 10
+  padding-top 111px
+  @media $bigDesktopMax
+    padding-top 75px
+  @media $tPortraitMax
+    padding-top 45px
+  &--rel
+    position relative
+    padding-bottom 81px
+    @media $tPortraitMax
+      padding-bottom 45px
   &__row
     display flex
     align-items center
     justify-content space-between
   &__burger
     display none
-    position relative
-    width 64px
-    height 64px
+    position fixed
+    top 30px
+    right calc((100% - 708px)/2)
+    width 48px
+    height 48px
+    border-radius 50%
     padding 0
+    background-image linear-gradient(to left, #08cdfe, #00b9ff, #00a2ff, #0088ff, #386af8)
     outline none
     border none
-    background $blue
     user-select none
     cursor pointer
     z-index 10
+    @media $tPortraitMax
+      display block
+    @media $mLandscapeMax
+      right 15px
     i
       display block
       position absolute
-      width 30px
+      width 24px
       height 3px
       top auto
-      bottom 23px
-      left 17px
+      left 13px
+      bottom 16px
       transition-delay .13s
       transition-timing-function cubic-bezier(.55,.055,.675,.19)
       transition-duration .13s
@@ -44,7 +53,7 @@
         display block
         content ""
         position absolute
-        width 30px
+        width 24px
         height 3px
         transition-timing-function ease
         transition-duration .15s
@@ -60,6 +69,7 @@
         background-color #fff
     &--active
       i
+        bottom 17px
         transition-delay .22s
         transition-timing-function cubic-bezier(.215,.61,.355,1)
         transform translate3d(0,-5px,0) rotate(-45deg)
@@ -71,15 +81,39 @@
           top 0
           transition top .2s cubic-bezier(.33333,0,.66667,.33333),opacity .1s linear .22s
           opacity 0
-  &__right
-    display flex
-    flex-direction column
-    align-items flex-end
-  &__phone
-    font-size 17px
-    line-height 21px
-    color #b0b0b0
-    b
-      color white
-      font-weight 700
-      font-weight 700
+  .nav
+    @media $tPortraitMax
+      display none
+      position fixed
+      left 0
+      top 0
+      width 100%
+      height 100%
+      z-index 10
+      background-color rgba(#000, .98)
+      padding 80px 0
+      overflow-y auto
+      &__list
+        flex-direction column
+        justify-content center
+        &-item
+          margin-right 0
+          margin-bottom 15px
+          text-align center
+          &:last-child
+            margin-bottom 0
+        &-href
+          font-size 20px
+          line-height 26px
+      &__sublist
+        position relative
+        opacity 1
+        visibility visible
+        top auto
+        left auto
+        margin-top 10px
+      &__subitem:last-child
+        margin-bottom 0
+      &__subhref
+        font-size 14px
+        line-height 22px

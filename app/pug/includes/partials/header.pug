@@ -1,35 +1,38 @@
 +b('header').header 
   .container
     +e.row
-      +b('a')(href="#").logo
-        +e('img')(src="static/img/logo.png" alt="").img
-      +b.nav
+      +b('ul').lang
+        +e('li').item
+          +e('a')(href="#").item-href EN
+        +e('li').item
+          +e('a')(href="#").item-href.--active RU
+
+      +b('nav').nav
         +e('ul').list
           +e('li').list-item
-            +e('a')(href="#").list-href Услуги
+            +e('a')(href="#").list-href.--active главная
           +e('li').list-item
-            +e('a')(href="#").list-href Проекты
+            +e('a')(href="#").list-href о нас
           +e('li').list-item
-            +e('a')(href="#").list-href.--active Компания
-          +e('li').list-item
-            +e('a')(href="#").list-href Блог
+            +e('a')(href="#").list-href продакшн
             +e('ul').sublist
               +e('li').subitem
-                +e('a')(href="#").subhref Продвижение сайтов
+                +e('a')(href="#").subhref.--active портфолио
               +e('li').subitem
-                +e('a')(href="#").subhref Интернет-маркетинг
-              +e('li').subitem
-                +e('a')(href="#").subhref Разработка
-              +e('li').subitem
-                +e('a')(href="#").subhref Маркетинг
+                +e('a')(href="#").subhref заполнить бриф
           +e('li').list-item
-            +e('a')(href="#").list-href Контакты
-
-      +e.right
-        +e('a')(href="tel:89617694801").phone +7 (961) 
-          b 769-48-01
-        +b.city
-          +e('a')(href="#").href Челябинск
+            +e('a')(href="#").list-href бренгдин
+            +e('ul').sublist
+              +e('li').subitem
+                +e('a')(href="#").subhref портфолио
+              +e('li').subitem
+                +e('a')(href="#").subhref заполнить бриф
+          +e('li').list-item
+            +e('a')(href="#").list-href обучение
+          +e('li').list-item
+            +e('a')(href="#").list-href продюссирование
+          +e('li').list-item
+            +e('a')(href="#").list-href контакты
 
       +e('button')(type="button").burger.js-burger
         i

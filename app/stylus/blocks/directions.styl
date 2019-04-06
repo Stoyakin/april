@@ -1,0 +1,111 @@
+.directions
+  padding 105px 0 143px
+  &__title
+    color #fff
+    font-size 30px
+    line-height 32px
+    font-weight 300
+    text-transform uppercase
+    margin-bottom 115px
+    @media $mLandscapeMax
+      font-size 24px
+      line-height 28px
+      margin-bottom 75px
+  &__row
+    display flex
+    flex-wrap wrap
+    width calc(100% + 124px)
+    margin 0 -62px
+    counter-reset myCounter_2
+    @media $tPortraitMax
+      width 100%
+      margin 0
+  &__item
+    display flex
+    flex-direction column
+    width calc(100%/3 - 124px)
+    margin 0 62px
+    @media $desktopMax
+      width calc(100%/3 - 100px)
+      margin 0 50px
+    @media $tPortraitMax
+      width 100%
+      margin 0 0 50px
+      &:last-child
+        margin-bottom 0
+    &-title
+      color #fff
+      font-size 48px
+      line-height 50px
+      font-weight 200
+      text-transform uppercase
+      margin-bottom 71px
+      @media $mLandscapeMax
+        font-size 30px
+        line-height 36px
+        margin-bottom 50px
+      &:before
+        counter-increment myCounter_2
+        content counters(myCounter_2, ".", decimal-leading-zero)
+        display inline-block
+        vertical-align top
+        color #24a0f9
+        font-size 48px
+        line-height 50px
+        font-weight 300
+        margin-right 13px
+        @media $mLandscapeMax
+          font-size 30px
+          line-height 36px
+    &-descr
+      margin-bottom 100px
+      &-title
+        margin-bottom 26px
+        color #fff
+        font-size 18px
+        line-height 22px
+        font-weight 300
+        text-transform uppercase
+        &:last-child
+          margin-bottom 0
+  &__entry-href
+    align-self flex-start
+    display inline-block
+    vertical-align top
+    position relative
+    margin-top auto
+    color #fefefe
+    font-size 18px
+    line-height 22px
+    font-weight 300
+    text-transform uppercase
+    transition color .5s
+    span
+      display block
+      color #fefefe
+      font-size 12px
+      line-height 12px
+      font-weight 300
+      text-transform uppercase
+      margin-top 4px
+      transition color .5s
+    &:hover
+      color rgba(#fefefe, .5)
+      span
+        color rgba(#fefefe, .5)
+      &:before
+        opacity .15
+    &:before
+      @extend .before
+      left 25%
+      top 50%
+      transform translate(-50%,-50%)
+      width 250px
+      height 250px
+      border-radius 50%
+      background radial-gradient(circle, rgba(#00B1EE,1) 0%, rgba(255,255,255,0) 70%)
+      opacity .45
+      transition opacity .5s
+      z-index -1
+
+

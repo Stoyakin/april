@@ -26,6 +26,8 @@ body
   font-weight $baseFontWeight
   box-sizing border-box
   overflow-x hidden
+  background-color #000
+  min-height 100vh
 
   &.blocked, &.open-menu
     overflow hidden
@@ -36,22 +38,14 @@ body
     .wrapper, .header, .main, .footer
       opacity 1
       visibility visible
-
+/*
 .wrapper, .header, .main, .footer
   opacity 0
   visibility hidden
   transition opacity .5s, visibility .5s
-
+*/
 .wrapper
-  overflow-x hidden
+  width 100%
   z-index 1
-  min-height 100vh
-  &--index
-    .header
-      position absolute
-      left 0
-      top 0
-      width 100%
-      z-index 10
-      padding-bottom 0
-
+  overflow-x hidden
+  height 100%

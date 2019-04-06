@@ -11,314 +11,98 @@ html(lang="ru")
       include includes/partials/header
 
       main.main
-
-        +b.decor
-          +e.line
-          +e.line
-          +e.line
-          +e.line
-
         +b('section').ihead
-          +e.back(style="background-image: url('static/img/back.jpg');")
+          //+e('span').back.cover(style="background-image: url('static/img/back.jpg');")
+          +e('video').video.video(preload="auto", loop, autoplay, muted, playsinline, style="background-image: url('static/img/back.jpg');")
+            source(src="static/video/video.ogv", type='video/ogg; codecs="theora, vorbis"')
+            source(src="static/video/video.mp4", type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
           .container
             +e.row
-              +e.info
-                +e('h1').title Комплексное продвижение сайтов
-                +e('p').text Разрабатываем и реализуем комплексные стратегии продвижения, задействуя все необходимые инструменты интернет-маркетинга.
-              +e('a')(href="#").write-btn Написать нам
-                i
-            +e.bottom
-              +e('p').more Подробнее
-                i
-              +e.bottom-right
-              +e('ul').social
-                +e('li').social-item
-                  +e('a')(href="#").social-href VKontakte
-                +e('li').social-item
-                  +e('a')(href="#").social-href Facebook
-                +e('li').social-item
-                  +e('a')(href="#").social-href Twitter
+              +e('a')(href="#").btn.callback-btn обратная связь
+              +b.logo
+                +e.overimg
+                  +e('img')(src="static/img/logo2.gif" alt="").img
+                +e('p').title creative<br>group
+              +b('ul').social
+                +e('li').item
+                  +e('a')(href="#").item-href.--inst
+                +e('li').item
+                  +e('a')(href="#").item-href.--ytb
+          +e('span').arrow.arrow
 
-        +b('section').ipluses
-          .container
-            +e.row
-              +e.item
-                +e.item-overico
-                  +e('img')(src="static/img/pluses.png" alt="").item-ico
-                +e('p').item-text Анализируем и привлекаем целевую аудиторию на сайт
-              +e.item
-                +e.item-overico
-                  +e('img')(src="static/img/pluses2.png" alt="").item-ico
-                +e('p').item-text Улучшаем репутацию вашей компании в Интернете
-              +e.item
-                +e.item-overico
-                  +e('img')(src="static/img/pluses3.png" alt="").item-ico
-                +e('p').item-text Отслеживаем и улучшаем показатели эффективности
-              +e.item
-                +e.item-overico
-                  +e('img')(src="static/img/pluses4.png" alt="").item-ico
-                +e('p').item-text Формируем и предоставляем понятную отчетность
+        +ivideo('static/img/video-cover.jpg')
 
-        +b('section').iabout
-          +e('p').decor.decor-text devsal
-          .container
-            +e.info
-              +e('p').marker.marker О нас
-              +e('h2').title.title Мы агентство Performance-маркетинга
-              +e.text
-                .wis-content
-                  p Понимаем ваши бизнес-задачи и предлагаем эффективные инструменты их решения. Задействуем все каналы интернет-маркетинга для максимального развития потенциала вашей компании в Интернет. 
-              +e('a')(href="#").more-href Подробнее о компании
-            +e.row
-              +e.item
-                +e.item-overico
-                  +e('img')(src="static/img/ico.png" alt="").item-ico
-                +e.item-number
-                  +e('p').item-number-item 01
-                +e('p').item-title Анализ и исследования
-                +e('p').item-text Изучаем ваш бизнес, продукт, рынок и целевую аудиторию, готовим стратегии позиционирования и продвижения вашей компании.
-              +e.item
-                +e.item-overico
-                  +e('img')(src="static/img/ico2.png" alt="").item-ico
-                +e.item-number
-                  +e('p').item-number-item 02
-                +e('p').item-title Создаем поток трафика
-                +e('p').item-text Настраиваем необходимые инструменты интернет-маркетинга для привлечения вашей целевой аудитории на сайт.
-              +e.item
-                +e.item-overico
-                  +e('img')(src="static/img/ico3.png" alt="").item-ico
-                +e.item-number
-                  +e('p').item-number-item 03
-                +e('p').item-title Повышаем конверсию сайта
-                +e('p').item-text Улучшение воронки продаж – мы не просто приводим посетителей, но и делаем все возможное, чтобы они совершили конверсию.
-              +e.item
-                +e.item-overico
-                  +e('img')(src="static/img/ico4.png" alt="").item-ico
-                +e.item-number
-                  +e('p').item-number-item 04
-                +e('p').item-title Замеряем и улучшаем результаты
-                +e('p').item-text Не останавливаемся на достигнутом. Постоянно анализируем и улучшаем показатели эффективности.
-
-        +b('section').instr
-          .container
-            +e.row
-              +e.item
-                +e('img')(src="static/img/instr.png" alt="").item-ico
-              +e.item
-                +e('img')(src="static/img/instr2.png" alt="").item-ico
-              +e.item
-                +e('img')(src="static/img/instr3.png" alt="").item-ico
-              +e.item
-                +e('img')(src="static/img/instr4.png" alt="").item-ico
-
-        +b('section').iappr
-          .container
-            +e.row
-              +e.info
-                +e('p').marker.marker Наш подход
-                +e('h2').title.title Не используем 
-                  span шаблонных решений
-                +e.text
-                  .wis-content
-                    p Анализируя состояние сайта, его тематику  и конкурентность, разрабатываем уникальную стратегию продвижения вашего бизнеса  в сети. 
-                    p В дальнейшем анализируем и совершенствуем выбранную стратегию для достижения максимального результата!
-
-              +e.right
-                +e.fakeimg-over
-                  +e('span')(style="background-image: url('static/img/iappr.jpg');").fakeimg-item
-                +e('a')(href="#").write-btn.btn.--arrow Написать нам
-                  i
-
-        +b('section').iserv
-          +e('p').decor.decor-text Услуги
+        +b('section').ifeed
+          //+e('span').back.cover(style="background-image: url('static/img/back2.jpg')")
+          +e('video').video.video(preload="auto", loop, autoplay, muted, playsinline, style="background-image: url('static/img/back2.jpg');")
+            source(src="static/video/video.ogv", type='video/ogg; codecs="theora, vorbis"')
+            source(src="static/video/video.mp4", type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
           .container
             +e.content
-              +e('p').marker.marker Услуги и цены
-              +e('h2').title.title Полный комплекс услуг продвижения
-              +e.text
-                .wis-content
-                  p Сделаем ваш ресурс инструментом превращения посетителей в клиентов с любых источников трафика в сети
-          +e.wrap
-            .container
-              +iserv-items([
-                {
-                  title: 'SEO-продвижение сайта',
-                  descr: 'Привлечение целевых посетителей из поисковых систем и повышение узнаваемости бренда.',
-                  price: '15 000'
-                },
-                {
-                  title: 'Контекстная реклама',
-                  descr: 'Запуск эффективных рекламных кампаний в Яндекс, Google, Mail, ориентированных на конверсии.',
-                  price: '10 000'
-                },
-                {
-                  title: 'Репутация в сети (SERM)',
-                  descr: 'Улучшение репутации компании в сети Интернет. Создание положительного имиджа.',
-                  price: '15 000'
-                },
-                {
-                  title: 'Работа с соц. сетями (SMM)',
-                  descr: 'Реализация индивидуальных SMM-стратегий для достижения целей вашего бизнеса.',
-                  price: '10 000'
-                },
-                {
-                  title: 'Веб-аналитика',
-                  descr: 'Изучение поведения посетителей сайта для принятия эффективных решений по его развитию.',
-                  price: '18 000'
-                },
-                {
-                  title: 'E-mail маркетинг',
-                  descr: 'Удержание клиентов компании с целью повторных или новых продаж.',
-                  price: '10 000'
-                }
-              ])
+              +e.top
+                +e('a')(href="#").logo
+                  +e('img')(src="static/img/logo-white.png" alt="").logo-img
+                +e('a')(href="#").href-page Перейти в портфолио
+              +e.form-wrap
+                +b('form').form.--feedback
+                  +e('h3').title оставьте заявку
+                  +e('p').text на расчет стоимости вашего проекта
+                  +e.row
+                    +e.field
+                      +e('input')(type="text" id="inp_01" data-req="req").field-input
+                      +e('label')(for="inp_01").field-label.--blue-marker Напишите ваше имя
+                  +e.row
+                    +e.field
+                      +e('input')(type="tel" id="inp_02" data-req="req").field-input.js-phone
+                      +e('label')(for="inp_02").field-label Напишите ваш номер телефона
+                  +e.row
+                    +e.field
+                      +e('button')(type="submit").field-submit Заказать обратный звонок
+                      +e('span').indicate-send
+                  +e('p').agreement Отправляя заявку, вы даёте 
+                    a(href="") согласие на обработку персональных данных
 
-              +e.bottom
-                +e('p').bottom-text Изучаем ваш бизнес, продукт, рынок и целевую аудиторию, готовим
-                +e('a')(href="#").bottom-href.btn.--arrow Все услуги
-                  i
-
-        +b('section').iaudit(style="background-image: url('static/img/back2.jpg');")
+        +b('section').iclients
           .container
-            +e('h2').title.title Проведем бесплатный аудит
-            +e.text
-              .wis-content
-                p Бесплатный аудит позволит вам ответить на следующие вопросы:
-            +e.row
-              +e.question
-                +e.question-number
-                  +e('p').question-number-item 01
-                +e('p').question-text Имеются ли недостатки текущего продвижения сайта?
-              +e.question
-                +e.question-number
-                  +e('p').question-number-item 02
-                +e('p').question-text Можно ли получить больше трафика на ваш сайт?
-              +e.question
-                +e.question-number
-                  +e('p').question-number-item 03
-                +e('p').question-text Какую стратегию продвижения вам лучше использовать?
-            +e.form-wrap
-              +b('form').form.--light
-                +e.row
-                  +e.field.--x3
-                    +e('input')(type="text" id="inp_01" data-req="req").field-input
-                    +e('label')(for="inp_01").field-label Имя*
-                  +e.field.--x3
-                    +e('input')(type="email" id="inp_02" data-req="req" data-type="email").field-input
-                    +e('label')(for="inp_02").field-label E-mail*
-                  +e.field.--x3
-                    +e('input')(type="text" id="inp_03" data-req="req").field-input
-                    +e('label')(for="inp_03").field-label Ваш сайт*
-                +e.row
-                  +e.field.--x3.--center
-                    +b.checkbox
-                      +e('input').input(type="checkbox" id="agreement" name="agreement" data-req="req" data-type="checkbox_personal")
-                      +e('label').label(for="agreement") Даю свое согласие на 
-                        a(href="#") обработку персональных данных
-                +e.row
-                  +e.field.--x3.--center
-                    +e('input')(type="submit" value="Получить бесплатный аудит").field-submit.btn
+            +e('h2').title.title
+              span.blue наши 
+              | клиенты
+            +e.courusel.swiper-container.js-iclients-swiper
+              .swiper-wrapper
+                .swiper-slide
+                  +e.item
+                    +e.item-overimg
+                      +e('img')(src="static/img/clients.png" alt="").item-img
+                    +e('a')(href="https://www.youtube.com/watch?v=HEXWRTEbj1I").item-href.js-mfp-video смотреть
+                .swiper-slide
+                  +e.item
+                    +e.item-overimg
+                      +e('img')(src="static/img/clients2.png" alt="").item-img
+                    +e('a')(href="https://www.youtube.com/watch?v=HEXWRTEbj1I").item-href.js-mfp-video смотреть
+                .swiper-slide
+                  +e.item
+                    +e.item-overimg
+                      +e('img')(src="static/img/clients3.png" alt="").item-img
+                    +e('a')(href="https://www.youtube.com/watch?v=HEXWRTEbj1I").item-href.js-mfp-video смотреть
+                .swiper-slide
+                  +e.item
+                    +e.item-overimg
+                      +e('img')(src="static/img/clients4.png" alt="").item-img
+                    +e('a')(href="https://www.youtube.com/watch?v=HEXWRTEbj1I").item-href.js-mfp-video смотреть
+                .swiper-slide
+                  +e.item
+                    +e.item-overimg
+                      +e('img')(src="static/img/clients5.png" alt="").item-img
+                    +e('a')(href="https://www.youtube.com/watch?v=HEXWRTEbj1I").item-href.js-mfp-video смотреть
+                .swiper-slide
+                  +e.item
+                    +e.item-overimg
+                      +e('img')(src="static/img/clients6.png" alt="").item-img
+                    +e('a')(href="https://www.youtube.com/watch?v=HEXWRTEbj1I").item-href.js-mfp-video смотреть
+                .swiper-slide
+                  +e.item
+                    +e.item-overimg
+                      +e('img')(src="static/img/clients7.png" alt="").item-img
+                    +e('a')(href="https://www.youtube.com/watch?v=HEXWRTEbj1I").item-href.js-mfp-video смотреть
 
-        +b('section').iprj
-          +e('p').decor.decor-text Проекты
-          .container
-            +e('p').marker.marker Проекты
-            +e('h2').title.title Наши проекты
-            +e.items
-              +e.item
-                +e.item-col
-                  +e('h3').item-title Интернет-магазин цветов
-                  +e.item-text
-                    .wis-content
-                      p Краткое описание кейса. Удержание клиентов компании с целью повторных или новых продаж. Краткое описание кейса. Удержание клиентов компании с целью повторных или новых продаж.
-                  +e('a')(href="#").item-more.href-arrow Подробнее
-                    i
-                  +e.item-stat
-                    +e('p').item-stat-number 105%
-                      span Рост трафика
-                    +e('p').item-stat-number 80%
-                      span Запросов в ТОП
-                    +e('p').item-stat-number 105%
-                      span Рост трафика
-                    +e('p').item-stat-number 80%
-                      span Запросов в ТОП
-
-                +e.item-col
-                  +e.item-fakeimg-over
-                    +e('span')(style="background-image: url('static/img/iprj.jpg');").item-fakeimg-img
-
-              +e.item.--mirror
-                +e.item-col
-                  +e('h3').item-title Интернет-магазин цветов
-                  +e.item-text
-                    .wis-content
-                      p Краткое описание кейса. Удержание клиентов компании с целью повторных или новых продаж. Краткое описание кейса. Удержание клиентов компании с целью повторных или новых продаж.
-                  +e('a')(href="#").item-more.href-arrow Подробнее
-                    i
-                  +e.item-stat
-                    +e('p').item-stat-number 105%
-                      span Рост трафика
-                    +e('p').item-stat-number 80%
-                      span Запросов в ТОП
-                    +e('p').item-stat-number 105%
-                      span Рост трафика
-                    +e('p').item-stat-number 80%
-                      span Запросов в ТОП
-
-                +e.item-col
-                  +e.item-fakeimg-over
-                    +e('span')(style="background-image: url('static/img/iprj2.jpg');").item-fakeimg-img
-
-              +e.item
-                +e.item-col
-                  +e('h3').item-title Интернет-магазин цветов
-                  +e.item-text
-                    .wis-content
-                      p Краткое описание кейса. Удержание клиентов компании с целью повторных или новых продаж. Краткое описание кейса. Удержание клиентов компании с целью повторных или новых продаж.
-                  +e('a')(href="#").item-more.href-arrow Подробнее
-                    i
-                  +e.item-stat
-                    +e('p').item-stat-number 105%
-                      span Рост трафика
-                    +e('p').item-stat-number 80%
-                      span Запросов в ТОП
-                    +e('p').item-stat-number 105%
-                      span Рост трафика
-                    +e('p').item-stat-number 80%
-                      span Запросов в ТОП
-
-                +e.item-col
-                  +e.item-fakeimg-over
-                    +e('span')(style="background-image: url('static/img/iprj3.jpg');").item-fakeimg-img
-
-              +e.item.--mirror
-                +e.item-col
-                  +e('h3').item-title Интернет-магазин цветов
-                  +e.item-text
-                    .wis-content
-                      p Краткое описание кейса. Удержание клиентов компании с целью повторных или новых продаж. Краткое описание кейса. Удержание клиентов компании с целью повторных или новых продаж.
-                  +e('a')(href="#").item-more.href-arrow Подробнее
-                    i
-                  +e.item-stat
-                    +e('p').item-stat-number 105%
-                      span Рост трафика
-                    +e('p').item-stat-number 80%
-                      span Запросов в ТОП
-                    +e('p').item-stat-number 105%
-                      span Рост трафика
-                    +e('p').item-stat-number 80%
-                      span Запросов в ТОП
-
-                +e.item-col
-                  +e.item-fakeimg-over
-                    +e('span')(style="background-image: url('static/img/iprj4.jpg');").item-fakeimg-img
-
-            +e.bottom
-              +e('a')(href="#").bottom-btn.btn Обсудить проект
-              +e('a')(href="#").bottom-href.href-arrow Все проекты
-                i
-
-        include includes/blocks/ifaq
-        include includes/blocks/ifeed
       include includes/partials/footer
-

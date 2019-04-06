@@ -1,0 +1,26 @@
++b.popup.--brands#brands.mfp-hide
+  +e.scroll-btns
+    +e('button')(type="button").scroll-btn.--up.js-scroll-btn
+    +e('button')(type="button").scroll-btn.--bottom.js-scroll-btn
+  +e.container
+    +b.brands-card
+      +e('h2').title HOLZ 
+      +e('p').descr пРОИЗВОДСТВО ДВЕРЕЙ <br>РАЗРАБОТКА ФИРМЕННОГО СТИЛЯ
+      +e.concept
+        +e.concept-item
+          +e('img')(src="static/img/concept.jpg" alt="").concept-img
+        +e.concept-item
+          +e('p').concept-item-title КОНЦЕПТ ОФОРМЛЕНИЯ ФИРМЕННЫХ СТРАНИЦ КАТАЛОГА
+          +e('img')(src="static/img/concept2.jpg" alt="").concept-img
+      +e.bottom
+        +e('p').text Тут оставить возможность вставлять какой-то заключительный текст. <br>Выявление и анализ трендов позволяют проектировать продукты, которые будут отвечать актуальным потребностям целевой аудитории к моменту их внедрения, а также минимизировать возможные риски и вероятность ошибок.
+        +e.others
+          +b.brands.--in-popups
+            - for (var i = 0; i < 4; ++i) {
+              +e('a')(href="#").item.js-mfp-ajax
+                +e('span').item-cover(style="background-image: url('static/img/brands"+i+".jpg')")
+                +e('span').item-info
+                  +e('span').item-title Название, бренд
+                  +e('span').item-year 2018
+            - }
+

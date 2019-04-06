@@ -1,33 +1,75 @@
 .ifeed
-  padding 160px 0
-  //.container
-  &__row
+  position relative
+  padding 173px 0
+  height 100vh
+  min-height 650px
+  z-index 1
+  @media $bigDesktopMax
+    padding-top 100px
+  @media $desktopMax
+    padding-top 80px
+    padding-bottom 80px
+    height auto
+  &__back
+    height calc(100% + 200px)
+  .container
+    height 100%
+  &__content
+    display flex
+    flex-direction column
+    align-items center
+    justify-content flex-start
+    height 100%
+  &__top
     display flex
     flex-wrap wrap
-    width calc(100% + 30px)
-    margin 0 -15px
-  &__col
-    width calc(50% - 30px)
-    margin 0 15px
-  &__title
-    margin-bottom 45px
-    span
-      display block
-      font-weight 300
-  &__text
-    color #5e5e5e
-    a:not([class]), p:not([class]), ul:not([class]) li, ol:not([class]) li, ol:not([class]) li:before, table:not([class]) th, table:not([class]) td
-      font-size 18px
-      line-height 32px
-  &__contacts
-    display flex
+    justify-content space-between
     align-items flex-start
-    flex-direction column
-    margin-top 35px
-    &-email, &-phone
-      font-size 23px
-      line-height 32px
-    &-email
-      color #00bee0
-    &-phone
-      color #5e5e5e
+    position relative
+    width 100%
+    z-index 2
+    @media $mLandscapeMax
+      flex-direction column
+      align-items center
+  &__logo
+    margin-right auto
+    transition opacity .5s
+    @media $mLandscapeMax
+      margin-right 0
+      margin-bottom 30px
+    &:hover
+      opacity .7
+  &__href-page
+    position relative
+    margin-left auto
+    color #fff
+    font-size 24px
+    line-height 30px
+    font-weight 300
+    letter-spacing .045em
+    text-transform uppercase
+    transition color .5s
+    @media $tPortraitMax
+      font-size 20px
+      margin-top 7px
+    @media $mLandscapeMax
+      margin-top 0
+      margin-right auto
+    &:after
+      content ''
+      position relative
+      display inline-block
+      vertical-align middle
+      width 7px
+      height 11px
+      background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAALCAQAAAAZmV8jAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBAYPERG+2n5PAAAALElEQVQI12P43/P/wX8VBhj47/n/1/8nyAJ+pAt0/P//fw42WTwcVHtRXQUA7oxAkUxSNa0AAAAASUVORK5CYII=') no-repeat center
+      margin-left 11px
+      margin-top -4px
+    &:hover
+      color rgba(#fff, .5)
+  &__form-wrap
+    width 100%
+    max-width 398px
+    margin-top auto
+    @media $desktopMax
+      margin-top 80px

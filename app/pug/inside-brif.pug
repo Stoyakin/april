@@ -1,0 +1,156 @@
+include includes/bemto/bemto
+include includes/__mixins
+
+doctype html
+html(lang="ru")
+  - var title = "Портфолио"
+  include includes/partials/head
+
+  body
+    .wrapper.wrapper--inside
+      include includes/partials/header
+
+      main.main
+        +b.decor
+          +e('span').item.--el5
+          +e('span').item.--el6
+
+        +b('section').ihead.--inside
+          //+e('span').back.cover(style="background-image: url('static/img/back6.jpg');")
+          +e('video').video.video(preload="auto", loop, autoplay, muted, playsinline, style="background-image: url('static/img/back6.jpg');")
+            source(src="static/video/video.ogv", type='video/ogg; codecs="theora, vorbis"')
+            source(src="static/video/video.mp4", type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
+          .container
+            +e.row
+              +b.logo.--middle
+                +e.overimg
+                  +e('img')(src="static/img/logo2.gif" alt="").img
+                +e('p').title creative<br>group
+              +b('ul').social
+                +e('li').item
+                  +e('a')(href="#").item-href.--inst
+                +e('li').item
+                  +e('a')(href="#").item-href.--ytb
+          +e('span').arrow.arrow
+
+        +b('section').brif
+          .container
+            +e('h2').title если вы хотите узнать приблизительную
+              span.blue стоимость проекта,<br>
+              |  вы можете заполнить 
+              span.blue бриф 
+              |  и наш менеджер вышлет расчет на вашу почту
+
+            +e.form-wrap
+              +b('form').form.--brif
+                +e('h3').title контактная информация
+                +e.wrap
+                  +e.col
+                    +e.row
+                      +e.field
+                        +e('input')(type="text" id="inp_21" data-req="req" value="apple").field-input
+                        +e('label')(for="inp_21").field-label.--blue-marker название организации (полное)
+                    +e.row
+                      +e.field
+                        +e('input')(type="text" id="inp_22" data-req="req" value="стив джобс").field-input
+                        +e('label')(for="inp_22").field-label фио контактного лица
+                  +e.col
+                    +e.row
+                      +e.field
+                        +e('input')(type="email" id="inp_23" data-req="req" data-type="email" value="apple").field-input
+                        +e('label')(for="inp_23").field-label e-mail
+                    +e.row
+                      +e.field
+                        +e('input')(type="tel" id="inp_24" data-req="req" value="+7 (999) 999 99 99").field-input.js-phone
+                        +e('label')(for="inp_24").field-label телефон
+                    +e.row
+                      +e.field
+                        +e('input')(type="text" id="inp_25" data-req="req" value="смосква").field-input
+                        +e('label')(for="inp_25").field-label город
+                    +e.row
+                      +e.field
+                        +e('input')(type="text" id="inp_26" data-req="req" value="ул. ленина д.6, кв. 6").field-input
+                        +e('label')(for="inp_26").field-label адрес
+
+                +e('h3').title информация о ролике
+                +e.wrap
+                  +e.row.--big
+                    +e.field
+                      +e('p').field-title общие сведения
+                      +e('p').field-descr Название рекламируемого продукта/товарной марки/услуги, слоган, логотип, брендбук.<br>Расскажите о вашей организации, её отрасли и области деятельности.
+                      +e('textarea')(data-req="req").field-textarea
+                    +b.uploaded-file
+                      +e('label')(for="inp-f_01").label Прикрепить файл
+                        +e('input')(type="file" id="inp-f_01").input.js-file
+                      +e.items
+
+                  +e.row.--big
+                    +e.field
+                      +e('p').field-title целевая аудитория
+                      +e('p').field-descr На кого должен работать ролик? Опишите типичного представителя. <br>Целевая аудитория в стандартной терминологии (возрат, пол)
+
+                      +e('textarea')(data-req="req").field-textarea
+                      +e.items
+                  +e.row.--big
+                    +e.field
+                      +e('p').field-title преимущества продукта, услуги
+                      +e('p').field-descr Пропишите основные конкурентные преимущества Вашего продукта, <br>его сильные стороны (чем больше, тем лучше)
+                      +e('textarea')(data-req="req").field-textarea
+                  +e.row.--big
+                    +e.field
+                      +e('p').field-title основная идея сценария
+                      +e('p').field-descr Опишите Ваше представление о сценарии ролика
+                      +e('textarea')(data-req="req").field-textarea
+                  +e.row.--big
+                    +e.field
+                      +e('p').field-title эмоции
+                      +e('p').field-descr Какие эмоции должен вызывать имиджевый ролик? К чему должен побуждать?
+                      +e('textarea')(data-req="req").field-textarea
+                  +e.row.--big
+                    +e.field
+                      +e('p').field-title ассоциации
+                      +e('p').field-descr Какие атрибуты вашего продукта не следует использовать при разработке? <br>Каких ассоциаций с Вашим продуктом следует избегать?
+                      +e('textarea')(data-req="req").field-textarea
+                  +e.row.--big
+                    +e.field
+                      +e('p').field-title предполагаемые места размещения
+                      +e('textarea')(data-req="req").field-textarea.--min
+                  +e.row.--big
+                    +e.field
+                      +e('p').field-title ожидаемый хронометраж ролика
+                      +e('textarea')(data-req="req").field-textarea.--min
+                  +e.row.--big
+                    +e.field
+                      +e('p').field-title примеры видеороликов
+                      +e('p').field-descr Приведите 2-3 примера видеороликов, которые Вам нравятся 
+                      +e('textarea')(data-req="req").field-textarea.--min
+                    +b.uploaded-file
+                      +e('label')(for="inp-f_01").label Прикрепить файл
+                        +e('input')(type="file" id="inp-f_01").input.js-file
+                      +e.items
+                  +e.row.--big
+                    +e.field
+                      +e('p').field-descr И которые не нравятся 
+                      +e('textarea')(data-req="req").field-textarea.--min
+                    +b.uploaded-file
+                      +e('label')(for="inp-f_01").label Прикрепить файл
+                        +e('input')(type="file" id="inp-f_01").input.js-file
+                      +e.items
+
+                +e('h3').title требования к материалам
+                +b('ul').requirements
+                  +e('li').item Все предоставленные материалы для разработки должны быть хорошего качества
+                  +e('li').item Ответственность за соблюдение авторских прав на исходные материалы возлагается на заказчика.
+                  +e('li').item Исходные материалы, а так же заказ на рекламный̆ ролик не должны нарушать законодательство РФ. При не полном заполнении брифа, отсутствии исходных материалов,  несоответствии к требованиям в  изготовлении ролика может быть  отказано
+
+                +e.bottom
+                  +e.field
+                    +e('button')(type="submit").field-submit.--air Отправить
+                    +e('span').indicate-send
+                  +e('p').agreement нажимая  кнопку  “отправить”, вы даёте <br> 
+                    a(href="") согласие на обработку персональных данных
+
+
+      include includes/partials/footer
+      
+

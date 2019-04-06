@@ -6,8 +6,8 @@
   z-index 1042
   overflow hidden
   position fixed
-  background #1C1C1C
-  opacity 0.98
+  background #000
+  opacity 0.9
 
 .mfp-wrap
   top 0
@@ -101,57 +101,45 @@
   .mfp-content
     display none
 
-button
-  &.mfp-close,
-  &.mfp-arrow
-    overflow visible
-    cursor pointer
-    background transparent
-    border 0
-    -webkit-appearance none
-    display block
-    outline none
-    padding 0
-    z-index 1046
-    box-shadow none
-    touch-action manipulation
+button.mfp-arrow
+  overflow visible
+  cursor pointer
+  background transparent
+  border 0
+  -webkit-appearance none
+  display block
+  outline none
+  padding 0
+  z-index 1046
+  box-shadow none
+  touch-action manipulation
   &::-moz-focus-inner
     padding 0
     border 0
 
 .mfp-close
+  display block
   width 44px
   height 44px
-  line-height 44px
-  position absolute
-  right 0
-  top 0
-  text-decoration none
-  text-align center
-  opacity 0.65
-  padding 0 0 18px 10px
-  color #FFF
-  font-style normal
-  font-size 28px
-  font-family Arial, Baskerville, monospace
-  &:active
-    top 1px
+  position fixed
+  right 100px
+  top 116px
+  background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAaBAMAAACwU+r+AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAJ1BMVEUAAAD///8jnfMjnfMjnfMjnfMjnfMjnfMjnfMjnfMjnfMjnfP///+MFgooAAAAC3RSTlMAABEizJlmqjPdRPeKOQwAAAABYktHRAH/Ai3eAAAACXBIWXMAAAsSAAALEgHS3X78AAAAB3RJTUUH4wQGDQcpicSnaAAAAJ9JREFUGNM90LERgzAMhWEdBbVM7qhTuMkgSeMmbEBqRkiTPdJkCWi8XJ7es6H770OIk9nV+KR0SW7Dvdf2csv1qZrr4fauu2qr9QMTzjVsKEIQ5hqOIHyzYVAUkcQKJLECSSogSWU3UStM7WeNMbf0An2JLjoy0UVr7GQFcecSFaQfQomE3shsAroVkSXgD2+sqqnEJR79gjkucV4X+/7J7Vee3Ed5GQAAAABJRU5ErkJggg==') no-repeat center
+  color transparent
+  font-size 0
+  border 0
+  outline none
+  padding 0
+  box-shadow none
+  touch-action manipulation
+  -webkit-appearance none
+  cursor pointer
+  z-index 1046
+  transition opacity .5s
 
 .mfp-close:hover,
 .mfp-close:focus
-  opacity 1
-
-.mfp-close-btn-in
-  .mfp-close
-    color #333
-
-.mfp-image-holder .mfp-close,
-.mfp-iframe-holder .mfp-close
-  color #FFF
-  right -6px
-  text-align right
-  padding-right 6px
-  width 100%
+  opacity .5
 
 .mfp-counter
   position absolute
@@ -225,7 +213,8 @@ button
     width 100%
     max-width 900px
   .mfp-close
-    top -40px
+    right 40px
+    top 40px
 
 .mfp-iframe-scaler
   width 100%
@@ -366,3 +355,4 @@ img.mfp-img
   .mfp-container
     padding-left 6px
     padding-right 6px
+

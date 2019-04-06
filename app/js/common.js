@@ -3,15 +3,18 @@
 function qs(query, root = document) {
   return root.querySelector(query);
 }
+
 function qsAll(query, root = document) {
   return root.querySelectorAll(query);
 }
+
 function getParent(elem, selector) {
   for (; elem && elem !== document; elem = elem.parentNode) {
     if (elem.classList.contains(selector)) return parent;
   }
 }
-//getParent(document.querySelector('.elem'), 'parent-class')
+
+window.onload = () => document.querySelector('body').classList.add('loaded-page');
 
 document.addEventListener("DOMContentLoaded", function (event) {
 
@@ -25,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         fieldPhones = qsAll('.js-phone'),
         formElems = qsAll('.form__field-input, .form__field-textarea');
       for (let phoneItem of fieldPhones) {
-        phoneItem.mask('+7(999) 999-9999')
+        $(phoneItem).mask('+7(999) 999-9999')
       }
       for (let formElem of formElems) {
         if (formElem.value != '') {
@@ -92,6 +95,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
   window.site.obj = {
 
     fadeOut: function fadeOut(selector, duration) {
+      if (!selector)
+        return;
       let element,
         op = 1;
       if (typeof selector === 'string' || selector instanceof String) {
@@ -99,8 +104,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         element = selector;
       }
-      if (!element)
-        return;
       let timer = setInterval(function () {
         if (op <= 0.1) {
           clearInterval(timer);
@@ -113,6 +116,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
     },
 
     fadeIn: function fadeIn(selector, duration) {
+      if (!selector)
+        return;
       let element,
         op = 0.1;
       if (typeof selector === 'string' || selector instanceof String) {
@@ -120,8 +125,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         element = selector;
       }
-      if (!element)
-        return;
       element.style.opacity = 0;
       element.style.display = 'block';
       let timer = setInterval(function () {
@@ -143,60 +146,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
         if (!_t.classList.contains('header__burger--active')) {
           _t.classList.add('header__burger--active');
           nav.classList.add('nav--show');
+          _th.fadeIn('.nav', 300);
         } else {
           _t.classList.remove('header__burger--active');
           nav.classList.remove('nav--show');
+          _th.fadeOut('.nav', 300);
         }
         return false;
       });
-    },
-
-    map2Gis: function map2Gis() {
-      let $map = qs('.js-map'),
-        coords = $map.dataset.coords.split(',');
-
-      DG.then(function () {
-        let map = DG.map('2GisMap', {
-          center: [coords[0], coords[1]],
-          zoom: $map.dataset.zoom || 17,
-        });
-
-        let myIcon = DG.icon({
-          iconUrl: 'static/img/pin.png',
-          iconSize: [77, 83],
-          iconAnchor: [38, 100]
-        });
-
-        map.scrollWheelZoom.disable();
-
-        DG.marker([coords[0], coords[1]], {
-          icon: myIcon
-        }).addTo(map).bindPopup('DEVSAL');
-      });
-    },
-
-    stickyAside: function stickyAside() {
-      let sidebarRight = new StickySidebar('.js-sticky-right', {
-        topSpacing: 35,
-        bottomSpacing: 35
-      });
-    },
-
-    mfp: function mfp() {
-      let closeMfp = qsAll('.js-close-mfp');
-      $('.js-mfp').magnificPopup({
-        type: 'inline',
-        midClick: true,
-        mainClass: 'mfp-fade'
-      });
-      if (closeMfp.length) {
-        for (let closeMfpItem of closeMfp) {
-          closeMfpItem.addEventListener('click', (e) => {
-            $.magnificPopup.close();
-            e.preventDefault();
-          });
-        }
-      }
     },
 
     jsFile: function jsFile() {
@@ -216,7 +173,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
           }
         }
       });
-
       document.onclick = function (e) {
         if (e.target.classList.contains('js-del-file')) {
           let _t = e.target,
@@ -232,138 +188,195 @@ document.addEventListener("DOMContentLoaded", function (event) {
       }
     },
 
+    mfpVideo: function mfp() {
+      $('.js-mfp-video').magnificPopup({
+        disableOn: 700,
+        type: 'iframe',
+        mainClass: 'mfp-fade',
+        removalDelay: 160,
+        preloader: false,
+        fixedContentPos: false
+      });
+    },
+
+    mfp: function mfp() {
+      $('.js-mfp').magnificPopup({
+        type: 'inline',
+        mainClass: 'mfp-fade'
+      });
+      $('.js-scroll-btn').on('click', function () {
+        var wrapScroll = $('.mfp-wrap');
+        if ($(this).hasClass('popup__scroll-btn--bottom')) {
+          wrapScroll.animate({ scrollTop: $('.mfp-content').height() }, "slow");
+        } else {
+          wrapScroll.animate({ scrollTop: 0 }, "slow");
+        }
+        return false;
+      });
+    },
+
+    mfpAjax: function mfpAjax() {
+      let mfpAjax = $('.js-mfp-ajax');
+      mfpAjax.on('click', function () {
+        var _t = $(this),
+          html = $.ajax(),
+          hiddenBlock = $('.hidden-block');
+
+        /*заглушка с уникальным id - заменть на контент подтянутый по ajax
+          разметку попапа взять с попапа в скрытом блоке после футера
+          --> .popup.popup--brands.mfp-hide#brands
+        */
+        html = $('.popup--brands:first-child')
+          .clone()
+          .addClass('appended')
+          .attr('id', 'brands_02');
+        /*end - заглушка с уникальным id*/
+
+        //помещаю контент в скрытый блок на стр
+        html.prependTo(hiddenBlock);
+
+        //закрываю текущий попап
+        $.magnificPopup.close();
+
+        //показываю добавленный на страницу
+        $.magnificPopup.open({
+          items: {
+            // сюда вставляем тот самый уникальный id
+            src: '#brands_02'
+          },
+          type: 'inline',
+          mainClass: 'mfp-fade'
+        }, 0);
+
+        return false;
+      });
+
+    },
+
+    ivideo: function ivideo() {
+      let ivideoVideos =  qsAll('.ivideo__item');
+      for (let ivideoItem of ivideoVideos) {
+        let ivideoOver = ivideoItem.parentNode,
+          centerContent = ivideoItem.nextElementSibling,
+          playBtn = centerContent.querySelector('.ivideo__play-ico');
+        ivideoItem.addEventListener('ended', (e)=> {
+          centerContent.classList.remove('ivideo__center--hide');
+          ivideoOver.classList.remove('ivideo--full');
+        });
+        ivideoItem.addEventListener('pause', (e)=> {
+          centerContent.classList.remove('ivideo__center--hide');
+          ivideoOver.classList.remove('ivideo--full');
+        });
+        playBtn.addEventListener('click', (e)=> {
+          ivideoItem.play();
+          centerContent.classList.add('ivideo__center--hide');
+          ivideoOver.classList.add('ivideo--full');
+          e.preventDefault();
+        });
+      }
+    },
+
+    iclientsSwiper: function iclientsSwiper() {
+      let iclientsSwiper = new Swiper('.js-iclients-swiper', {
+        loop: true,
+        speed: 750,
+        slidesPerView: 7,
+        autoHeight: true,
+        mousewheel: false,
+        keyboard: false,
+        allowSwipeToNext: false,
+        allowSwipeToPrev: false,
+        autoplay: {
+          delay: 1000
+        },
+        autoplayDisableOnInteraction: false,
+        breakpoints: {
+          768: {
+            slidesPerView: 2
+          },
+          992: {
+            slidesPerView: 3
+          },
+          1600: {
+            slidesPerView: 5
+          }
+        }
+      });
+      qs('.js-iclients-swiper').onmouseover = function(event) {
+        iclientsSwiper.autoplay.stop();
+      };
+      qs('.js-iclients-swiper').onmouseout = function(event) {
+        iclientsSwiper.autoplay.start();
+      };
+    },
+
     init: function init() {
       let _self = this,
         $body = qs('body');
 
-      window.onload = () => $body.classList.add('loaded-page')
+      if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) $body.classList.add('ios');
 
-      if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
-        $body.classList.add('ios');
-      }
+      if (qs('.js-file')) this.jsFile();
 
-      if (qs('.js-file')) this.jsFile()
+      if (qs('.js-mfp')) this.mfp();
 
-      if (qs('.js-map')) this.map2Gis()
+      if (qs('.js-mfp-video')) this.mfpVideo();
 
-      if (qs('.js-mfp')) this.mfp()
+      if (qs('.js-burger')) this.burger();
 
-      if ($('.js-cases-swiper').length) {
-        let casesSwiper = new Swiper('.js-cases-swiper', {
-          loop: true,
-          speed: 500,
-          slidesPerView: 1,
-          effect: 'fade',
-          fadeEffect: {
-            crossFade: true
-          },
-          autoHeight: true,
-          mousewheel: false,
-          grabCursor: false,
-          keyboard: false,
-          simulateTouch: false,
-          allowSwipeToNext: false,
-          allowSwipeToPrev: false,
-          navigation: {
-            nextEl: '.cases .swiper-button-next',
-            prevEl: '.cases .swiper-button-prev'
-          },
-          pagination: {
-            el: '.cases .swiper-pagination',
-            clickable: true
-          }
-        });
-      }
+      if (qs('.js-mfp-ajax')) this.mfpAjax();
 
-      if ($('.js-clients-swiper').length) {
-        let clientsSwiper = new Swiper('.js-clients-swiper', {
-          loop: true,
-          speed: 500,
-          slidesPerView: 4,
-          mousewheel: false,
-          grabCursor: false,
-          keyboard: false,
-          simulateTouch: false,
-          allowSwipeToNext: false,
-          allowSwipeToPrev: false,
-          navigation: {
-            nextEl: '.clients .swiper-button-next',
-            prevEl: '.clients .swiper-button-prev'
-          }
-        });
-      }
+      if (qsAll('.ivideo__item').length) this.ivideo();
 
-      if (qsAll('.js-toggle-answer').length) {
-        let btns = qsAll('.js-toggle-answer');
-        for (let btnItem of btns) {
-          btnItem.addEventListener('click', function (e) {
-            var _t = this,
-              answer = _t.nextElementSibling;
-            if (_t.classList.contains('active')) {
-              _self.fadeOut(answer, 300)
-              _t.classList.remove('active');
-            } else {
-              _self.fadeIn(answer, 300)
-              _t.classList.add('active');
-            }
-            e.preventDefault();
-          });
+      if (qs('.js-iclients-swiper')) this.iclientsSwiper();
+
+      $('.js-toggle-desr').on('click', function() {
+        var _t = $(this),
+          hiddenSibl = _t.siblings('.services__item-descr');
+        if (_t.hasClass('services__item-title-button--active')) {
+          _t.removeClass('services__item-title-button--active')
+          hiddenSibl.slideUp(350);
+        } else {
+          _t.addClass('services__item-title-button--active')
+          hiddenSibl.slideDown(350);
         }
-      }
+        return false;
+      });
 
-      /*
-      if ($('.js-rating').length) {
-        var rating = $('.js-rating'),
-          star = rating.find('.rating-review__star-item');
-        star.on('click', function () {
-          var _tStar = $(this),
-            input = _tStar.parents('.rating-review').find('.rating-review__input');
-          if (!_tStar.hasClass('selected')) {
-            star.removeClass('active selected');
-            _tStar.addClass('selected');
-            _tStar.prevAll('.rating-review__star-item').addClass('active');
-            input.prop('value', _tStar.index() + 1);
-          } else {
-            _tStar.removeClass('selected');
-            star.removeClass('active');
-            input.prop('value', '0');
+      /*переделать говнище*/
+      if ($('.js-people').length) {
+        $('.js-people .people__item').on('click', function () {
+          var _t = $(this),
+              dataName = _t.data('name') && _t.data('name') != '' ? _t.data('name') : false,
+              dataPos = _t.data('pos') && _t.data('pos') != '' ? _t.data('pos') : false,
+              dataDescr = _t.data('descr') && _t.data('descr') != '' ? _t.data('descr') : false,
+            activeSlide = _t.siblings('.people__item--active'),
+            infoName = $('.people__info-name'),
+            infoPos = $('.people__info-pos'),
+            infoDescr = $('.people__info-descr');
+
+          function changeInfo(dataAtr, selector) {
+            if (dataAtr)
+              selector.text(dataAtr).fadeIn(300)
+            else
+              selector.fadeOut(300)
           }
+
+          if (!_t.hasClass('.people__item--active')) {
+            activeSlide.removeClass('people__item--active');
+            _t
+              .insertBefore(activeSlide)
+              .addClass('people__item--active');
+
+            changeInfo(dataName, infoName);
+            changeInfo(dataPos, infoPos);
+            changeInfo(dataDescr, infoDescr);
+
+          }
+
           return false;
         });
-
-        star.mouseenter(function () {
-          var _t = $(this),
-            starSelected = $('.rating-review__star-item.selected');
-          if (!_t.hasClass('active')) {
-            star.removeClass('active');
-            _t.addClass('active');
-            _t.prevAll('.rating-review__star-item').addClass('active');
-          } else {
-            if (starSelected.length) {
-              if (_t.index() >= starSelected.index()) {
-                _t.nextAll('.rating-review__star-item').removeClass('active');
-              }
-            } else {
-              _t.nextAll('.rating-review__star-item').removeClass('active');
-            }
-          }
-        });
-
-        rating.mouseleave(function () {
-          if (!$('.rating-review__star-item.selected').length) {
-            star.removeClass('active');
-          }
-        });
-
       }
-
-      var $contentTables = $(".text table");
-      if ($contentTables.length) {
-          $contentTables.each(function () {
-              $(this).wrap('<div class="table-wrap">');
-          });
-      }
-      */
 
       return this;
     }
@@ -371,3 +384,4 @@ document.addEventListener("DOMContentLoaded", function (event) {
   }.init();
 
 });
+

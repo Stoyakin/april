@@ -1,0 +1,85 @@
+.services
+  padding 116px 0 9px
+  &__title
+    color #fff
+    font-size 30px
+    font-weight 300
+    line-height 48px
+    text-transform uppercase
+    margin-bottom 60px
+    @media $mLandscapeMax
+      font-size 24px
+      line-height 28px
+  &__subtitle
+    color #24a0f9
+    font-size 30px
+    font-weight 400
+    text-transform uppercase
+    margin-bottom 49px
+    @media $mLandscapeMax
+      font-size 24px
+      line-height 28px
+  &__direction
+    margin-bottom 59px
+    border-top 1px solid rgba(#fff, .43)
+    padding-top 37px
+    &:last-child
+      margin-bottom 0
+    &-title
+      color #fff
+      font-size 30px
+      font-weight 400
+      text-transform uppercase
+      margin-bottom 44px
+      @media $mLandscapeMax
+        font-size 24px
+        line-height 28px
+  &__item
+    margin-bottom 28px
+    @media $tPortraitMax
+      margin-left 35px
+    &:last-child
+      margin-bottom 0
+    &-title-button
+      display inline-block
+      vertical-align top
+      position relative
+      color #fff
+      font-family Stem
+      font-size 18px
+      font-weight 300
+      line-height 24px
+      text-transform uppercase
+      background none
+      border none
+      user-select none
+      outline none
+      padding 0
+      transition color .5s
+      @media $tPortraitMax
+        text-align left
+      &:hover
+        color rgba(#fff, .5)
+      &:before
+        @extend .before
+        left -50px
+        top 3px
+        width 17px
+        height 16px
+        background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAQBAMAAAACH4lsAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAD1BMVEUAAAD///8jnfMjnfP////kx+Y2AAAAA3RSTlMAAESLx0FXAAAAAWJLR0QB/wIt3gAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAd0SU1FB+MEBgwnDFaGPboAAAAcSURBVAjXY2BgYGAyBhICDJSwlI0hwACJRRWTAT3SBzeGx74wAAAAAElFTkSuQmCC') no-repeat center
+        transition transform .5s
+        @media $tPortraitMax
+          left -35px
+      &--active
+        &:before
+          transform rotate(45deg)
+    &-descr
+      display none
+      padding 36px 0 19px
+      color #fff
+      font-size 20px
+      line-height 24px
+      font-weight 300
+      .text
+        p
+          text-indent 32px
