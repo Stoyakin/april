@@ -1,0 +1,109 @@
+.nav
+  margin-left auto
+  &--footer
+    @media $tPortraitMax
+      display none
+    .nav--footer-href:after,
+    .nav__list-href:after
+      bottom auto
+      top -8px
+  &__list
+    display flex
+    flex-wrap wrap
+    margin-bottom -20px
+    &-item
+      position relative
+      margin-right 64px
+      margin-bottom 20px
+      z-index 1
+      @media $bigDesktopMax
+        margin-right 34px
+      @media $desktopMax
+        margin-right 20px
+      &:after
+        @extend .after
+        left 0
+        bottom -30px
+        width 100%
+        height 40px
+        z-index -1
+      &:hover
+        .nav__sublist
+          opacity 1
+          visibility visible
+      &:last-child
+        margin-right 0
+    &-href
+      display inline-block
+      vertical-align top
+      position relative
+      color #fff
+      font-size 15px
+      font-weight 300
+      text-transform uppercase
+      padding 5px
+      transition color .5s
+      @media $desktopMax
+        font-size 12px
+      &:hover
+        color rgba(#fff, .5)
+      &:after
+        @extend .after
+        bottom -8px
+        left 50%
+        transform translateX(-50%)
+        width 4px
+        height 4px
+        border-radius 50%
+        background-color #18b4fb
+        opacity 0
+        visibility hidden
+        transition opacity .5s, visibility .5s
+      &--active
+        &:hover
+          color #fff
+        &:after
+          opacity 1
+          visibility visible
+  &__sublist
+    position absolute
+    left 5px
+    top calc(100% + 17px)
+    opacity 0
+    visibility hidden
+    transition opacity .5s, visibility .5s
+  &__subitem
+    margin-bottom 10px
+    &:last-child
+      margin-right 0
+  &__subhref
+    display inline-block
+    vertical-align top
+    position relative
+    color #fff
+    font-size 12px
+    font-weight 300
+    padding 5px
+    text-transform uppercase
+    white-space nowrap
+    transition color .5s
+    &:hover
+      color rgba(#fff, .5)
+    &:after
+      @extend .after
+      bottom -5px
+      left 50%
+      transform translateX(-50%)
+      width 4px
+      height 4px
+      border-radius 50%
+      background-color #18b4fb
+      opacity 0
+      visibility hidden
+      transition opacity .5s, visibility .5s
+    &--active
+      &:hover
+        color #fff
+      &:after
+        opacity 1
+        visibility visible

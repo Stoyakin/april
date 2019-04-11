@@ -1,0 +1,46 @@
+.logo
+  display inline-flex
+  align-items center
+  flex-shrink 0
+  margin 35px 50px
+  &--min-static
+    .logo
+      &__overimg
+        max-width 298px
+        margin-right 23px
+        @media $mPortraitMax
+          width 195px
+          margin-right 20px
+      &__title
+        font-size 11px
+        line-height 13px
+  &--middle
+    margin 0
+    .logo
+      &__overimg
+        max-width 246px
+        margin-right 23px
+        @media $mPortraitMax
+          width 195px
+          margin-right 20px
+      &__title
+        font-size 11px
+        line-height 13px
+  &__overimg
+    display block
+    width 436px
+    margin-right 38px
+    @media $mLandscapeMax
+      width 236px
+      margin-right 20px
+    @media $mPortraitMax
+      width 195px
+  &__title
+    color #fff
+    font-size 20px
+    line-height 26px
+    font-weight 300
+    text-transform uppercase
+    @media $mLandscapeMax
+      font-size 15px
+      line-height 20px

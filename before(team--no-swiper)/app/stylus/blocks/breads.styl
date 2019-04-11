@@ -1,0 +1,53 @@
+.breadcrumbs
+  margin-bottom 35px
+  max-width calc(75% - 8px)
+  &--white
+    max-width 100%
+    .breadcrumbs
+      &__item
+        &:before
+          color rgba(#fff, .3)
+      &__link
+        color rgba(#fff, .5)
+        &[href]
+          color rgba(#fff, .3)
+          border-bottom 1px solid rgba(#fff, .3)
+        &:hover
+          &[href]
+            border-bottom-color transparent
+  &__item
+    display inline-block
+    vertical-align top
+    position relative
+    padding-right 7px
+    margin-right 4px
+    &:last-child
+      &:before
+        display none
+        content none
+    &:before
+      content '/'
+      display block
+      position absolute
+      color rgba(#5e5e5e, .8)
+      font-size 15px
+      font-weight 300
+      line-height 19px
+      right -2px
+      top 0
+      height 24px
+  &__link
+    display inline-block
+    vertical-align top
+    color #9f9f9f
+    font-size 15px
+    font-weight 300
+    line-height 17px
+    &[href]
+      color #5e5e5e
+      border-bottom 1px solid rgba(#5e5e5e, .8)
+      transition border .5s
+    &:hover
+      &[href]
+        border-bottom-color transparent
+

@@ -1,5 +1,12 @@
 .directions
   padding 105px 0 143px
+  &.start-animate
+    .directions
+      &__title
+        opacity 1
+      &__item
+        opacity 1
+        top 0
   &__title
     color #fff
     font-size 30px
@@ -7,6 +14,8 @@
     font-weight 300
     text-transform uppercase
     margin-bottom 115px
+    opacity 0
+    transition opacity .5s
     @media $mLandscapeMax
       font-size 24px
       line-height 28px
@@ -23,8 +32,18 @@
   &__item
     display flex
     flex-direction column
+    position relative
     width calc(100%/3 - 124px)
     margin 0 62px
+    top 100px
+    opacity 0
+    transition opacity .5s, top .5s
+    for index in (0..12)
+      &:nth-child({index})
+          transition-delay (.25 + index*0.2)s
+    &.start-animate
+      opacity 1
+      top 0
     @media $desktopMax
       width calc(100%/3 - 100px)
       margin 0 50px

@@ -1,0 +1,31 @@
+.popup
+  width 100%
+  margin 0
+  &__container
+    max-width 1460px
+    margin 0 auto
+    padding 125px 0 300px
+  &__scroll
+    &-btns
+      position fixed
+      right 100px
+      top 175px
+      display flex
+      flex-direction column
+      width 40px
+    &-btn
+      width 40px
+      height 40px
+      padding 0
+      transition opacity .5s
+      background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAPCAMAAAAmuJTXAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAANlBMVEUjnfP///8jnfMjnfMjnfMjnfMjnfMjnfMjnfMjnfMjnfMjnfMjnfMjnfMjnfMjnfMjnfP///8N3JaMAAAAEHRSTlMAACqbcwNy36XzYmkG4k+eiJSL5AAAAAFiS0dEAf8CLd4AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBAYNGBwSLW3VAAAAYElEQVQY023JSRKAIAwEwAFENsX8/7UWECCx7GvDusNDMI0/nUUgiv4zPhIFJNLFQQmZdHFQBooujmLwrRltVK3oI2rHmFUieLguEXNG3SLWjBKxh2uFmF4Ff4P6VOx5AWCCCDGFKvcwAAAAAElFTkSuQmCC') no-repeat center
+      user-select none
+      border none
+      outline none
+      &:hover
+        opacity .5
+      &--up
+        transform scaleY(-1)
+      &--bottom
+        margin-top 12px
+

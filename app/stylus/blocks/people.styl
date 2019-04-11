@@ -4,33 +4,57 @@
   flex-wrap wrap
   justify-content flex-end
   width 100%
+  &:not(.people--mirror)
+    .people__item
+      width 574px
+      height 619px
   &--mirror
     align-items flex-end
+    @media(max-width: 1440px)
+      justify-content flex-start
     .people
+      flex-wrap wrap
       &__decor
+        @media(max-width: 1440px)
+          order 2
         &-item
           background-size contain
           &--el1
-            right 407px
+            right 30.1vw
             top -1px
             width 723px
             height 703px
+            @media (max-width: 1440px)
+              right calc((100% - 723px)/2)
+            @media $tPortraitMax
+              width 423px
+              height 403px
+              right calc((100% - 423px)/2)
           &--el2
-            top 30px
-            right 180px
+            display none
+            right 145px
+            top 28px
             width 200px
             height 200px
+            background url('../../../../static/img/decor-el2.png') no-repeat center
+            background-size contain
+            @media(max-width: 1440px)
+              display block
       &__items
-        display flex
-        flex-direction row-reverse
-        max-width calc(100% - 419px)
+        width 100%
         align-items flex-end
-        margin-right auto
-        margin-left calc((1583px - 100vw)/2)
+        @media(max-width: 1440px)
+          order 3
       &__item
         display flex
         align-items flex-end
         flex-shrink 0
+        width 100%
+        height auto
+        @media $tPortraitMax
+          height 400px
+          img
+            max-height 100%
   &__decor
     position relative
     width 100%
@@ -53,34 +77,71 @@
         width 155px
         height 155px
         background url('../../../../static/img/decor-el2.png') no-repeat center
+  .swiper
+    &-wrapper
+      align-items flex-end
+    &-slide
+      width auto
+      transition opacity .5s
+      &-active
+        .people__item
+          filter grayscale(0)
+        & + .swiper-slide,
+        & + .swiper-slide + .swiper-slide,
+        & + .swiper-slide + .swiper-slide + .swiper-slide
+          opacity 0
+          @media (max-width: 1440px)
+            opacity 1
   &__items
     position relative
   &__item
     display block
-    width 574px
-    height 619px
+    width 100%
+    height 100%
     &--i1, &--i2, &--i3
-      width 100%
       filter grayscale(100%)
       transition filter .5s
-      &:hover, &.people__item--active
+      &:hover
         filter grayscale(0)
-    &--i1
-      width 582px
-      height 659px
-    &--i2
-      width 388px
-      height 454px
-      margin-right -67px
-    &--i3
-      width 310px
-      height 437px
-      margin-right -32px
   &__info
-    width 370px
+    display flex
+    justify-content flex-end
     flex-direction column
-    margin-bottom 143px
-    padding-left 5px
+    position absolute
+    bottom 0
+    right 0
+    width 30.1vw
+    height 100%
+    z-index 1
+    background-color #fff
+    padding 0 7vw 143px 56px
+    @media (max-width: 1440px)
+      order 1
+      position relative
+      right auto
+      bottom auto
+      width 50%
+      padding 0
+      background none
+      left calc((100% - 1100px)/2)
+      margin-bottom 50px
+    @media $desktopMax
+      left calc((100% - 976px)/2)
+    @media $tPortraitMax
+      left calc((100% - 708px)/2)
+    @media $mLandscapeMax
+      left 16px
+      width 80%
+    &:before
+      @extend .before
+      left 45px
+      top 28px
+      width 200px
+      height 200px
+      background url('../../../../static/img/decor-el2.png') no-repeat center
+      background-size contain
+      @media(max-width: 1440px)
+        display none
     &-name
       color #000
       font-size 22px
@@ -106,3 +167,5 @@
       text-transform none
       &:first-child
         margin-top 0
+      @media (max-width: 1440px)
+        margin-top 40px

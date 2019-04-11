@@ -32,8 +32,8 @@
       left 50%
       top 50%
       transform translate(-50%,-50%)
-      width 1000px
-      height 1000px
+      width 780px
+      height 780px
       border-radius 50%
       background radial-gradient(circle, rgba(#00B1EE,1) 0%, rgba(255,255,255,0) 70%)
       opacity .5
@@ -176,14 +176,14 @@
       width 100%
       border 1px solid #fff
       height 151px
+      color #fff
       font-family Stem
       font-size 15px
       line-height 20px
       font-weight 300
       text-transform uppercase
-      padding 10px 0
+      padding 10px 10px
       background none
-      user-select none
       outline none
       resize none
       &--min
@@ -202,11 +202,18 @@
       text-transform uppercase
       padding 10px 0
       background none
-      user-select none
       outline none
       transition border .5s
       &:focus, &.no-empty
         border-bottom-color #fff
+        & + .form__field-label
+          opacity 0
+          visibility hidden
+      &-textarea
+        &:focus, &.no-empty
+          & + .form__field-label
+            opacity 0
+            visibility hidden
     &-label
       position absolute
       display inline-block
@@ -221,7 +228,7 @@
       white-space nowrap
       text-transform uppercase
       z-index -1
-      transition top .5s, font .5s
+      transition opacity .5s, visibility .5s
       &--blue-marker
         &:before
           @extend .before

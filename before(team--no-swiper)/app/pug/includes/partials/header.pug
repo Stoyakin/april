@@ -1,0 +1,38 @@
++b('header').header 
+  .container
+    +e.row
+      +b('ul').lang
+        +e('li').item
+          +e('a')(href="#").item-href EN
+        +e('li').item
+          +e('a')(href="#").item-href.--active RU
+
+      +b('nav').nav
+        +e('ul').list
+          +e('li').list-item
+            +e('a')(href="#").list-href.--active главная
+          +e('li').list-item
+            +e('a')(href="#").list-href о нас
+          +e('li').list-item
+            +e('a')(href="#").list-href продакшн
+            +e('ul').sublist
+              +e('li').subitem
+                +e('a')(href="#").subhref.--active портфолио
+              +e('li').subitem
+                +e('a')(href="#").subhref заполнить бриф
+          +e('li').list-item
+            +e('a')(href="#").list-href бренгдин
+            +e('ul').sublist
+              +e('li').subitem
+                +e('a')(href="#").subhref портфолио
+              +e('li').subitem
+                +e('a')(href="#").subhref заполнить бриф
+          +e('li').list-item
+            +e('a')(href="#").list-href обучение
+          +e('li').list-item
+            +e('a')(href="#").list-href продюссирование
+          +e('li').list-item
+            +e('a')(href="#").list-href контакты
+
+      +e('button')(type="button").burger.js-burger
+        i

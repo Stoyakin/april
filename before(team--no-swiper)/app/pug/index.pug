@@ -1,0 +1,69 @@
+include includes/bemto/bemto.pug
+include includes/__mixins
+
+doctype html
+html(lang="ru")
+  - var title = "Разводящая"
+  include includes/partials/head
+  style(type='text/css').
+    .page-list{
+      display: inline-block;
+      vertical-align: top;
+      width: 48%;
+      margin: 30px 0 0 !important;
+    }
+    .page-list-item{
+      margin: 0 0 10px !important;
+    }
+    .page-list-item:before{
+      display: none;
+      content: none;
+    }
+    .page-list-item a{
+      color: #fff;
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+      border-bottom: 1px solid #fff;
+      transition: color 0.5s, border 0.5s;
+      -webkit-transition: color 0.5s, border 0.5s;
+    }
+    .page-list-item a:hover {
+      border-bottom-color: transparent;
+    }
+    
+  body
+    .wrapper(style="overflow-x: hidden; padding-top: 80px;")
+      main.main(style="background: none;")
+        .container
+          .wis-content
+            ul.page-list(style="display:inline-block;vertical-align:top;width:45%;margin-right:35px;")
+              li.page-list-item
+                h3 Страницы
+                a(target="_blank" href="main.html").link Главная
+              li.page-list-item
+                a(target="_blank" href="inside-about.html").link Наша команда
+              li.page-list-item
+                a(target="_blank" href="inside-branding.html").link Брэндинг
+              li.page-list-item
+                a(target="_blank" href="inside-brif.html").link Бриф
+              li.page-list-item
+                a(target="_blank" href="inside-contacts.html").link Котнакты
+              li.page-list-item
+                a(target="_blank" href="inside-portfolio.html").link Портфолио
+              li.page-list-item
+                a(target="_blank" href="inside-training.html").link Тренинг
+
+            ul.page-list(style="display:inline-block;vertical-align:top;width:45%;margin-right:35px;")
+              li.page-list-item
+                h3 Попапы
+                a(href="#brands").js-mfp Брэнд
+                
+      .hidden-block
+        include includes/__popups
+
+      script(src="static/js/vendor.js")
+      script(src="static/js/own.js")
+      
+
+

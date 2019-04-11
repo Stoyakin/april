@@ -1,17 +1,37 @@
 .brands
   display flex
   flex-wrap wrap
+  width 100%
+  overflow hidden
   &--in-popups
     margin 0 -8px
     width calc(100% + 16px)
+    @media $mPortraitMax
+      width 100%
+      margin 0
     .brands__item
       width calc(25% - 16px)
       margin 0 8px 16px
+      opacity 1
+      @media $mLandscapeMax
+        width calc(50% - 16px)
+      @media $mPortraitMax
+        width 100%
+        margin 0 0 16px
   &__item
     display block
     position relative
     width calc(100%/3)
     overflow hidden
+    opacity 0
+    animation-duration 0.6s
+    animation-fill-mode forwards
+    for index in (0..12)
+      &:nth-child({index})
+          animation-delay (.15 + index*0.1)s
+    &.start-animate
+      animation-play-state running
+      animation-name bounceInUp
     @media $tPortraitMax
       width 50%
     @media $mPortraitMax

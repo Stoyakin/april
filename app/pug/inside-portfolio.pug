@@ -15,7 +15,7 @@ html(lang="ru")
           +e('span').item.--el9
 
         +b('section').ihead.--inside
-          //+e('span').back.cover(style="background-image: url('static/img/back3.jpg');")
+          +e('span').back.cover(style="background-image: url('static/img/back3.jpg');")
           +e('video').video.video(preload="auto", loop, autoplay, muted, playsinline, style="background-image: url('static/img/back3.jpg');")
             source(src="static/video/video.ogv", type='video/ogg; codecs="theora, vorbis"')
             source(src="static/video/video.mp4", type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
@@ -34,7 +34,7 @@ html(lang="ru")
 
         +b('section').portfolio
           - for (var i = 0; i < 6; ++i) {
-            +e('a')(href="#").item
+            +e('a')(href="#").item.js-scroll-anim
               +e('span').item-cover(style="background-image: url('static/img/portf"+i+".jpg')")
               +e('span').item-info
                 +e('span').item-title Название, бренд
@@ -45,7 +45,7 @@ html(lang="ru")
         
         +b('section').portfolio
           - for (var i = 0; i < 6; ++i) {
-            +e('a').item(href="#")
+            +e('a')(href="#").item.js-scroll-anim
               +e('span').item-cover(style="background-image: url('static/img/portf2"+i+".jpg')")
               +e('span').item-info
                 +e('span').item-title Название, бренд
@@ -97,7 +97,7 @@ html(lang="ru")
                 +e.item-right
                   +e('p').item-text Презентация  готового  ролика заказчику, продвижение ролика в  сети  или  подготовка  к  показу на  экраны  при  необходимости
         
-        +b('section').common-feed
+        +b('section').common-feed.js-scroll-anim
           .container
             +b('form').form.--feedback
               +e('h3').title оставьте заявку

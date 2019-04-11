@@ -1,0 +1,105 @@
+
+<!--include mixins/breads--><!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+        <title>Разводящая</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <link rel="stylesheet" href="static/css/styles.css">
+    </head>
+    <style type="text/css">
+        .page-list{
+          display: inline-block;
+          vertical-align: top;
+          width: 48%;
+          margin: 30px 0 0 !important;
+        }
+        .page-list-item{
+          margin: 0 0 10px !important;
+        }
+        .page-list-item:before{
+          display: none;
+          content: none;
+        }
+        .page-list-item a{
+          color: #fff;
+          font-size: 16px;
+          line-height: 24px;
+          font-weight: 400;
+          border-bottom: 1px solid #fff;
+          transition: color 0.5s, border 0.5s;
+          -webkit-transition: color 0.5s, border 0.5s;
+        }
+        .page-list-item a:hover {
+          border-bottom-color: transparent;
+        }
+        
+    </style>
+    <body>
+        <div class="wrapper" style="overflow-x: hidden; padding-top: 80px;">
+            <main class="main" style="background: none;">
+                <div class="container">
+                    <div class="wis-content">
+                        <ul class="page-list" style="display:inline-block;vertical-align:top;width:45%;margin-right:35px;">
+                            <li class="page-list-item">
+                                <h3>Страницы</h3><a class="link" target="_blank" href="main.html">Главная</a>
+                            </li>
+                            <li class="page-list-item"><a class="link" target="_blank" href="inside-about.html">Наша команда</a></li>
+                            <li class="page-list-item"><a class="link" target="_blank" href="inside-branding.html">Брэндинг</a></li>
+                            <li class="page-list-item"><a class="link" target="_blank" href="inside-brif.html">Бриф</a></li>
+                            <li class="page-list-item"><a class="link" target="_blank" href="inside-contacts.html">Котнакты</a></li>
+                            <li class="page-list-item"><a class="link" target="_blank" href="inside-portfolio.html">Портфолио</a></li>
+                            <li class="page-list-item"><a class="link" target="_blank" href="inside-training.html">Тренинг</a></li>
+                        </ul>
+                        <ul class="page-list" style="display:inline-block;vertical-align:top;width:45%;margin-right:35px;">
+                            <li class="page-list-item">
+                                <h3>Попапы</h3><a class="js-mfp" href="#brands">Брэнд</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </main>
+            <div class="hidden-block">
+                <div class="popup popup--brands mfp-hide" id="brands">
+                    <div class="popup__scroll-btns">
+                        <button class="popup__scroll-btn popup__scroll-btn--up js-scroll-btn" type="button">
+                        </button>
+                        <button class="popup__scroll-btn popup__scroll-btn--bottom js-scroll-btn" type="button">
+                        </button>
+                    </div>
+                    <div class="popup__container">
+                        <div class="brands-card">
+                            <h2 class="brands-card__title">HOLZ 
+                            </h2>
+                            <p class="brands-card__descr">пРОИЗВОДСТВО ДВЕРЕЙ <br>РАЗРАБОТКА ФИРМЕННОГО СТИЛЯ
+                            </p>
+                            <div class="brands-card__concept">
+                                <div class="brands-card__concept-item"><img class="brands-card__concept-img" src="static/img/concept.jpg" alt="" role="presentation"/>
+                                </div>
+                                <div class="brands-card__concept-item">
+                                    <p class="brands-card__concept-item-title">КОНЦЕПТ ОФОРМЛЕНИЯ ФИРМЕННЫХ СТРАНИЦ КАТАЛОГА
+                                    </p><img class="brands-card__concept-img" src="static/img/concept2.jpg" alt="" role="presentation"/>
+                                </div>
+                            </div>
+                            <div class="brands-card__bottom">
+                                <p class="brands-card__text">Тут оставить возможность вставлять какой-то заключительный текст. <br>Выявление и анализ трендов позволяют проектировать продукты, которые будут отвечать актуальным потребностям целевой аудитории к моменту их внедрения, а также минимизировать возможные риски и вероятность ошибок.
+                                </p>
+                                <div class="brands-card__others">
+                                    <div class="brands brands--in-popups"><a class="brands__item js-mfp-ajax" href="#"><span class="brands__item-cover" style="background-image: url('static/img/brands0.jpg')"></span><span class="brands__item-info"><span class="brands__item-title">Название, бренд</span><span class="brands__item-year">2018</span></span></a><a class="brands__item js-mfp-ajax" href="#"><span class="brands__item-cover" style="background-image: url('static/img/brands1.jpg')"></span><span class="brands__item-info"><span class="brands__item-title">Название, бренд</span><span class="brands__item-year">2018</span></span></a><a class="brands__item js-mfp-ajax" href="#"><span class="brands__item-cover" style="background-image: url('static/img/brands2.jpg')"></span><span class="brands__item-info"><span class="brands__item-title">Название, бренд</span><span class="brands__item-year">2018</span></span></a><a class="brands__item js-mfp-ajax" href="#"><span class="brands__item-cover" style="background-image: url('static/img/brands3.jpg')"></span><span class="brands__item-info"><span class="brands__item-title">Название, бренд</span><span class="brands__item-year">2018</span></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="static/js/vendor.js"></script>
+            <script src="static/js/own.js"></script>
+        </div>
+    </body>
+</html>

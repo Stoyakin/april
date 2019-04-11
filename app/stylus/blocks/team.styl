@@ -1,9 +1,55 @@
 .team
   display flex
+  flex-direction column
   padding 92px 0 0
   background-color #fff
   min-height 765px
   overflow hidden
+  &.start-animate
+    .team
+      &__title
+        opacity 1
+      &__top
+        right 0
+        opacity 1
+    .people
+      &__decor-item--el1
+        opacity 1
+      &__info
+        &:before
+          opacity 1
+          left 45px
+        &-name, &-pos, &-descr
+          opacity 1
+          top 0
+      &__items
+        opacity 1
+        top 0
+  .people
+    &__decor-item--el1
+      opacity 0
+      transition opacity .5s
+      transition-delay .45s
+    &__items
+      position relative
+      opacity 0
+      top 100px
+      transition top .5s, opacity .5s
+      transition-delay .65s
+    &__info
+      &:before
+        opacity 0
+        left -5px
+        transition left .5s, opacity .5s
+        transition-delay .45s
+      &-name, &-pos, &-descr
+        position relative
+        opacity 0
+        top 50px
+        transition opacity .5s
+        transition-delay .45s
+  @media $tPortraitMax
+    min-height auto
   .container
     flex-grow 1
   &__title
@@ -14,13 +60,23 @@
     text-transform uppercase
     margin-top 100px
     margin-bottom 47px
+    opacity 0
+    transition opacity .5s
     @media $mLandscapeMax
       font-size 30px
       line-height 36px
+    @media $tPortraitMax
+      margin-top 0
   &__top
     display flex
     flex-direction column
     align-items flex-end
+    position relative
+    right -100px
+    opacity 0
+    transition opacity .5s, right .5s
+    @media $tPortraitMax
+      display none
   .social
     &__item
       &:last-child

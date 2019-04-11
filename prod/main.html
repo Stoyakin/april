@@ -58,8 +58,7 @@
         </div>
       </header>
       <main class="main">
-        <section class="ihead">
-          <!--+e('span').back.cover(style="background-image: url('static/img/back.jpg');")-->
+        <section class="ihead"><span class="ihead__back cover" style="background-image: url('static/img/back.jpg');"></span>
           <video class="ihead__video video" preload="auto" loop="loop" autoplay="autoplay" muted="muted" playsinline="playsinline" style="background-image: url('static/img/back.jpg');">
             <source src="static/video/video.ogv" type="video/ogg; codecs=&quot;theora, vorbis&quot;">
             <source src="static/video/video.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
@@ -90,12 +89,13 @@
           <div class="ivideo__center"><span class="ivideo__title">showreel</span><a class="ivideo__play-ico" href="#"><i></i></a>
           </div>
         </section>
-        <section class="ifeed">
-          <!--+e('span').back.cover(style="background-image: url('static/img/back2.jpg')")-->
-          <video class="ifeed__video video" preload="auto" loop="loop" autoplay="autoplay" muted="muted" playsinline="playsinline" style="background-image: url('static/img/back2.jpg');">
-            <source src="static/video/video.ogv" type="video/ogg; codecs=&quot;theora, vorbis&quot;">
-            <source src="static/video/video.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
-          </video>
+        <section class="ifeed"><span class="ifeed__back cover" style="background-image: url('static/img/back2.jpg')"></span>
+          <div class="ifeed__video-over">
+            <video class="ifeed__video video" preload="auto" loop="loop" autoplay="autoplay" muted="muted" playsinline="playsinline" style="background-image: url('static/img/back2.jpg');">
+              <source src="static/video/video.ogv" type="video/ogg; codecs=&quot;theora, vorbis&quot;">
+              <source src="static/video/video.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
+            </video>
+          </div>
           <div class="container">
             <div class="ifeed__content">
               <div class="ifeed__top"><a class="ifeed__logo" href="#"><img class="ifeed__logo-img" src="static/img/logo-white.png" alt="" role="presentation"/></a><a class="ifeed__href-page" href="#">Перейти в портфолио</a>

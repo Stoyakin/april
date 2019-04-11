@@ -1,0 +1,83 @@
+.uploaded-file
+  width 100%
+  overflow hidden
+  &--vert
+    display flex
+    align-items flex-end
+    position absolute
+    left calc(100% + 55px)
+    bottom -2px
+    max-width 300px
+    .uploaded-file
+      &__label
+        padding 5px 5px 20px 5px
+        writing-mode tb-rl
+        transform scale(-1, -1)
+        margin-left -5px
+        margin-bottom -5px
+        &:after
+          right 2px
+          bottom 0
+          top auto
+          transform scale(-1, -1)
+      &__items
+        margin-left 41px
+        margin-bottom -4px
+  &__label
+    display inline-block
+    vertical-align top
+    position relative
+    padding-right 30px
+    color rgba(#fefefe, .37)
+    font-family Stem
+    font-size 14px
+    line-height 14px
+    font-weight 300
+    text-transform uppercase
+    white-space nowrap
+    cursor pointer
+    &:after
+      @extend .after
+      right 0
+      top 0
+      width 16px
+      height 16px
+      background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAApVBMVEUkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPn////YhmsWAAAANXRSTlMAfhB4EasGa7wMackVLSBq1xwOMpjlzO40wvY+F+L6STP3+Ei+QlPq3zsjD0YnuhiXCm4DBNgNvwsAAAABYktHRDZHv4jRAAAACXBIWXMAAAsSAAALEgHS3X78AAAAB3RJTUUH4wQDCg8q6oWabQAAAHtJREFUGNNjYAACRiYGFMBsyoLGN2VlQ+KzmwIBByecz2UKBtw8MAFePn6wiIAgg5AwVEwELCIqJi4BFWCTBItIScPNkZEF8uXkkWxSkDJVVFJGdouKlKqaugKSgIYqA4OmgBacr60DInX1eBhQgb6BIZoIp5ExmoiJJgDvXAzTOawzkAAAAABJRU5ErkJggg==') no-repeat center
+      transform scale(-1, 1)
+  &__input
+    position absolute
+    left -9999px
+    top -9999px
+    opacity 0
+  &__items
+    display flex
+    flex-direction column
+    justify-content space-between
+    align-items flex-start
+  &__item
+    display flex
+    align-items flex-start
+    position relative
+    padding-right 20px
+    margin-bottom 11px
+    &:last-child
+      margin-bottom 0
+    &-name
+      color rgba(#fefefe, .37)
+      font-size 14px
+      line-height 16px
+      font-weight 300
+      text-transform uppercase
+    &-del-btn
+      position absolute
+      right 0
+      top 1px
+      width 10px
+      height 12px
+      background url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAMCAMAAABstdySAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAdVBMVEX///8koPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPkkoPn////gi1c8AAAAJXRSTlMALOrg7S9KYIjOvGXQY3LfpUVqwZAnfawJkpnrh824dLCdvV7zESXRfAAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBAMKESzXpwCHAAAAaUlEQVQI1y3MNwKDMAAEwbNlI4JBAo6cw/3/i1bBVFstgNfbmM8XQGTjxNokthFS80iR/R4ZchXOe1coR6mqJutKJRq1Hdm1atBrGMlxUA9MfiZnP4Xxsm7kti4hd3ec5+H2kNet4L7wB5g2CDH+u/vTAAAAAElFTkSuQmCC') no-repeat center
+      border none
+      padding 0
+      outline none
+      user-select none
+      cursor pointer
+

@@ -1,0 +1,58 @@
+.brands
+  display flex
+  flex-wrap wrap
+  &--in-popups
+    margin 0 -8px
+    width calc(100% + 16px)
+    .brands__item
+      width calc(25% - 16px)
+      margin 0 8px 16px
+  &__item
+    display block
+    position relative
+    width calc(100%/3)
+    overflow hidden
+    @media $tPortraitMax
+      width 50%
+    @media $mPortraitMax
+      width 100%
+    &-cover
+      display block
+      width 100%
+      padding-top 100%
+      background-position center
+      background-size cover
+      background-repeat no-repeat
+    &-info
+      position absolute
+      left 0
+      bottom 0
+      display flex
+      flex-direction column
+      justify-content center
+      align-items center
+      width 100%
+      height 0
+      opacity 0
+      background-color #0086F2
+      transition height .5s, opacity .5s
+      z-index 1
+    &-title, &-year
+      display block
+      color #fefefe
+      font-size 16px
+      line-height 20px
+      font-weight 300
+      text-transform uppercase
+      transition visibility .5s, opacity .5s
+      transition-delay .3s
+      opacity 0
+      visibility hidden
+    &:hover
+      .brands__item
+        &-info
+          height 100%
+          opacity 1
+        &-title, &-year
+          opacity 1
+          visibility visible

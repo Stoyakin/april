@@ -59,10 +59,10 @@
       </header>
       <main class="main">
         <section class="ihead ihead--inside"><span class="ihead__back cover" style="background-image: url('static/img/back4.jpg');"></span>
-          <!--+e('video').video.video(preload="auto", loop, autoplay, muted, playsinline, style="background-image: url('static/img/back4.jpg');")
-          source(src="static/video/video.ogv", type='video/ogg; codecs="theora, vorbis"')
-          source(src="static/video/video.mp4", type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
-          -->
+          <video class="ihead__video video" preload="auto" loop="loop" autoplay="autoplay" muted="muted" playsinline="playsinline" style="background-image: url('static/img/back4.jpg');">
+            <source src="static/video/video.ogv" type="video/ogg; codecs=&quot;theora, vorbis&quot;">
+            <source src="static/video/video.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
+          </video>
           <div class="container">
             <div class="ihead__row">
               <ul class="social">
@@ -74,7 +74,7 @@
             </div>
           </div><span class="ihead__arrow arrow"></span>
         </section>
-        <section class="training">
+        <section class="training js-scroll-anim">
           <div class="container">
             <div class="training__row">
               <div class="training__left">
@@ -110,7 +110,7 @@
             </div>
           </div>
         </section>
-        <section class="advant">
+        <section class="advant js-scroll-anim">
           <div class="container">
             <div class="advant__wrap">
               <h2 class="advant__title">Что делает школу <span class="blue">уникальной?</span>
@@ -176,19 +176,19 @@
               <h2 class="advant__title">ПОЧЕМУ именно <span class="blue">наша ШКОЛА</span>
               </h2>
               <div class="advant__row">
-                <div class="advant__item">
+                <div class="advant__item js-scroll-anim">
                   <div class="advant__item-overico"><img class="advant__item-ico" src="static/img/adv-ico7.png" alt="" role="presentation"/>
                   </div>
                   <p class="advant__item-descr">Наиболее полное обучение из существующих на рынке: от пред продакшен до продюсирования себя как ФилмМейкера
                   </p>
                 </div>
-                <div class="advant__item">
+                <div class="advant__item js-scroll-anim">
                   <div class="advant__item-overico"><img class="advant__item-ico" src="static/img/adv-ico8.png" alt="" role="presentation"/>
                   </div>
                   <p class="advant__item-descr">Выпускник школы не только создает видео, но и продает видео, продвигает себя и занимается творчеством
                   </p>
                 </div>
-                <div class="advant__item">
+                <div class="advant__item js-scroll-anim">
                   <div class="advant__item-overico"><img class="advant__item-ico" src="static/img/adv-ico9.png" alt="" role="presentation"/>
                   </div>
                   <p class="advant__item-descr">Выход на стабильный заработок с 6-значными цифрами через 6 месяцев;
@@ -207,7 +207,7 @@
           <div class="ivideo__center"><span class="ivideo__title">showreel</span><a class="ivideo__play-ico" href="#"><i></i></a>
           </div>
         </section>
-        <section class="directions">
+        <section class="directions js-scroll-anim">
           <div class="container">
             <h2 class="directions__title"><span class="blue">выбери</span>курс, который подойдет именно тебе
             </h2>

@@ -1,0 +1,64 @@
+.iclients
+  position relative
+  padding-top 103px
+  padding-bottom 55px
+  z-index 2
+  &__title
+    margin-bottom 127px
+    @media $bigDesktopMax
+      margin-bottom 70px
+  &__item
+    position relative
+    z-index 1
+    &:before
+      @extend .before
+      left 50%
+      top 50%
+      transform translate(-50%, -50%)
+      width 230px
+      height 250px
+      border-radius 115px
+      background radial-gradient(circle, rgba(36,160,249,1) 0%, rgba(255,255,255,0) 70%)
+      opacity 0
+      transition opacity .5s
+      z-index -1
+    &:hover
+      &:before
+        opacity .3
+      .iclients__item-href
+        bottom 0
+        opacity 1
+        visibility visible
+    &-overimg
+      display flex
+      justify-content center
+      align-items center
+      position relative
+      width 100%
+      height 320px
+      @media $bigDesktopMax
+        height 260px
+    &-img
+      max-height 100%
+    &-href
+      position absolute
+      left 50%
+      transform translateX(-50%)
+      bottom 30px
+      display inline-block
+      color #24a0f9
+      font-size 18px
+      font-weight 300
+      text-transform uppercase
+      letter-spacing -0.01em
+      opacity 0
+      visibility hidden
+      transition bottom .5s, visibility .5s, opacity .5s
+      &:before
+        @extend .before
+        left 50%
+        transform translateX(-50%)
+        top -36px
+        width 22px
+        height 22px
+        background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAQAAABuvaSwAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQfjBAEWMzI1L+lbAAABLklEQVQoz5WTMUvDUBSFzwtKpzrUqR3cWwoKQgcHrQTsqvhfIsXFv5BZsrkWZ4WOblETcA06aJeSgpsE4XPw2aZNiu2ZHuedd9/h3HulHKjjMSQFIGWIR11loIpPRkgflyZNXPqEZPhUF6UtEmK6hRJdYhJa89IxAZXSHysEjKdyqiQEGC0BhoDEmsEn/quK4Zydkuox/m8C2cwrR8AXF2wUvGfUhUeYI0955YwPQtoL8hDPUU+DOfbT3KqlZ4VcsZnjB+qJFHeucmRPJ7wRsTu9cUkd1TQqy8Dcq60nPbBtiZFqjpYDfctRTuFookap8lgvOtChGVuioYmjSJ2CcItr3elG+2aWVEdReXTvPLJXjK68KZdLmrJWu9ccpLVG1MpXHX5rZtW1sg/+Wdgf/WETZQOeZtoAAAAASUVORK5CYII=')

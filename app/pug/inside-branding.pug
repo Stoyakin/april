@@ -16,10 +16,7 @@ html(lang="ru")
           +e('span').item.--el8
 
         +b('section').ihead.--inside
-          //+e('span').back.cover(style="background-image: url('static/img/back7.jpg');")
-          +e('video').video.video(preload="auto", loop, autoplay, muted, playsinline, style="background-image: url('static/img/back7.jpg');")
-            source(src="static/video/video.ogv", type='video/ogg; codecs="theora, vorbis"')
-            source(src="static/video/video.mp4", type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
+          +e('span').back.cover(style="background-image: url('static/img/back7.jpg');")
           .container
             +e.row
               +b.logo.--middle
@@ -35,25 +32,28 @@ html(lang="ru")
 
         +b('section').brands
           - for (var i = 0; i < 6; ++i) {
-            +e('a')(href="#brands").item.js-mfp
+            +e('a')(href="#brands").item.js-mfp.js-scroll-anim
               +e('span').item-cover(style="background-image: url('static/img/brands"+i+".jpg')")
               +e('span').item-info
                 +e('span').item-title Название, бренд
                 +e('span').item-year 2018
           - }
           - for (var i = 0; i < 6; ++i) {
-            +e('a')(href="#brands").item.js-mfp
+            +e('a')(href="#brands").item.js-mfp.js-scroll-anim
               +e('span').item-cover(style="background-image: url('static/img/brands"+i+".jpg')")
               +e('span').item-info
                 +e('span').item-title Название, бренд
                 +e('span').item-year 2018
           - }
-
-        +b('section').services
+          
+        +b('section').services.js-scroll-anim
           .container
-            +e('h2').title МЫ НАПОЛНЯЕМ бренды смыслом <br>проектирУЕМ коммуникацию с аудиторией <br>способствУЕМ  развитию ВАШЕЙ компаниИ
+            +e('h2').title 
+              span.anim-row МЫ НАПОЛНЯЕМ бренды смыслом 
+              span.anim-row проектирУЕМ коммуникацию с аудиторией
+              span.anim-row способствУЕМ  развитию ВАШЕЙ компаниИ
             +e('h2').subtitle Услуги
-            +e.direction
+            +e.direction.js-scroll-anim
               +e('h2').direction-title АУДИТ И ИССЛЕДОВАНИЯ
               +e.items
                 +e.item
@@ -86,7 +86,7 @@ html(lang="ru")
                     .text
                       p Для выбора успешной стратегии развития компании необходимо изучить рынок: оценить его объем, стадию жизненного цикла, характер конкуренции, потенциал и другие параметры.
                       p Выявление и анализ трендов позволяют проектировать продукты, которые будут отвечать актуальным потребностям целевой аудитории к моменту их внедрения, а также минимизировать возможные риски и вероятность ошибок.
-            +e.direction
+            +e.direction.js-scroll-anim
               +e('h2').direction-title Стратегия
               +e.items
                 +e.item
@@ -108,7 +108,7 @@ html(lang="ru")
                       p Для выбора успешной стратегии развития компании необходимо изучить рынок: оценить его объем, стадию жизненного цикла, характер конкуренции, потенциал и другие параметры.
                       p Выявление и анализ трендов позволяют проектировать продукты, которые будут отвечать актуальным потребностям целевой аудитории к моменту их внедрения, а также минимизировать возможные риски и вероятность ошибок.
                 +e.item
-            +e.direction
+            +e.direction.js-scroll-anim
               +e('h2').direction-title Дизайн и коммуникации
               +e.items
                 +e.item
@@ -148,7 +148,7 @@ html(lang="ru")
                       p Для выбора успешной стратегии развития компании необходимо изучить рынок: оценить его объем, стадию жизненного цикла, характер конкуренции, потенциал и другие параметры.
                       p Выявление и анализ трендов позволяют проектировать продукты, которые будут отвечать актуальным потребностям целевой аудитории к моменту их внедрения, а также минимизировать возможные риски и вероятность ошибок.
           
-        +b('section').common-feed
+        +b('section').common-feed.js-scroll-anim
           .container
             +b('form').form.--feedback
               +e('h3').title оставьте заявку

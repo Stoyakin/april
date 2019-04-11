@@ -8,13 +8,17 @@ function qsAll(query, root = document) {
   return root.querySelectorAll(query);
 }
 
-function getParent(elem, selector) {
-  for (; elem && elem !== document; elem = elem.parentNode) {
-    if (elem.classList.contains(selector)) return parent;
+function getParent(el, findParent) {
+  while (el && el.parentNode) {
+    el = el.parentNode;
+    if (el.classList && el.classList.contains(findParent)) return el;
   }
+  return false;
 }
 
-window.onload = () => document.querySelector('body').classList.add('loaded-page');
+window.onload = () => qs('body').classList.add('loaded-page');
+
+if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) qs('body').classList.add('ios');
 
 document.addEventListener("DOMContentLoaded", function (event) {
 
@@ -157,22 +161,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
     },
 
     jsFile: function jsFile() {
-      let inputFile = qs('.js-file'),
+      let inputFiles = qsAll('.js-file'),
         fileItems;
-      inputFile.addEventListener('change', function () {
-        let _t = this,
-          over = _t.parentNode.parentNode,
-          fileItems = over.querySelector('.uploaded-file__items'),
-          fileItemDiv = document.createElement('div');
-        if (_t.files.length && fileItems) {
-          fileItemDiv.classList.add('uploaded-file__item');
-          fileItemDiv.innerHTML = '<p class="uploaded-file__item-name">' + _t.files[0].name + '</p><button class="uploaded-file__item-del-btn js-del-file" type="button">удалить</button>';
-          fileItems.appendChild(fileItemDiv);
-          if (!over.classList.contains('uploaded-file--no-empty')) {
-            over.classList.add('uploaded-file--no-empty');
+
+      for (let inputFileItem of inputFiles) {
+        inputFileItem.addEventListener('change', function () {
+          let _t = this,
+            over = _t.parentNode.parentNode,
+            fileItems = over.querySelector('.uploaded-file__items'),
+            fileItemDiv = document.createElement('div');
+          if (_t.files.length && fileItems) {
+            fileItemDiv.classList.add('uploaded-file__item');
+            fileItemDiv.innerHTML = '<p class="uploaded-file__item-name">' + _t.files[0].name + '</p><button class="uploaded-file__item-del-btn js-del-file" type="button">удалить</button>';
+            fileItems.appendChild(fileItemDiv);
+            if (!over.classList.contains('uploaded-file--no-empty')) {
+              over.classList.add('uploaded-file--no-empty');
+            }
           }
-        }
-      });
+        });
+      }
+
       document.onclick = function (e) {
         if (e.target.classList.contains('js-del-file')) {
           let _t = e.target,
@@ -186,6 +194,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
           e.preventDefault();
         }
       }
+
     },
 
     mfpVideo: function mfp() {
@@ -222,7 +231,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
           html = $.ajax(),
           hiddenBlock = $('.hidden-block');
 
-        /*заглушка с уникальным id - заменть на контент подтянутый по ajax
+        /*заглушка с уникальным id - заменть на контент подтянутый по ajax,
           разметку попапа взять с попапа в скрытом блоке после футера
           --> .popup.popup--brands.mfp-hide#brands
         */
@@ -289,7 +298,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         autoplay: {
           delay: 1000
         },
-        autoplayDisableOnInteraction: false,
         breakpoints: {
           768: {
             slidesPerView: 2
@@ -310,11 +318,101 @@ document.addEventListener("DOMContentLoaded", function (event) {
       };
     },
 
-    init: function init() {
-      let _self = this,
-        $body = qs('body');
+    peopleSwiper: function peopleSwiper() {
+      let _th = this;
+      let peopleSwiper = new Swiper('.js-people-swiper', {
+        loop: true,
+        speed: 750,
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        slidesOffsetBefore: 0,
+        spaceBetween: 40,
+        slideToClickedSlide: true,
+        breakpoints: {
+          1600: {
+            spaceBetween: 0
+          }
+        }
+      });
+      peopleSwiper.on('slideChangeTransitionEnd', function() {
+        let _t = this,
+          _tSlideChildren = qs('.swiper-slide-active .people__item', _t.el),
+          dataName = _tSlideChildren.dataset.name && _tSlideChildren.dataset.name != '' ? _tSlideChildren.dataset.name : false,
+          dataPos = _tSlideChildren.dataset.pos && _tSlideChildren.dataset.pos != '' ? _tSlideChildren.dataset.pos : false,
+          dataDescr = _tSlideChildren.dataset.descr && _tSlideChildren.dataset.descr != '' ? _tSlideChildren.dataset.descr : false,
+          infoName = qs('.people__info-name') || false,
+          infoPos = qs('.people__info-pos') || false,
+          infoDescr = qs('.people__info-descr') || false;
+        function changeInfo(dataAtr, selector) {
+          if (dataAtr){
+            selector.textContent = dataAtr;
+            _th.fadeIn(selector, 250);
+          } else{
+            _th.fadeOut(selector, 250);
+          }
+        }
+        if (dataName && infoName ) changeInfo(dataName, infoName);
+        if (dataPos && infoPos) changeInfo(dataPos, infoPos);
+        if (dataDescr && infoDescr) changeInfo(dataDescr, infoDescr);
+      });
+    },
 
-      if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) $body.classList.add('ios');
+    scrollnextElem: function scrollnextElem() {
+      qs('.arrow').addEventListener('click', function(e) {
+        window.scroll({
+          left: 0,
+          top: this.parentNode.offsetHeight,
+          behavior: 'smooth'
+        });
+        e.preventDefault();
+      });
+    },
+
+    anim: function anim() {
+      let elemsAnimArr = ['.js-scroll-anim'];
+
+      function visChecker(el) {
+        const rect = el.getBoundingClientRect();
+        const wHeight = window.innerHeight || document.documentElement.clientHeight;
+        const wWidth = window.innerWidth || document.documentElement.clientWidth;
+        return (
+          rect.bottom - el.offsetHeight * 0.75 <= wHeight &&
+          rect.right <= wWidth
+        );
+      }
+
+      function elemVisCheck(elArray) {
+        window.addEventListener('scroll', () => {
+          if (elArray.length) {
+            elArray.forEach((item) => {
+              if (document.querySelectorAll(item).length) {
+                document.querySelectorAll(item).forEach((elem) => {
+                  if (visChecker(elem)) {
+                    elem.classList.add('start-animate');
+                  }
+                });
+              }
+            });
+          }
+        });
+      }
+
+      if (elemsAnimArr.length) {
+        elemVisCheck(elemsAnimArr);
+      }
+    },
+
+    init: function init() {
+
+      let elemsAnimArr = ['.js-scroll-anim'];
+
+      if (elemsAnimArr.length) this.anim();
+
+      if(qs('.arrow')) this.scrollnextElem();
+
+      if (qs('.js-burger')) this.burger();
+
+      if (qsAll('.ivideo__item').length) this.ivideo();
 
       if (qs('.js-file')) this.jsFile();
 
@@ -322,13 +420,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
       if (qs('.js-mfp-video')) this.mfpVideo();
 
-      if (qs('.js-burger')) this.burger();
-
       if (qs('.js-mfp-ajax')) this.mfpAjax();
 
-      if (qsAll('.ivideo__item').length) this.ivideo();
-
       if (qs('.js-iclients-swiper')) this.iclientsSwiper();
+
+      if (qs('.js-people') && qs('.js-people-swiper')) this.peopleSwiper();
 
       $('.js-toggle-desr').on('click', function() {
         var _t = $(this),
@@ -343,40 +439,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
         return false;
       });
 
-      /*переделать говнище*/
-      if ($('.js-people').length) {
-        $('.js-people .people__item').on('click', function () {
-          var _t = $(this),
-              dataName = _t.data('name') && _t.data('name') != '' ? _t.data('name') : false,
-              dataPos = _t.data('pos') && _t.data('pos') != '' ? _t.data('pos') : false,
-              dataDescr = _t.data('descr') && _t.data('descr') != '' ? _t.data('descr') : false,
-            activeSlide = _t.siblings('.people__item--active'),
-            infoName = $('.people__info-name'),
-            infoPos = $('.people__info-pos'),
-            infoDescr = $('.people__info-descr');
-
-          function changeInfo(dataAtr, selector) {
-            if (dataAtr)
-              selector.text(dataAtr).fadeIn(300)
-            else
-              selector.fadeOut(300)
-          }
-
-          if (!_t.hasClass('.people__item--active')) {
-            activeSlide.removeClass('people__item--active');
-            _t
-              .insertBefore(activeSlide)
-              .addClass('people__item--active');
-
-            changeInfo(dataName, infoName);
-            changeInfo(dataPos, infoPos);
-            changeInfo(dataDescr, infoDescr);
-
-          }
-
-          return false;
-        });
+      let eventScroll
+      try {
+        eventScroll = new Event('scroll')
+      } catch (e) {
+        eventScroll = document.createEvent('Event');
+        let doesnt_bubble = false,
+          isnt_cancelable = false
+        eventScroll.initEvent('scroll', doesnt_bubble, isnt_cancelable);
       }
+      window.dispatchEvent(eventScroll)
 
       return this;
     }

@@ -1,10 +1,23 @@
 .popup
   width 100%
   margin 0
+  &--brands
+    @media (max-width: 1660px)
+      .mfp-close
+        right 25px
+    @media $mLandscapeMax
+      .mfp-close
+        top 50px
   &__container
     max-width 1460px
     margin 0 auto
     padding 125px 0 300px
+    @media (max-width: 1660px)
+      max-width calc(100% - 150px)
+    @media $mLandscapeMax
+      padding 65px 0
+      margin 0 75px 0 30px
+      max-width calc(100% - 105px)
   &__scroll
     &-btns
       position fixed
@@ -13,6 +26,10 @@
       display flex
       flex-direction column
       width 40px
+      @media (max-width: 1660px)
+        right 25px
+      @media $mLandscapeMax
+        top 100px
     &-btn
       width 40px
       height 40px

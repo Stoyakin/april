@@ -13,7 +13,7 @@ html(lang="ru")
       main.main
         +b('section').ihead.--inside
           +e('span').back.cover(style="background-image: url('static/img/back4.jpg');")
-          //+e('video').video.video(preload="auto", loop, autoplay, muted, playsinline, style="background-image: url('static/img/back4.jpg');")
+          +e('video').video.video(preload="auto", loop, autoplay, muted, playsinline, style="background-image: url('static/img/back4.jpg');")
             source(src="static/video/video.ogv", type='video/ogg; codecs="theora, vorbis"')
             source(src="static/video/video.mp4", type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
           .container
@@ -25,7 +25,7 @@ html(lang="ru")
                   +e('a')(href="#").item-href.--ytb
           +e('span').arrow.arrow
 
-        +b('section').training
+        +b('section').training.js-scroll-anim
           .container
             +e.row
               +e.left
@@ -55,7 +55,7 @@ html(lang="ru")
 
                 +e('a')(href="#").entry-href Записаться на курс
         
-        +b('section').advant
+        +b('section').advant.js-scroll-anim
           .container
             +e.wrap
               +e('h2').title Что делает школу 
@@ -100,22 +100,22 @@ html(lang="ru")
               +e('h2').title ПОЧЕМУ именно 
                 span.blue наша ШКОЛА
               +e.row
-                +e.item
+                +e.item.js-scroll-anim
                   +e.item-overico
                     +e('img')(src="static/img/adv-ico7.png" alt="").item-ico
                   +e('p').item-descr Наиболее полное обучение из существующих на рынке: от пред продакшен до продюсирования себя как ФилмМейкера
-                +e.item
+                +e.item.js-scroll-anim
                   +e.item-overico
                     +e('img')(src="static/img/adv-ico8.png" alt="").item-ico
                   +e('p').item-descr Выпускник школы не только создает видео, но и продает видео, продвигает себя и занимается творчеством
-                +e.item
+                +e.item.js-scroll-anim
                   +e.item-overico
                     +e('img')(src="static/img/adv-ico9.png" alt="").item-ico
                   +e('p').item-descr Выход на стабильный заработок с 6-значными цифрами через 6 месяцев;
         
         +ivideo('static/img/video-cover.jpg')
 
-        +b('section').directions
+        +b('section').directions.js-scroll-anim
           .container
             +e('h2').title
               span.blue выбери

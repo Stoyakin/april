@@ -1,5 +1,10 @@
 .services
   padding 116px 0 9px
+  &.start-animate
+    .anim-row
+      top 0
+      opacity 1
+      visibility visible
   &__title
     color #fff
     font-size 30px
@@ -7,6 +12,16 @@
     line-height 48px
     text-transform uppercase
     margin-bottom 60px
+    span
+      display block
+      position relative
+      top 75px
+      opacity 0
+      transition opacity .5s, top .5s
+      &:nth-child(2)
+        transition-delay .2s
+      &:nth-child(3)
+        transition-delay .4s
     @media $mLandscapeMax
       font-size 24px
       line-height 28px
@@ -20,9 +35,24 @@
       font-size 24px
       line-height 28px
   &__direction
+    position relative
+    top 100px
     margin-bottom 59px
     border-top 1px solid rgba(#fff, .43)
     padding-top 37px
+    opacity 0
+    transition opacity .35s, top .35s
+    &.start-animate
+      opacity 1
+      top 0
+      &:nth-child(2)
+        transition-delay .2s
+      &:nth-child(3)
+        transition-delay .4s
+      &:nth-child(4)
+        transition-delay .6s
+      &:nth-child(5)
+        transition-delay .8s
     &:last-child
       margin-bottom 0
     &-title

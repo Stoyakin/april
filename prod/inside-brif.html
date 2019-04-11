@@ -1,1 +1,324 @@
-<!--include mixins/breads--><!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="format-detection" content="telephone=no"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/png" sizes="16x16" href="favicon.png"><title>Портфолио</title><meta name="description" content=""><meta name="keywords" content=""><link rel="stylesheet" href="static/css/styles.css"></head><body><div class="wrapper wrapper--inside"><header class="header"> <div class="container"><div class="header__row"><ul class="lang"><li class="lang__item"><a class="lang__item-href" href="#">EN</a></li><li class="lang__item"><a class="lang__item-href lang__item-href--active" href="#">RU</a></li></ul><nav class="nav"><ul class="nav__list"><li class="nav__list-item"><a class="nav__list-href nav__list-href--active" href="#">главная</a></li><li class="nav__list-item"><a class="nav__list-href" href="#">о нас</a></li><li class="nav__list-item"><a class="nav__list-href" href="#">продакшн</a><ul class="nav__sublist"><li class="nav__subitem"><a class="nav__subhref nav__subhref--active" href="#">портфолио</a></li><li class="nav__subitem"><a class="nav__subhref" href="#">заполнить бриф</a></li></ul></li><li class="nav__list-item"><a class="nav__list-href" href="#">бренгдин</a><ul class="nav__sublist"><li class="nav__subitem"><a class="nav__subhref" href="#">портфолио</a></li><li class="nav__subitem"><a class="nav__subhref" href="#">заполнить бриф</a></li></ul></li><li class="nav__list-item"><a class="nav__list-href" href="#">обучение</a></li><li class="nav__list-item"><a class="nav__list-href" href="#">продюссирование</a></li><li class="nav__list-item"><a class="nav__list-href" href="#">контакты</a></li></ul></nav><button class="header__burger js-burger" type="button"><i></i></button></div></div></header><main class="main"><div class="decor"><span class="decor__item decor__item--el5"></span><span class="decor__item decor__item--el6"></span></div><section class="ihead ihead--inside"><!--+e('span').back.cover(style="background-image: url('static/img/back6.jpg');")--><video class="ihead__video video" preload="auto" loop="loop" autoplay="autoplay" muted="muted" playsinline="playsinline" style="background-image: url('static/img/back6.jpg');"><source src="static/video/video.ogv" type="video/ogg; codecs=&quot;theora, vorbis&quot;"><source src="static/video/video.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;"></video><div class="container"><div class="ihead__row"><div class="logo logo--middle"><div class="logo__overimg"><img class="logo__img" src="static/img/logo2.gif" alt="" role="presentation"/></div><p class="logo__title">creative<br>group</p></div><ul class="social"><li class="social__item"><a class="social__item-href social__item-href--inst" href="#"></a></li><li class="social__item"><a class="social__item-href social__item-href--ytb" href="#"></a></li></ul></div></div><span class="ihead__arrow arrow"></span></section><section class="brif"><div class="container"><h2 class="brif__title">если вы хотите узнать приблизительную<span class="blue">стоимость проекта,<br></span> вы можете заполнить <span class="blue">бриф </span> и наш менеджер вышлет расчет на вашу почту</h2><div class="brif__form-wrap"><form class="form form--brif"><h3 class="form__title">контактная информация</h3><div class="form__wrap"><div class="form__col"><div class="form__row"><div class="form__field"><input class="form__field-input" type="text" id="inp_21" data-req="req" value="apple"/><label class="form__field-label form__field-label--blue-marker" for="inp_21">название организации (полное)</label></div></div><div class="form__row"><div class="form__field"><input class="form__field-input" type="text" id="inp_22" data-req="req" value="стив джобс"/><label class="form__field-label" for="inp_22">фио контактного лица</label></div></div></div><div class="form__col"><div class="form__row"><div class="form__field"><input class="form__field-input" type="email" id="inp_23" data-req="req" data-type="email" value="apple"/><label class="form__field-label" for="inp_23">e-mail</label></div></div><div class="form__row"><div class="form__field"><input class="form__field-input js-phone" type="tel" id="inp_24" data-req="req" value="+7 (999) 999 99 99"/><label class="form__field-label" for="inp_24">телефон</label></div></div><div class="form__row"><div class="form__field"><input class="form__field-input" type="text" id="inp_25" data-req="req" value="смосква"/><label class="form__field-label" for="inp_25">город</label></div></div><div class="form__row"><div class="form__field"><input class="form__field-input" type="text" id="inp_26" data-req="req" value="ул. ленина д.6, кв. 6"/><label class="form__field-label" for="inp_26">адрес</label></div></div></div></div><h3 class="form__title">информация о ролике</h3><div class="form__wrap"><div class="form__row form__row--big"><div class="form__field"><p class="form__field-title">общие сведения</p><p class="form__field-descr">Название рекламируемого продукта/товарной марки/услуги, слоган, логотип, брендбук.<br>Расскажите о вашей организации, её отрасли и области деятельности.</p><textarea class="form__field-textarea" data-req="req"></textarea></div><div class="uploaded-file"><label class="uploaded-file__label" for="inp-f_01">Прикрепить файл<input class="uploaded-file__input js-file" type="file" id="inp-f_01"/></label><div class="uploaded-file__items"></div></div></div><div class="form__row form__row--big"><div class="form__field"><p class="form__field-title">целевая аудитория</p><p class="form__field-descr">На кого должен работать ролик? Опишите типичного представителя. <br>Целевая аудитория в стандартной терминологии (возрат, пол)</p><textarea class="form__field-textarea" data-req="req"></textarea><div class="form__items"></div></div></div><div class="form__row form__row--big"><div class="form__field"><p class="form__field-title">преимущества продукта, услуги</p><p class="form__field-descr">Пропишите основные конкурентные преимущества Вашего продукта, <br>его сильные стороны (чем больше, тем лучше)</p><textarea class="form__field-textarea" data-req="req"></textarea></div></div><div class="form__row form__row--big"><div class="form__field"><p class="form__field-title">основная идея сценария</p><p class="form__field-descr">Опишите Ваше представление о сценарии ролика</p><textarea class="form__field-textarea" data-req="req"></textarea></div></div><div class="form__row form__row--big"><div class="form__field"><p class="form__field-title">эмоции</p><p class="form__field-descr">Какие эмоции должен вызывать имиджевый ролик? К чему должен побуждать?</p><textarea class="form__field-textarea" data-req="req"></textarea></div></div><div class="form__row form__row--big"><div class="form__field"><p class="form__field-title">ассоциации</p><p class="form__field-descr">Какие атрибуты вашего продукта не следует использовать при разработке? <br>Каких ассоциаций с Вашим продуктом следует избегать?</p><textarea class="form__field-textarea" data-req="req"></textarea></div></div><div class="form__row form__row--big"><div class="form__field"><p class="form__field-title">предполагаемые места размещения</p><textarea class="form__field-textarea form__field-textarea--min" data-req="req"></textarea></div></div><div class="form__row form__row--big"><div class="form__field"><p class="form__field-title">ожидаемый хронометраж ролика</p><textarea class="form__field-textarea form__field-textarea--min" data-req="req"></textarea></div></div><div class="form__row form__row--big"><div class="form__field"><p class="form__field-title">примеры видеороликов</p><p class="form__field-descr">Приведите 2-3 примера видеороликов, которые Вам нравятся </p><textarea class="form__field-textarea form__field-textarea--min" data-req="req"></textarea></div><div class="uploaded-file"><label class="uploaded-file__label" for="inp-f_01">Прикрепить файл<input class="uploaded-file__input js-file" type="file" id="inp-f_01"/></label><div class="uploaded-file__items"></div></div></div><div class="form__row form__row--big"><div class="form__field"><p class="form__field-descr">И которые не нравятся </p><textarea class="form__field-textarea form__field-textarea--min" data-req="req"></textarea></div><div class="uploaded-file"><label class="uploaded-file__label" for="inp-f_01">Прикрепить файл<input class="uploaded-file__input js-file" type="file" id="inp-f_01"/></label><div class="uploaded-file__items"></div></div></div></div><h3 class="form__title">требования к материалам</h3><ul class="requirements"><li class="requirements__item">Все предоставленные материалы для разработки должны быть хорошего качества</li><li class="requirements__item">Ответственность за соблюдение авторских прав на исходные материалы возлагается на заказчика.</li><li class="requirements__item">Исходные материалы, а так же заказ на рекламный̆ ролик не должны нарушать законодательство РФ. При не полном заполнении брифа, отсутствии исходных материалов,  несоответствии к требованиям в  изготовлении ролика может быть  отказано</li></ul><div class="form__bottom"><div class="form__field"><button class="form__field-submit form__field-submit--air" type="submit">Отправить</button><span class="form__indicate-send"></span></div><p class="form__agreement">нажимая  кнопку  “отправить”, вы даёте <br> <a href="">согласие на обработку персональных данных</a></p></div></form></div></div></section></main><footer class="footer"><div class="container"><a class="footer__logo" href="#"><img class="footer__logo-img" src="static/img/logo-footer.png" alt="" role="presentation"/></a><div class="footer__bottom"><div class="footer__row"><ul class="lang lang--footer"><li class="lang__item"><a class="lang__item-href" href="#">EN</a></li><li class="lang__item"><a class="lang__item-href lang__item-href--active" href="#">RU</a></li></ul><nav class="nav nav--footer"><ul class="nav__list"><li class="nav__list-item"><a class="nav__list-href nav__list-href--active" href="#">главная</a></li><li class="nav__list-item"><a class="nav__list-href" href="#">о нас</a></li><li class="nav__list-item"><a class="nav__list-href" href="#">продакшн</a></li><li class="nav__list-item"><a class="nav__list-href" href="#">бренгдин</a></li><li class="nav__list-item"><a class="nav__list-href" href="#">обучение</a></li><li class="nav__list-item"><a class="nav__list-href" href="#">продюссирование</a></li><li class="nav__list-item"><a class="nav__list-href" href="#">контакты</a></li></ul></nav></div></div></div></footer><div class="hidden-block"><div class="popup popup--brands mfp-hide" id="brands"><div class="popup__scroll-btns"><button class="popup__scroll-btn popup__scroll-btn--up js-scroll-btn" type="button"></button><button class="popup__scroll-btn popup__scroll-btn--bottom js-scroll-btn" type="button"></button></div><div class="popup__container"><div class="brands-card"><h2 class="brands-card__title">HOLZ </h2><p class="brands-card__descr">пРОИЗВОДСТВО ДВЕРЕЙ <br>РАЗРАБОТКА ФИРМЕННОГО СТИЛЯ</p><div class="brands-card__concept"><div class="brands-card__concept-item"><img class="brands-card__concept-img" src="static/img/concept.jpg" alt="" role="presentation"/></div><div class="brands-card__concept-item"><p class="brands-card__concept-item-title">КОНЦЕПТ ОФОРМЛЕНИЯ ФИРМЕННЫХ СТРАНИЦ КАТАЛОГА</p><img class="brands-card__concept-img" src="static/img/concept2.jpg" alt="" role="presentation"/></div></div><div class="brands-card__bottom"><p class="brands-card__text">Тут оставить возможность вставлять какой-то заключительный текст. <br>Выявление и анализ трендов позволяют проектировать продукты, которые будут отвечать актуальным потребностям целевой аудитории к моменту их внедрения, а также минимизировать возможные риски и вероятность ошибок.</p><div class="brands-card__others"><div class="brands brands--in-popups"><a class="brands__item js-mfp-ajax" href="#"><span class="brands__item-cover" style="background-image: url('static/img/brands0.jpg')"></span><span class="brands__item-info"><span class="brands__item-title">Название, бренд</span><span class="brands__item-year">2018</span></span></a><a class="brands__item js-mfp-ajax" href="#"><span class="brands__item-cover" style="background-image: url('static/img/brands1.jpg')"></span><span class="brands__item-info"><span class="brands__item-title">Название, бренд</span><span class="brands__item-year">2018</span></span></a><a class="brands__item js-mfp-ajax" href="#"><span class="brands__item-cover" style="background-image: url('static/img/brands2.jpg')"></span><span class="brands__item-info"><span class="brands__item-title">Название, бренд</span><span class="brands__item-year">2018</span></span></a><a class="brands__item js-mfp-ajax" href="#"><span class="brands__item-cover" style="background-image: url('static/img/brands3.jpg')"></span><span class="brands__item-info"><span class="brands__item-title">Название, бренд</span><span class="brands__item-year">2018</span></span></a></div></div></div></div></div></div></div><script src="static/js/vendor.js"></script><script src="static/js/own.js"></script></div></body></html>
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <title>Портфолио</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="static/css/styles.css">
+  </head>
+  <body>
+    <div class="wrapper wrapper--inside">
+      <header class="header"> 
+        <div class="container">
+          <div class="header__row">
+            <ul class="lang">
+              <li class="lang__item"><a class="lang__item-href" href="#">EN</a>
+              </li>
+              <li class="lang__item"><a class="lang__item-href lang__item-href--active" href="#">RU</a>
+              </li>
+            </ul>
+            <nav class="nav">
+              <ul class="nav__list">
+                <li class="nav__list-item"><a class="nav__list-href nav__list-href--active" href="#">главная</a>
+                </li>
+                <li class="nav__list-item"><a class="nav__list-href" href="#">о нас</a>
+                </li>
+                <li class="nav__list-item"><a class="nav__list-href" href="#">продакшн</a>
+                  <ul class="nav__sublist">
+                    <li class="nav__subitem"><a class="nav__subhref nav__subhref--active" href="#">портфолио</a>
+                    </li>
+                    <li class="nav__subitem"><a class="nav__subhref" href="#">заполнить бриф</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav__list-item"><a class="nav__list-href" href="#">бренгдин</a>
+                  <ul class="nav__sublist">
+                    <li class="nav__subitem"><a class="nav__subhref" href="#">портфолио</a>
+                    </li>
+                    <li class="nav__subitem"><a class="nav__subhref" href="#">заполнить бриф</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav__list-item"><a class="nav__list-href" href="#">обучение</a>
+                </li>
+                <li class="nav__list-item"><a class="nav__list-href" href="#">продюссирование</a>
+                </li>
+                <li class="nav__list-item"><a class="nav__list-href" href="#">контакты</a>
+                </li>
+              </ul>
+            </nav>
+            <button class="header__burger js-burger" type="button"><i></i>
+            </button>
+          </div>
+        </div>
+      </header>
+      <main class="main">
+        <div class="decor"><span class="decor__item decor__item--el5"></span><span class="decor__item decor__item--el6"></span>
+        </div>
+        <section class="ihead ihead--inside"><span class="ihead__back cover" style="background-image: url('static/img/back6.jpg');"></span>
+          <video class="ihead__video video" preload="auto" loop="loop" autoplay="autoplay" muted="muted" playsinline="playsinline" style="background-image: url('static/img/back6.jpg');">
+            <source src="static/video/video.ogv" type="video/ogg; codecs=&quot;theora, vorbis&quot;">
+            <source src="static/video/video.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
+          </video>
+          <div class="container">
+            <div class="ihead__row">
+              <div class="logo logo--middle">
+                <div class="logo__overimg"><img class="logo__img" src="static/img/logo2.gif" alt="" role="presentation"/>
+                </div>
+                <p class="logo__title">creative<br>group
+                </p>
+              </div>
+              <ul class="social">
+                <li class="social__item"><a class="social__item-href social__item-href--inst" href="#"></a>
+                </li>
+                <li class="social__item"><a class="social__item-href social__item-href--ytb" href="#"></a>
+                </li>
+              </ul>
+            </div>
+          </div><span class="ihead__arrow arrow"></span>
+        </section>
+        <section class="brif">
+          <div class="container">
+            <h2 class="brif__title">если вы хотите узнать приблизительную<span class="blue">стоимость проекта,<br></span> вы можете заполнить <span class="blue">бриф </span> и наш менеджер вышлет расчет на вашу почту
+            </h2>
+            <div class="brif__form-wrap">
+              <form class="form form--brif">
+                <h3 class="form__title">контактная информация
+                </h3>
+                <div class="form__wrap">
+                  <div class="form__col">
+                    <div class="form__row">
+                      <div class="form__field"><input class="form__field-input" type="text" id="inp_21" data-req="req" value="apple"/>
+                        <label class="form__field-label form__field-label--blue-marker" for="inp_21">название организации (полное)
+                        </label>
+                      </div>
+                    </div>
+                    <div class="form__row">
+                      <div class="form__field"><input class="form__field-input" type="text" id="inp_22" data-req="req" value="стив джобс"/>
+                        <label class="form__field-label" for="inp_22">фио контактного лица
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form__col">
+                    <div class="form__row">
+                      <div class="form__field"><input class="form__field-input" type="email" id="inp_23" data-req="req" data-type="email" value="apple"/>
+                        <label class="form__field-label" for="inp_23">e-mail
+                        </label>
+                      </div>
+                    </div>
+                    <div class="form__row">
+                      <div class="form__field"><input class="form__field-input js-phone" type="tel" id="inp_24" data-req="req" value="+7 (999) 999 99 99"/>
+                        <label class="form__field-label" for="inp_24">телефон
+                        </label>
+                      </div>
+                    </div>
+                    <div class="form__row">
+                      <div class="form__field"><input class="form__field-input" type="text" id="inp_25" data-req="req" value="смосква"/>
+                        <label class="form__field-label" for="inp_25">город
+                        </label>
+                      </div>
+                    </div>
+                    <div class="form__row">
+                      <div class="form__field"><input class="form__field-input" type="text" id="inp_26" data-req="req" value="ул. ленина д.6, кв. 6"/>
+                        <label class="form__field-label" for="inp_26">адрес
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <h3 class="form__title">информация о ролике
+                </h3>
+                <div class="form__wrap">
+                  <div class="form__row form__row--big">
+                    <div class="form__field">
+                      <p class="form__field-title">общие сведения
+                      </p>
+                      <p class="form__field-descr">Название рекламируемого продукта/товарной марки/услуги, слоган, логотип, брендбук.<br>Расскажите о вашей организации, её отрасли и области деятельности.
+                      </p><textarea class="form__field-textarea" data-req="req"></textarea>
+                    </div>
+                    <div class="uploaded-file">
+                      <label class="uploaded-file__label" for="inp-f_01">Прикрепить файл<input class="uploaded-file__input js-file" type="file" id="inp-f_01"/>
+                      </label>
+                      <div class="uploaded-file__items">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form__row form__row--big">
+                    <div class="form__field">
+                      <p class="form__field-title">целевая аудитория
+                      </p>
+                      <p class="form__field-descr">На кого должен работать ролик? Опишите типичного представителя. <br>Целевая аудитория в стандартной терминологии (возрат, пол)
+                      </p><textarea class="form__field-textarea" data-req="req"></textarea>
+                    </div>
+                  </div>
+                  <div class="form__row form__row--big">
+                    <div class="form__field">
+                      <p class="form__field-title">преимущества продукта, услуги
+                      </p>
+                      <p class="form__field-descr">Пропишите основные конкурентные преимущества Вашего продукта, <br>его сильные стороны (чем больше, тем лучше)
+                      </p><textarea class="form__field-textarea" data-req="req"></textarea>
+                    </div>
+                  </div>
+                  <div class="form__row form__row--big">
+                    <div class="form__field">
+                      <p class="form__field-title">основная идея сценария
+                      </p>
+                      <p class="form__field-descr">Опишите Ваше представление о сценарии ролика
+                      </p><textarea class="form__field-textarea" data-req="req"></textarea>
+                    </div>
+                  </div>
+                  <div class="form__row form__row--big">
+                    <div class="form__field">
+                      <p class="form__field-title">эмоции
+                      </p>
+                      <p class="form__field-descr">Какие эмоции должен вызывать имиджевый ролик? К чему должен побуждать?
+                      </p><textarea class="form__field-textarea" data-req="req"></textarea>
+                    </div>
+                  </div>
+                  <div class="form__row form__row--big">
+                    <div class="form__field">
+                      <p class="form__field-title">ассоциации
+                      </p>
+                      <p class="form__field-descr">Какие атрибуты вашего продукта не следует использовать при разработке? <br>Каких ассоциаций с Вашим продуктом следует избегать?
+                      </p><textarea class="form__field-textarea" data-req="req"></textarea>
+                    </div>
+                  </div>
+                  <div class="form__row form__row--big">
+                    <div class="form__field">
+                      <p class="form__field-title">предполагаемые места размещения
+                      </p><textarea class="form__field-textarea form__field-textarea--min" data-req="req"></textarea>
+                    </div>
+                  </div>
+                  <div class="form__row form__row--big">
+                    <div class="form__field">
+                      <p class="form__field-title">ожидаемый хронометраж ролика
+                      </p><textarea class="form__field-textarea form__field-textarea--min" data-req="req"></textarea>
+                    </div>
+                  </div>
+                  <div class="form__row form__row--big">
+                    <div class="form__field">
+                      <p class="form__field-title">примеры видеороликов
+                      </p>
+                      <p class="form__field-descr">Приведите 2-3 примера видеороликов, которые Вам нравятся 
+                      </p><textarea class="form__field-textarea form__field-textarea--min" data-req="req"></textarea>
+                    </div>
+                    <div class="uploaded-file">
+                      <label class="uploaded-file__label" for="inp-f_02">Прикрепить файл<input class="uploaded-file__input js-file" type="file" id="inp-f_02"/>
+                      </label>
+                      <div class="uploaded-file__items">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form__row form__row--big">
+                    <div class="form__field">
+                      <p class="form__field-descr">И которые не нравятся 
+                      </p><textarea class="form__field-textarea form__field-textarea--min" data-req="req"></textarea>
+                    </div>
+                    <div class="uploaded-file">
+                      <label class="uploaded-file__label" for="inp-f_03">Прикрепить файл<input class="uploaded-file__input js-file" type="file" id="inp-f_03"/>
+                      </label>
+                      <div class="uploaded-file__items">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <h3 class="form__title">требования к материалам
+                </h3>
+                <ul class="requirements">
+                  <li class="requirements__item">Все предоставленные материалы для разработки должны быть хорошего качества
+                  </li>
+                  <li class="requirements__item">Ответственность за соблюдение авторских прав на исходные материалы возлагается на заказчика.
+                  </li>
+                  <li class="requirements__item">Исходные материалы, а так же заказ на рекламный̆ ролик не должны нарушать законодательство РФ. При не полном заполнении брифа, отсутствии исходных материалов,  несоответствии к требованиям в  изготовлении ролика может быть  отказано
+                  </li>
+                </ul>
+                <div class="form__bottom">
+                  <div class="form__field">
+                    <button class="form__field-submit form__field-submit--air" type="submit">Отправить
+                    </button><span class="form__indicate-send"></span>
+                  </div>
+                  <p class="form__agreement">нажимая  кнопку  “отправить”, вы даёте <br> <a href="">согласие на обработку персональных данных</a>
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="container"><a class="footer__logo" href="#"><img class="footer__logo-img" src="static/img/logo-footer.png" alt="" role="presentation"/></a>
+          <div class="footer__bottom">
+            <div class="footer__row">
+              <ul class="lang lang--footer">
+                <li class="lang__item"><a class="lang__item-href" href="#">EN</a>
+                </li>
+                <li class="lang__item"><a class="lang__item-href lang__item-href--active" href="#">RU</a>
+                </li>
+              </ul>
+              <nav class="nav nav--footer">
+                <ul class="nav__list">
+                  <li class="nav__list-item"><a class="nav__list-href nav__list-href--active" href="#">главная</a>
+                  </li>
+                  <li class="nav__list-item"><a class="nav__list-href" href="#">о нас</a>
+                  </li>
+                  <li class="nav__list-item"><a class="nav__list-href" href="#">продакшн</a>
+                  </li>
+                  <li class="nav__list-item"><a class="nav__list-href" href="#">бренгдин</a>
+                  </li>
+                  <li class="nav__list-item"><a class="nav__list-href" href="#">обучение</a>
+                  </li>
+                  <li class="nav__list-item"><a class="nav__list-href" href="#">продюссирование</a>
+                  </li>
+                  <li class="nav__list-item"><a class="nav__list-href" href="#">контакты</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <div class="hidden-block">
+        <div class="popup popup--brands mfp-hide" id="brands">
+          <div class="popup__scroll-btns">
+            <button class="popup__scroll-btn popup__scroll-btn--up js-scroll-btn" type="button">
+            </button>
+            <button class="popup__scroll-btn popup__scroll-btn--bottom js-scroll-btn" type="button">
+            </button>
+          </div>
+          <div class="popup__container">
+            <div class="brands-card">
+              <h2 class="brands-card__title">HOLZ 
+              </h2>
+              <p class="brands-card__descr">пРОИЗВОДСТВО ДВЕРЕЙ <br>РАЗРАБОТКА ФИРМЕННОГО СТИЛЯ
+              </p>
+              <div class="brands-card__concept">
+                <div class="brands-card__concept-item"><img class="brands-card__concept-img" src="static/img/concept.jpg" alt="" role="presentation"/>
+                </div>
+                <div class="brands-card__concept-item">
+                  <p class="brands-card__concept-item-title">КОНЦЕПТ ОФОРМЛЕНИЯ ФИРМЕННЫХ СТРАНИЦ КАТАЛОГА
+                  </p><img class="brands-card__concept-img" src="static/img/concept2.jpg" alt="" role="presentation"/>
+                </div>
+              </div>
+              <div class="brands-card__bottom">
+                <p class="brands-card__text">Тут оставить возможность вставлять какой-то заключительный текст. <br>Выявление и анализ трендов позволяют проектировать продукты, которые будут отвечать актуальным потребностям целевой аудитории к моменту их внедрения, а также минимизировать возможные риски и вероятность ошибок.
+                </p>
+                <div class="brands-card__others">
+                  <div class="brands brands--in-popups"><a class="brands__item js-mfp-ajax" href="#"><span class="brands__item-cover" style="background-image: url('static/img/brands0.jpg')"></span><span class="brands__item-info"><span class="brands__item-title">Название, бренд</span><span class="brands__item-year">2018</span></span></a><a class="brands__item js-mfp-ajax" href="#"><span class="brands__item-cover" style="background-image: url('static/img/brands1.jpg')"></span><span class="brands__item-info"><span class="brands__item-title">Название, бренд</span><span class="brands__item-year">2018</span></span></a><a class="brands__item js-mfp-ajax" href="#"><span class="brands__item-cover" style="background-image: url('static/img/brands2.jpg')"></span><span class="brands__item-info"><span class="brands__item-title">Название, бренд</span><span class="brands__item-year">2018</span></span></a><a class="brands__item js-mfp-ajax" href="#"><span class="brands__item-cover" style="background-image: url('static/img/brands3.jpg')"></span><span class="brands__item-info"><span class="brands__item-title">Название, бренд</span><span class="brands__item-year">2018</span></span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="static/js/vendor.js"></script>
+      <script src="static/js/own.js"></script>
+    </div>
+  </body>
+</html>

@@ -1,5 +1,12 @@
 .common-feed
+  position relative
   padding 129px 0
+  top 100px
+  opacity 0
+  transition top .5s, opacity .5s
+  &.start-animate
+    opacity 1
+    top 0
   .container
     display flex
     justify-content center

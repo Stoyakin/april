@@ -1,6 +1,29 @@
 .training
   padding 149px 0 150px
   overflow hidden
+  &.start-animate
+    .logo
+      top 0
+      opacity 1
+    .training
+      &__title, &__scool, &__text, &__entry-href
+        top 0
+        opacity 1
+    .people
+      &__item
+        left 0
+        opacity 1
+      &__decor
+        opacity 1
+  .people
+    &__item
+      position relative
+      left -100px
+      opacity 0
+      transition left .5s, opacity .5s
+    &__decor
+      opacity 0
+      transition opacity .5s
   &__row
     display flex
     flex-wrap wrap
@@ -17,17 +40,30 @@
       padding 0
       width 100%
   .logo
+    position relative
     margin 0 0 16px 0
+    opacity 0
+    top 50px
+    transition opacity .5s, top .5s
   .people
     margin-top -37px
   &__title
+    position relative
     color #fff
     font-size 27px
     line-height 31px
     font-weight 300
     text-transform uppercase
     margin-bottom 54px
+    opacity 0
+    top 50px
+    transition opacity .5s, top .5s
   &__scool
+    position relative
+    opacity 0
+    top 50px
+    transition opacity .5s, top .5s
+    transition-delay  .45s
     &-info
       color #fff
       font-size 23px
@@ -43,10 +79,15 @@
       font-weight 300
       margin-top 4px
   &__text
+    position relative
     margin-top 50px
     color #fff
     font-size 18px
     font-weight 300
+    opacity 0
+    top 50px
+    transition opacity .5s, top .5s
+    transition-delay  .65s
     p
       text-indent 7px
       &+p
@@ -62,6 +103,10 @@
     font-weight 300
     text-transform uppercase
     transition color .5s
+    opacity 0
+    top 50px
+    transition opacity .5s, top .5s
+    transition-delay  .85s
     &:hover
       color rgba(#fefefe, .5)
       &:before
@@ -78,4 +123,7 @@
       opacity .45
       transition opacity .5s
       z-index -1
+      @media $tPortraitMax
+        width 300px
+        height 300px
 

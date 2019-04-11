@@ -1,0 +1,335 @@
+@keyframes arrowJump
+  0%
+    bottom 57px
+  33%
+    bottom 42px
+  66%
+    bottom 57px
+  100%
+    bottom 57px
+
+@keyframes arrowLeft
+  0%
+    transform rotate(45deg)
+  20%
+    transform rotate(53deg)
+  100%
+    transform rotate(45deg)
+
+@keyframes arrowRight
+  0%
+    transform rotate(-45deg)
+  20%
+    transform rotate(-53deg)
+  100%
+    transform rotate(-45deg)
+
+.title
+    color #fff
+    font-size 24px
+    line-height 30px
+    font-weight 200
+    text-transform uppercase
+
+.blue
+  color #24a0f9
+
+.cover
+  position absolute
+  left 0
+  top 0
+  width 100%
+  height 100%
+  background-size cover
+  background-position 50% 50%
+  background-repeat no-repeat
+  z-index -2
+
+.video
+  position absolute
+  left 50%
+  top 0
+  transform translate(-50%,0)
+  min-width 100%
+  min-height 100%
+  z-index -2
+
+.callback-btn
+  display inline-block
+  vertical-align top
+  transform-origin left top
+  transform rotate(-90deg)
+  color $color
+  font-size 15px
+  line-height 20px
+  font-weight 300
+  text-transform uppercase
+  transition color .5s
+  &:hover
+    color rgba(#fff, .6)
+
+.arrow
+  display block
+  position absolute
+  left 50%
+  transform translateX(-50%)
+  bottom 57px
+  width  25px
+  height 13px
+  animation arrowJump 1.4s infinite ease-in-out
+  &:before, &:after
+    content ''
+    position absolute
+    top 11px
+    width 16px
+    height 3px
+    background-color #fff
+    border-radius 2px
+  &:before
+    left -4px
+    transform-origin right bottom
+    transform rotate(45deg)
+    animation arrowLeft 1.4s infinite ease-in-out
+  &:after
+    right -4px
+    transform-origin left bottom
+    transform rotate(-45deg)
+    animation arrowRight 1.4s infinite ease-in-out
+
+/*--wis-content--*/
+.wis-content
+  width 100%
+  color #fff
+
+  h1:not([class]), h2:not([class]), h3:not([class]), h4:not([class]), h5:not([class])
+    color #fff
+    font-weight 300
+    text-transform uppercase
+    &:first-child
+      margin-top 0
+    &:last-child
+      margin-bottom 0
+
+  h1:not([class])
+    font-size 40px
+    line-height 44px
+    margin-bottom 40px
+    @media $mLandscapeMax
+      font-size 30px
+      line-height 36px
+
+  h2:not([class])
+    font-size 30px
+    line-height 32px
+    margin 50px 0 60px
+    @media $mLandscapeMax
+      font-size 24px
+      line-height 28px
+
+  h3:not([class])
+    font-size 26px
+    line-height 28px
+    margin 59px 0 38px
+    @media $mLandscapeMax
+      font-size 20px
+      line-height 24px
+
+  h4:not([class])
+    font-size 22px
+    line-height 24px
+    margin 50px 0 30px
+    @media $mLandscapeMax
+      font-size 16px
+      line-height 20px
+
+  h5:not([class])
+    font-size 18px
+    line-height 22px
+    margin 50px 0 30px
+    @media $mLandscapeMax
+      font-size 16px
+      line-height 20px
+
+  figure:not([class])
+    margin 30px 0
+    max-width 100%
+
+  figcaption:not([class])
+    color #fff
+    font-size 14px
+    font-weight 300
+    line-height 17px
+
+  img:not([class])
+    margin 20px 0
+    max-width 100%
+    margin-left 0
+
+  * + img:not([class])
+    margin-top 15px
+
+  ul:not([class])
+    list-style none
+    margin 25px 0
+
+    ul:not([class])
+      margin 20px 0 10px 15px
+
+      ul:not([class])
+        margin-top 10px
+
+        li + li
+          margin-top 5px
+
+  * + ul:not([class])
+    margin-top 5px
+
+  ul:not([class]) ul:not([class]),
+  ol:not([class]) ol:not([class]),
+  ol:not([class]) ul:not([class]),
+  ul:not([class]) ol:not([class])
+    margin-top 5px
+
+  ul:not([class]) li
+    padding-left 25px
+    position relative
+    font-size 16px
+    line-height 18px
+    font-weight 300
+
+  ul:not([class]) li + li
+    margin-top: 5px
+
+  ul:not([class]) ol:not([class]),
+  ol:not([class]) ul:not([class]),
+  ul:not([class]) li:not([class]) ol:not([class]),
+  ol:not([class]) li:not([class]) ul:not([class])
+    counter-reset myCounter
+
+  ul:not([class]) ol:not([class]) li:before
+    height 28px
+    background none
+
+  ul:not([class]) li:before
+    content ""
+    position absolute
+    display block
+    left 0
+    top 10px
+    width 16px
+    height 2px
+    background-color #24a0f9
+
+  ol:not([class]) ul:not([class]) li:before
+    content ""
+    left 0
+    top 10px
+    width 16px
+    height 2px
+    background-color #fff
+
+  ol:not([class])
+    list-style none
+    margin 20px 0
+    counter-reset myCounter
+
+    ol:not([class])
+      margin 20px 0 10px 15px
+
+      ol:not([class])
+        margin-top 10px
+
+        li + li
+          margin-top 5px
+
+  * + ol:not([class])
+    margin-top 5px
+
+  ol:not([class]) li
+    position relative
+    padding-left 30px
+    font-size 16px
+    line-height 18px
+    font-weight 300
+
+  ol:not([class]) li + li
+    margin-top 5px
+
+  ol:not([class]) li:before
+    counter-increment myCounter
+    content counters(myCounter,".")"."
+    position absolute
+    left 0
+    top 0
+    width 28px
+    text-align left
+    color #fff
+    font-size 16px
+    line-height 18px
+    font-weight 300
+    box-sizing border-box
+    height 18px
+    background-color transparent
+
+  table:not([class])
+    margin 40px 0 35px
+    width 100%
+
+    th, td
+      font-size 16px
+      line-height 18px
+      padding 12px 25px
+
+    th
+      font-weight 300
+      color #fff
+
+    td
+      color #fff
+
+  b
+    color #fff
+    font-weight bold
+
+  p:not([class])
+    color #fff
+    font-size 16px
+    line-height 19px
+    font-weight 300
+    margin 20px 0
+    text-indent 40px
+
+    & + p
+      margin-top 20px
+
+  a:not([class])
+    color #fff
+    font-size 16px
+    line-height 18px
+    font-weight 300
+    border-bottom 1px solid transparent
+    transition .5s border
+    -webkit-transition .5s border
+
+    &:hover
+      border-color #24a0f9
+
+  iframe
+    margin 20px 0  !important
+    max-width 100% !important
+
+  ul:not([class]):last-child,
+  ol:not([class]):last-child,
+  p:not([class]):last-child,
+  iframe:not([class]):last-child,
+  table:not([class]):last-child
+    margin-bottom 0 !important
+
+  p:not([class]):first-child,
+  table:not([class]):first-child
+    margin-top 0 !important
+/*--end - wis-content--*/
+
+.hidden-block
+  display none
+

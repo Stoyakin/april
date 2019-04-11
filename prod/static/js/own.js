@@ -10,16 +10,20 @@ function qsAll(query) {
   return root.querySelectorAll(query);
 }
 
-function getParent(elem, selector) {
-  for (; elem && elem !== document; elem = elem.parentNode) {
-    if (elem.classList.contains(selector)) return parent;
+function getParent(el, findParent) {
+  while (el && el.parentNode) {
+    el = el.parentNode;
+    if (el.classList && el.classList.contains(findParent)) return el;
   }
+
+  return false;
 }
 
 window.onload = function () {
-  return document.querySelector('body').classList.add('loaded-page');
+  return qs('body').classList.add('loaded-page');
 };
 
+if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) qs('body').classList.add('ios');
 document.addEventListener("DOMContentLoaded", function (event) {
   window.site = {};
   window.site.form = {
@@ -241,24 +245,46 @@ document.addEventListener("DOMContentLoaded", function (event) {
       });
     },
     jsFile: function jsFile() {
-      var inputFile = qs('.js-file'),
+      var inputFiles = qsAll('.js-file'),
           fileItems;
-      inputFile.addEventListener('change', function () {
-        var _t = this,
-            over = _t.parentNode.parentNode,
-            fileItems = over.querySelector('.uploaded-file__items'),
-            fileItemDiv = document.createElement('div');
+      var _iteratorNormalCompletion4 = true;
+      var _didIteratorError4 = false;
+      var _iteratorError4 = undefined;
 
-        if (_t.files.length && fileItems) {
-          fileItemDiv.classList.add('uploaded-file__item');
-          fileItemDiv.innerHTML = '<p class="uploaded-file__item-name">' + _t.files[0].name + '</p><button class="uploaded-file__item-del-btn js-del-file" type="button">удалить</button>';
-          fileItems.appendChild(fileItemDiv);
+      try {
+        for (var _iterator4 = inputFiles[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+          var inputFileItem = _step4.value;
+          inputFileItem.addEventListener('change', function () {
+            var _t = this,
+                over = _t.parentNode.parentNode,
+                fileItems = over.querySelector('.uploaded-file__items'),
+                fileItemDiv = document.createElement('div');
 
-          if (!over.classList.contains('uploaded-file--no-empty')) {
-            over.classList.add('uploaded-file--no-empty');
+            if (_t.files.length && fileItems) {
+              fileItemDiv.classList.add('uploaded-file__item');
+              fileItemDiv.innerHTML = '<p class="uploaded-file__item-name">' + _t.files[0].name + '</p><button class="uploaded-file__item-del-btn js-del-file" type="button">удалить</button>';
+              fileItems.appendChild(fileItemDiv);
+
+              if (!over.classList.contains('uploaded-file--no-empty')) {
+                over.classList.add('uploaded-file--no-empty');
+              }
+            }
+          });
+        }
+      } catch (err) {
+        _didIteratorError4 = true;
+        _iteratorError4 = err;
+      } finally {
+        try {
+          if (!_iteratorNormalCompletion4 && _iterator4.return != null) {
+            _iterator4.return();
+          }
+        } finally {
+          if (_didIteratorError4) {
+            throw _iteratorError4;
           }
         }
-      });
+      }
 
       document.onclick = function (e) {
         if (e.target.classList.contains('js-del-file')) {
@@ -315,7 +341,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         var _t = $(this),
             html = $.ajax(),
             hiddenBlock = $('.hidden-block');
-        /*заглушка с уникальным id - заменть на контент подтянутый по ajax
+        /*заглушка с уникальным id - заменть на контент подтянутый по ajax,
           разметку попапа взять с попапа в скрытом блоке после футера
           --> .popup.popup--brands.mfp-hide#brands
         */
@@ -342,13 +368,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
     },
     ivideo: function ivideo() {
       var ivideoVideos = qsAll('.ivideo__item');
-      var _iteratorNormalCompletion4 = true;
-      var _didIteratorError4 = false;
-      var _iteratorError4 = undefined;
+      var _iteratorNormalCompletion5 = true;
+      var _didIteratorError5 = false;
+      var _iteratorError5 = undefined;
 
       try {
         var _loop2 = function _loop2() {
-          var ivideoItem = _step4.value;
+          var ivideoItem = _step5.value;
           var ivideoOver = ivideoItem.parentNode,
               centerContent = ivideoItem.nextElementSibling,
               playBtn = centerContent.querySelector('.ivideo__play-ico');
@@ -368,20 +394,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
           });
         };
 
-        for (var _iterator4 = ivideoVideos[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+        for (var _iterator5 = ivideoVideos[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
           _loop2();
         }
       } catch (err) {
-        _didIteratorError4 = true;
-        _iteratorError4 = err;
+        _didIteratorError5 = true;
+        _iteratorError5 = err;
       } finally {
         try {
-          if (!_iteratorNormalCompletion4 && _iterator4.return != null) {
-            _iterator4.return();
+          if (!_iteratorNormalCompletion5 && _iterator5.return != null) {
+            _iterator5.return();
           }
         } finally {
-          if (_didIteratorError4) {
-            throw _iteratorError4;
+          if (_didIteratorError5) {
+            throw _iteratorError5;
           }
         }
       }
@@ -399,7 +425,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         autoplay: {
           delay: 1000
         },
-        autoplayDisableOnInteraction: false,
         breakpoints: {
           768: {
             slidesPerView: 2
@@ -421,18 +446,100 @@ document.addEventListener("DOMContentLoaded", function (event) {
         iclientsSwiper.autoplay.start();
       };
     },
-    init: function init() {
-      var _self = this,
-          $body = qs('body');
+    peopleSwiper: function peopleSwiper() {
+      var _th = this;
 
-      if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) $body.classList.add('ios');
+      var peopleSwiper = new Swiper('.js-people-swiper', {
+        loop: true,
+        speed: 750,
+        slidesPerView: 'auto',
+        centeredSlides: true,
+        slidesOffsetBefore: 0,
+        spaceBetween: 40,
+        slideToClickedSlide: true,
+        breakpoints: {
+          1600: {
+            spaceBetween: 0
+          }
+        }
+      });
+      peopleSwiper.on('slideChangeTransitionEnd', function () {
+        var _t = this,
+            _tSlideChildren = qs('.swiper-slide-active .people__item', _t.el),
+            dataName = _tSlideChildren.dataset.name && _tSlideChildren.dataset.name != '' ? _tSlideChildren.dataset.name : false,
+            dataPos = _tSlideChildren.dataset.pos && _tSlideChildren.dataset.pos != '' ? _tSlideChildren.dataset.pos : false,
+            dataDescr = _tSlideChildren.dataset.descr && _tSlideChildren.dataset.descr != '' ? _tSlideChildren.dataset.descr : false,
+            infoName = qs('.people__info-name') || false,
+            infoPos = qs('.people__info-pos') || false,
+            infoDescr = qs('.people__info-descr') || false;
+
+        function changeInfo(dataAtr, selector) {
+          if (dataAtr) {
+            selector.textContent = dataAtr;
+
+            _th.fadeIn(selector, 250);
+          } else {
+            _th.fadeOut(selector, 250);
+          }
+        }
+
+        if (dataName && infoName) changeInfo(dataName, infoName);
+        if (dataPos && infoPos) changeInfo(dataPos, infoPos);
+        if (dataDescr && infoDescr) changeInfo(dataDescr, infoDescr);
+      });
+    },
+    scrollnextElem: function scrollnextElem() {
+      qs('.arrow').addEventListener('click', function (e) {
+        window.scroll({
+          left: 0,
+          top: this.parentNode.offsetHeight,
+          behavior: 'smooth'
+        });
+        e.preventDefault();
+      });
+    },
+    anim: function anim() {
+      var elemsAnimArr = ['.js-scroll-anim'];
+
+      function visChecker(el) {
+        var rect = el.getBoundingClientRect();
+        var wHeight = window.innerHeight || document.documentElement.clientHeight;
+        var wWidth = window.innerWidth || document.documentElement.clientWidth;
+        return rect.bottom - el.offsetHeight * 0.75 <= wHeight && rect.right <= wWidth;
+      }
+
+      function elemVisCheck(elArray) {
+        window.addEventListener('scroll', function () {
+          if (elArray.length) {
+            elArray.forEach(function (item) {
+              if (document.querySelectorAll(item).length) {
+                document.querySelectorAll(item).forEach(function (elem) {
+                  if (visChecker(elem)) {
+                    elem.classList.add('start-animate');
+                  }
+                });
+              }
+            });
+          }
+        });
+      }
+
+      if (elemsAnimArr.length) {
+        elemVisCheck(elemsAnimArr);
+      }
+    },
+    init: function init() {
+      var elemsAnimArr = ['.js-scroll-anim'];
+      if (elemsAnimArr.length) this.anim();
+      if (qs('.arrow')) this.scrollnextElem();
+      if (qs('.js-burger')) this.burger();
+      if (qsAll('.ivideo__item').length) this.ivideo();
       if (qs('.js-file')) this.jsFile();
       if (qs('.js-mfp')) this.mfp();
       if (qs('.js-mfp-video')) this.mfpVideo();
-      if (qs('.js-burger')) this.burger();
       if (qs('.js-mfp-ajax')) this.mfpAjax();
-      if (qsAll('.ivideo__item').length) this.ivideo();
       if (qs('.js-iclients-swiper')) this.iclientsSwiper();
+      if (qs('.js-people') && qs('.js-people-swiper')) this.peopleSwiper();
       $('.js-toggle-desr').on('click', function () {
         var _t = $(this),
             hiddenSibl = _t.siblings('.services__item-descr');
@@ -449,37 +556,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         return false;
       });
-      /*переделать говнище*/
+      var eventScroll;
 
-      if ($('.js-people').length) {
-        $('.js-people .people__item').on('click', function () {
-          var _t = $(this),
-              dataName = _t.data('name') && _t.data('name') != '' ? _t.data('name') : false,
-              dataPos = _t.data('pos') && _t.data('pos') != '' ? _t.data('pos') : false,
-              dataDescr = _t.data('descr') && _t.data('descr') != '' ? _t.data('descr') : false,
-              activeSlide = _t.siblings('.people__item--active'),
-              infoName = $('.people__info-name'),
-              infoPos = $('.people__info-pos'),
-              infoDescr = $('.people__info-descr');
-
-          function changeInfo(dataAtr, selector) {
-            if (dataAtr) selector.text(dataAtr).fadeIn(300);else selector.fadeOut(300);
-          }
-
-          if (!_t.hasClass('.people__item--active')) {
-            activeSlide.removeClass('people__item--active');
-
-            _t.insertBefore(activeSlide).addClass('people__item--active');
-
-            changeInfo(dataName, infoName);
-            changeInfo(dataPos, infoPos);
-            changeInfo(dataDescr, infoDescr);
-          }
-
-          return false;
-        });
+      try {
+        eventScroll = new Event('scroll');
+      } catch (e) {
+        eventScroll = document.createEvent('Event');
+        var doesnt_bubble = false,
+            isnt_cancelable = false;
+        eventScroll.initEvent('scroll', doesnt_bubble, isnt_cancelable);
       }
 
+      window.dispatchEvent(eventScroll);
       return this;
     }
   }.init();

@@ -16,7 +16,7 @@ html(lang="ru")
           +e('span').item.--el6
 
         +b('section').ihead.--inside
-          //+e('span').back.cover(style="background-image: url('static/img/back6.jpg');")
+          +e('span').back.cover(style="background-image: url('static/img/back6.jpg');")
           +e('video').video.video(preload="auto", loop, autoplay, muted, playsinline, style="background-image: url('static/img/back6.jpg');")
             source(src="static/video/video.ogv", type='video/ogg; codecs="theora, vorbis"')
             source(src="static/video/video.mp4", type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
@@ -88,9 +88,7 @@ html(lang="ru")
                     +e.field
                       +e('p').field-title целевая аудитория
                       +e('p').field-descr На кого должен работать ролик? Опишите типичного представителя. <br>Целевая аудитория в стандартной терминологии (возрат, пол)
-
                       +e('textarea')(data-req="req").field-textarea
-                      +e.items
                   +e.row.--big
                     +e.field
                       +e('p').field-title преимущества продукта, услуги
@@ -125,18 +123,17 @@ html(lang="ru")
                       +e('p').field-descr Приведите 2-3 примера видеороликов, которые Вам нравятся 
                       +e('textarea')(data-req="req").field-textarea.--min
                     +b.uploaded-file
-                      +e('label')(for="inp-f_01").label Прикрепить файл
-                        +e('input')(type="file" id="inp-f_01").input.js-file
+                      +e('label')(for="inp-f_02").label Прикрепить файл
+                        +e('input')(type="file" id="inp-f_02").input.js-file
                       +e.items
                   +e.row.--big
                     +e.field
                       +e('p').field-descr И которые не нравятся 
                       +e('textarea')(data-req="req").field-textarea.--min
                     +b.uploaded-file
-                      +e('label')(for="inp-f_01").label Прикрепить файл
-                        +e('input')(type="file" id="inp-f_01").input.js-file
+                      +e('label')(for="inp-f_03").label Прикрепить файл
+                        +e('input')(type="file" id="inp-f_03").input.js-file
                       +e.items
-
                 +e('h3').title требования к материалам
                 +b('ul').requirements
                   +e('li').item Все предоставленные материалы для разработки должны быть хорошего качества

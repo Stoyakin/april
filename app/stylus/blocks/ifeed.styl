@@ -1,7 +1,7 @@
 .ifeed
   position relative
   padding 173px 0
-  height 100vh
+  height calc(100vh + 30px)
   min-height 650px
   z-index 1
   @media $bigDesktopMax
@@ -10,8 +10,15 @@
     padding-top 80px
     padding-bottom 80px
     height auto
+  &__video-over
+    position absolute
+    left 0
+    top 0
+    width 100%
+    height 100%
+    overflow hidden
   &__back
-    height calc(100% + 200px)
+    height 100%
   .container
     height 100%
   &__content
