@@ -12,16 +12,15 @@ html(lang="ru")
 
       main.main
         +b('section').ihead
-          +e('span').back.cover(style="background-image: url('static/img/back.jpg');")
-          +e('video').video.video(preload="auto", loop, autoplay, muted, playsinline, style="background-image: url('static/img/back.jpg');")
-            source(src="static/video/video.ogv", type='video/ogg; codecs="theora, vorbis"')
+          +e('video').video.video(preload="auto", loop, autoplay, muted, playsinline, style="background-image: url('static/video/video-poster.jpg');")
             source(src="static/video/video.mp4", type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
           .container
             +e.row
               +e('a')(href="#").btn.callback-btn обратная связь
               +b.logo
                 +e.overimg
-                  +e('img')(src="static/img/logo2.gif" alt="").img
+                  +e('img')(src="static/img/logo-left.png" alt="").img
+                  +e('span')(style="background-image: url('static/img/logo-right.png')").img.--animation
                 +e('p').title creative<br>group
               +b('ul').social
                 +e('li').item
@@ -30,14 +29,12 @@ html(lang="ru")
                   +e('a')(href="#").item-href.--ytb
           +e('span').arrow.arrow
 
-        +ivideo('static/img/video-cover.jpg')
+        +ivideo('static/video/video-poster5.jpg')
 
         +b('section').ifeed
-          +e('span').back.cover(style="background-image: url('static/img/back2.jpg')")
           +e.video-over
-            +e('video').video.video(preload="auto", loop, autoplay, muted, playsinline, style="background-image: url('static/img/back2.jpg');")
-              source(src="static/video/video.ogv", type='video/ogg; codecs="theora, vorbis"')
-              source(src="static/video/video.mp4", type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
+            +e('video').video.video(preload="auto", loop, autoplay, muted, playsinline, style="background-image: url('static/video/video-poster2.jpg');")
+              source(src="static/video/video2.mp4", type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
           .container
             +e.content
               +e.top

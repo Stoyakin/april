@@ -413,6 +413,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
       }
     },
     iclientsSwiper: function iclientsSwiper() {
+      var _th = this;
+
       var iclientsSwiper = new Swiper('.js-iclients-swiper', {
         loop: true,
         speed: 750,
@@ -434,6 +436,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
           },
           1600: {
             slidesPerView: 5
+          }
+        },
+        on: {
+          init: function init() {
+            if (qs('.js-mfp-video')) _th.mfpVideo();
           }
         }
       });

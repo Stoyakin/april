@@ -1,3 +1,9 @@
+@keyframes playlogo
+  from
+    background-position 0 0
+  to
+    background-position 0 -34970px
+
 .logo
   display inline-flex
   align-items center
@@ -17,6 +23,24 @@
   &--middle
     margin 0
     .logo
+      &__img
+        &--animation
+          top -1px
+          transform scale(0.25)
+          right -429px
+          @media $mPortraitMax
+            right -468px
+            transform scale(.17)
+            top -1px
+        &:not(.logo__img--animation)
+          position relative
+          margin-top 35px
+          max-width 366px
+          left -18px
+          @media $mPortraitMax
+            margin-top 37px
+            max-width 313px
+            left -15px
       &__overimg
         max-width 246px
         margin-right 23px
@@ -28,13 +52,47 @@
         line-height 13px
   &__overimg
     display block
-    width 436px
+    position relative
+    height 110px
+    width 570px
     margin-right 38px
+    overflow hidden
     @media $mLandscapeMax
-      width 236px
+      width 330px
       margin-right 20px
     @media $mPortraitMax
       width 195px
+  &__img
+    &:not(.logo__img--animation)
+      margin-top 23px
+      @media $mLandscapeMax
+        position relative
+        margin-top 34px
+        max-width 400px
+        left -20px
+      @media $mPortraitMax
+        margin-top 37px
+        max-width 313px
+        left -15px
+    &--animation
+      display block
+      width 570px
+      height 130px
+      position absolute
+      right -200px
+      transform scale(.75)
+      transform-origin left center
+      top -8px
+      animation playlogo 12s steps(269) infinite
+      background-repeat no-repeat
+      @media $mLandscapeMax
+        right -362px
+        transform scale(.38)
+        top -2px
+      @media $mPortraitMax
+        right -468px
+        transform scale(.17)
+        top -1px
   &__title
     color #fff
     font-size 20px
@@ -44,3 +102,7 @@
     @media $mLandscapeMax
       font-size 15px
       line-height 20px
+    @media $mPortraitMax
+      font-size 13px
+      line-height 15px
+

@@ -15,15 +15,14 @@ html(lang="ru")
           +e('span').item.--el9
 
         +b('section').ihead.--inside
-          +e('span').back.cover(style="background-image: url('static/img/back3.jpg');")
-          +e('video').video.video(preload="auto", loop, autoplay, muted, playsinline, style="background-image: url('static/img/back3.jpg');")
-            source(src="static/video/video.ogv", type='video/ogg; codecs="theora, vorbis"')
+          +e('video').video.video(preload="auto", loop, autoplay, muted, playsinline, style="background-image: url('static/video/video-poster.jpg');")
             source(src="static/video/video.mp4", type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
           .container
             +e.row
               +b.logo.--middle
                 +e.overimg
-                  +e('img')(src="static/img/logo2.gif" alt="").img
+                  +e('img')(src="static/img/logo-left.png" alt="").img
+                  +e('span')(style="background-image: url('static/img/logo-right.png')").img.--animation
                 +e('p').title creative<br>group
               +b('ul').social
                 +e('li').item
@@ -41,7 +40,7 @@ html(lang="ru")
                 +e('span').item-year 2018
           - }
 
-        +ivideo('static/img/video-cover2.jpg')
+        +ivideo('static/video/video-poster5.jpg')
         
         +b('section').portfolio
           - for (var i = 0; i < 6; ++i) {

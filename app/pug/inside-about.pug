@@ -15,16 +15,15 @@ html(lang="ru")
           +e('span').item.--el10
 
         +b('section').ihead.--middle
-          +e('span').back.cover(style="background-image: url('static/img/back5.jpg');")
-          +e('video').video.video(preload="auto", loop, autoplay, muted, playsinline, style="background-image: url('static/img/back5.jpg');")
-            source(src="static/video/video.ogv", type='video/ogg; codecs="theora, vorbis"')
+          +e('video').video.video(preload="auto", loop, autoplay, muted, playsinline, style="background-image: url('static/video/video-poster.jpg');")
             source(src="static/video/video.mp4", type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
           .container
             +e.row
               +e('a')(href="#").btn.callback-btn обратная связь
               +b.logo
                 +e.overimg
-                  +e('img')(src="static/img/logo2.gif" alt="").img
+                  +e('img')(src="static/img/logo-left.png" alt="").img
+                  +e('span')(style="background-image: url('static/img/logo-right.png')").img.--animation
           +e('span').arrow.arrow
 
         +b('section').team.js-scroll-anim

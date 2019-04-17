@@ -12,9 +12,7 @@ html(lang="ru")
 
       main.main
         +b('section').ihead.--inside
-          +e('span').back.cover(style="background-image: url('static/img/back4.jpg');")
-          +e('video').video.video(preload="auto", loop, autoplay, muted, playsinline, style="background-image: url('static/img/back4.jpg');")
-            source(src="static/video/video.ogv", type='video/ogg; codecs="theora, vorbis"')
+          +e('video').video.video(preload="auto", loop, autoplay, muted, playsinline, style="background-image: url('static/video/video-poster.jpg');")
             source(src="static/video/video.mp4", type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
           .container
             +e.row
@@ -113,7 +111,7 @@ html(lang="ru")
                     +e('img')(src="static/img/adv-ico9.png" alt="").item-ico
                   +e('p').item-descr Выход на стабильный заработок с 6-значными цифрами через 6 месяцев;
         
-        +ivideo('static/img/video-cover.jpg')
+        +ivideo('static/video/video-poster5.jpg')
 
         +b('section').directions.js-scroll-anim
           .container
