@@ -268,19 +268,36 @@ document.addEventListener("DOMContentLoaded", function (event) {
         let ivideoOver = ivideoItem.parentNode,
           centerContent = ivideoItem.nextElementSibling,
           playBtn = centerContent.querySelector('.ivideo__play-ico');
+
         ivideoItem.addEventListener('ended', (e)=> {
           centerContent.classList.remove('ivideo__center--hide');
           ivideoOver.classList.remove('ivideo--full');
         });
+
         ivideoItem.addEventListener('pause', (e)=> {
           centerContent.classList.remove('ivideo__center--hide');
           ivideoOver.classList.remove('ivideo--full');
         });
-        playBtn.addEventListener('click', (e)=> {
+
+        ivideoOver.addEventListener('click', function (event) {
+          if (!ivideoItem.paused) {
+            ivideoItem.pause();
+            centerContent.classList.remove('ivideo__center--hide');
+            ivideoOver.classList.remove('ivideo--full');
+          } else {
+            ivideoItem.play();
+            centerContent.classList.add('ivideo__center--hide');
+            ivideoOver.classList.add('ivideo--full');
+          }
+          event.preventDefault();
+        });
+
+        playBtn.addEventListener('click', (event)=> {
           ivideoItem.play();
           centerContent.classList.add('ivideo__center--hide');
           ivideoOver.classList.add('ivideo--full');
-          e.preventDefault();
+          event.preventDefault();
+          console.log('2');
         });
       }
     },
@@ -377,23 +394,23 @@ document.addEventListener("DOMContentLoaded", function (event) {
     anim: function anim() {
       let elemsAnimArr = ['.js-scroll-anim'];
 
-      function visChecker(el) {
+      function visChecker(el, scrollTop) {
         const rect = el.getBoundingClientRect();
         const wHeight = window.innerHeight || document.documentElement.clientHeight;
         const wWidth = window.innerWidth || document.documentElement.clientWidth;
         return (
-          rect.bottom - el.offsetHeight * 0.75 <= wHeight &&
-          rect.right <= wWidth
+          rect.top + scrollTop <= (wHeight * 0.82) + scrollTop && rect.right <= wWidth
         );
       }
 
       function elemVisCheck(elArray) {
-        window.addEventListener('scroll', () => {
+        window.addEventListener('scroll', function(event) {
+          let wst = this.pageYOffset;
           if (elArray.length) {
             elArray.forEach((item) => {
               if (document.querySelectorAll(item).length) {
                 document.querySelectorAll(item).forEach((elem) => {
-                  if (visChecker(elem)) {
+                  if (visChecker(elem, wst)) {
                     elem.classList.add('start-animate');
                   }
                 });
@@ -443,6 +460,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
           hiddenSibl.slideDown(350);
         }
         return false;
+      });
+
+      $(document).on('click', function (e) {
+        if ($(e.target).closest('.popup--brands').length && !$(e.target).closest('.popup__container').length) {
+          $.magnificPopup.close();
+          e.preventDefault;
+        }
       });
 
       let eventScroll

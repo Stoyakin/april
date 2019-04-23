@@ -49,3 +49,13 @@ body
   z-index 1
   overflow-x hidden
   height 100%
+  &--index
+    .logo
+      &__title
+        margin-right 5px
+        @media $desktopMax
+          margin-right 20px
+        @media $mPortraitMax
+          margin-right 10px
+      &__overimg
+        margin-right 0

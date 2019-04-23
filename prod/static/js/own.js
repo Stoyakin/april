@@ -386,11 +386,25 @@ document.addEventListener("DOMContentLoaded", function (event) {
             centerContent.classList.remove('ivideo__center--hide');
             ivideoOver.classList.remove('ivideo--full');
           });
-          playBtn.addEventListener('click', function (e) {
+          ivideoOver.addEventListener('click', function (event) {
+            if (!ivideoItem.paused) {
+              ivideoItem.pause();
+              centerContent.classList.remove('ivideo__center--hide');
+              ivideoOver.classList.remove('ivideo--full');
+            } else {
+              ivideoItem.play();
+              centerContent.classList.add('ivideo__center--hide');
+              ivideoOver.classList.add('ivideo--full');
+            }
+
+            event.preventDefault();
+          });
+          playBtn.addEventListener('click', function (event) {
             ivideoItem.play();
             centerContent.classList.add('ivideo__center--hide');
             ivideoOver.classList.add('ivideo--full');
-            e.preventDefault();
+            event.preventDefault();
+            console.log('2');
           });
         };
 
@@ -508,20 +522,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
     anim: function anim() {
       var elemsAnimArr = ['.js-scroll-anim'];
 
-      function visChecker(el) {
+      function visChecker(el, scrollTop) {
         var rect = el.getBoundingClientRect();
         var wHeight = window.innerHeight || document.documentElement.clientHeight;
         var wWidth = window.innerWidth || document.documentElement.clientWidth;
-        return rect.bottom - el.offsetHeight * 0.75 <= wHeight && rect.right <= wWidth;
+        return rect.top + scrollTop <= wHeight * 0.82 + scrollTop && rect.right <= wWidth;
       }
 
       function elemVisCheck(elArray) {
-        window.addEventListener('scroll', function () {
+        window.addEventListener('scroll', function (event) {
+          var wst = this.pageYOffset;
+
           if (elArray.length) {
             elArray.forEach(function (item) {
               if (document.querySelectorAll(item).length) {
                 document.querySelectorAll(item).forEach(function (elem) {
-                  if (visChecker(elem)) {
+                  if (visChecker(elem, wst)) {
                     elem.classList.add('start-animate');
                   }
                 });
@@ -562,6 +578,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
         }
 
         return false;
+      });
+      $(document).on('click', function (e) {
+        if ($(e.target).closest('.popup--brands').length && !$(e.target).closest('.popup__container').length) {
+          $.magnificPopup.close();
+          e.preventDefault;
+        }
       });
       var eventScroll;
 

@@ -2,7 +2,7 @@
   from
     background-position 0 0
   to
-    background-position 0 -34970px
+    background-position 0 -29590px
 
 .logo
   display inline-flex
@@ -24,26 +24,21 @@
     margin 0
     .logo
       &__img
-        &--animation
-          top -1px
-          transform scale(0.25)
-          right -429px
-          @media $mPortraitMax
-            right -468px
-            transform scale(.17)
-            top -1px
+        position relative
+        margin-top 0
+        max-width 100%
+        left 0
         &:not(.logo__img--animation)
-          position relative
-          margin-top 35px
-          max-width 366px
-          left -18px
-          @media $mPortraitMax
-            margin-top 37px
-            max-width 313px
-            left -15px
+          margin-top 0
+          @media $mLandscapeMax
+            max-width 100%
+            left 0
       &__overimg
         max-width 246px
         margin-right 23px
+        height 41px
+        @media $mLandscapeMax
+          height 31px
         @media $mPortraitMax
           width 195px
           margin-right 20px
@@ -76,21 +71,21 @@
         left -15px
     &--animation
       display block
-      width 570px
-      height 130px
+      width 540px
+      height 110px
       position absolute
-      right -200px
+      right -180px
       transform scale(.75)
       transform-origin left center
-      top -8px
-      animation playlogo 12s steps(269) infinite
+      top -3px
+      animation playlogo 9s steps(269) infinite
       background-repeat no-repeat
       @media $mLandscapeMax
-        right -362px
+        right -342px
         transform scale(.38)
-        top -2px
+        top 1px
       @media $mPortraitMax
-        right -468px
+        right -442px
         transform scale(.17)
         top -1px
   &__title
