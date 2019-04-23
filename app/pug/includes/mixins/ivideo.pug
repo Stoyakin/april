@@ -1,6 +1,6 @@
 mixin ivideo(cover)
   +b('section').ivideo
-    +e('video').item(preload="auto", controls, muted, style="background-image: url('"+cover+"');")
+    +e('video').item(preload="auto", muted, style="background-image: url('"+cover+"');")
       source(src="static/video/video5.mp4", type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"')
     +e.center
       +e('span').title showreel

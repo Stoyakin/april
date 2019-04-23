@@ -9,11 +9,11 @@
     width calc(100%/3)
     overflow hidden
     opacity 0
-    animation-duration 0.6s
+    animation-duration 0.65s
     animation-fill-mode forwards
     for index in (0..12)
       &:nth-child({index})
-          animation-delay (.15 + index*0.1)s
+          animation-delay (.08 + index*0.07)s
     &.start-animate
       animation-play-state running
       animation-name bounceInUp

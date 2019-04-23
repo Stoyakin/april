@@ -2640,12 +2640,14 @@ img.mfp-img {
     top: auto;
     transform: none;
   }
-  .ihead__btn:hover {
-    top: auto;
-  }
 }
 .ihead__btn:hover {
   top: 67px;
+}
+@media (max-width: 991px) {
+  .ihead__btn:hover {
+    top: auto;
+  }
 }
 .ihead__video {
   opacity: 0.5;
@@ -2992,47 +2994,47 @@ img.mfp-img {
   width: calc(100% / 3);
   overflow: hidden;
   opacity: 0;
-  animation-duration: 0.6s;
+  animation-duration: 0.65s;
   animation-fill-mode: forwards;
 }
 .portfolio__item:nth-child(0) {
-  animation-delay: 0.15s;
+  animation-delay: 0.08s;
 }
 .portfolio__item:nth-child(1) {
-  animation-delay: 0.25s;
+  animation-delay: 0.15s;
 }
 .portfolio__item:nth-child(2) {
-  animation-delay: 0.35s;
+  animation-delay: 0.22s;
 }
 .portfolio__item:nth-child(3) {
-  animation-delay: 0.45s;
+  animation-delay: 0.29s;
 }
 .portfolio__item:nth-child(4) {
-  animation-delay: 0.55s;
+  animation-delay: 0.36s;
 }
 .portfolio__item:nth-child(5) {
-  animation-delay: 0.65s;
+  animation-delay: 0.43s;
 }
 .portfolio__item:nth-child(6) {
-  animation-delay: 0.75s;
+  animation-delay: 0.5s;
 }
 .portfolio__item:nth-child(7) {
-  animation-delay: 0.85s;
+  animation-delay: 0.57s;
 }
 .portfolio__item:nth-child(8) {
-  animation-delay: 0.95s;
+  animation-delay: 0.64s;
 }
 .portfolio__item:nth-child(9) {
-  animation-delay: 1.05s;
+  animation-delay: 0.71s;
 }
 .portfolio__item:nth-child(10) {
-  animation-delay: 1.15s;
+  animation-delay: 0.78s;
 }
 .portfolio__item:nth-child(11) {
-  animation-delay: 1.25s;
+  animation-delay: 0.85s;
 }
 .portfolio__item:nth-child(12) {
-  animation-delay: 1.35s;
+  animation-delay: 0.92s;
 }
 .portfolio__item.start-animate {
   animation-play-state: running;
@@ -3528,9 +3530,18 @@ img.mfp-img {
 .people .swiper-slide {
   width: auto;
   transition: opacity 0.5s;
+  transition: all 0.5s;
+}
+.people .swiper-slide .people__item-img {
+  transform: scale(0.65);
+  transform-origin: bottom;
+  transition: transform 0.5s;
 }
 .people .swiper-slide-active .people__item {
   filter: grayscale(0);
+}
+.people .swiper-slide-active .people__item-img {
+  transform: scale(1);
 }
 .people .swiper-slide-active + .swiper-slide,
 .people .swiper-slide-active + .swiper-slide + .swiper-slide,

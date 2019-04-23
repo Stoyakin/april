@@ -83,9 +83,16 @@
     &-slide
       width auto
       transition opacity .5s
+      transition all .5s
+      .people__item-img
+        transform scale(.65)
+        transform-origin bottom
+        transition transform .5s
       &-active
         .people__item
           filter grayscale(0)
+          &-img
+            transform scale(1)
         & + .swiper-slide,
         & + .swiper-slide + .swiper-slide,
         & + .swiper-slide + .swiper-slide + .swiper-slide

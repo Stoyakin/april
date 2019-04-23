@@ -347,6 +347,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         loop: true,
         speed: 750,
         slidesPerView: 'auto',
+        loopedSlides: qsAll('.js-people-swiper .swiper-slide').length,
         centeredSlides: true,
         slidesOffsetBefore: 0,
         spaceBetween: 40,
@@ -460,6 +461,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
           hiddenSibl.slideDown(350);
         }
         return false;
+      });
+
+      $('.ihead__btn').on('click', function () {
+        if ($('.ifeed').length) {
+          $('html, body').stop().animate({scrollTop: $('.ifeed').offset().top }, 700, 'swing');
+          return false;
+        }
+        if ($('.common-feed').length) {
+          $('html, body').stop().animate({scrollTop: $('.common-feed').offset().top }, 700, 'swing');
+          return false;
+        }
       });
 
       $(document).on('click', function (e) {
